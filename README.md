@@ -1,2 +1,0 @@
-# soundpod
-Databases project

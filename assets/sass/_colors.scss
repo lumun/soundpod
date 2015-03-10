@@ -1,0 +1,33 @@
+// Global variables
+$black: black;
+$green: green;
+$gray: gray;
+$green-semi-transparent: rgba(0, 128, 0, 0.2);
+
+// Background images are all located /assets/images/background
+// Alternatives available are escheresque.png, az-subtle.png
+// Repeating backgrounds found at subtlepatterns.com, a great styling resource
+$background-image: url("/assets/images/background/escheresque.png") repeat left top;
+
+// Header/nav bar variables
+$header-border-color: green;
+$header-background-color: $green-semi-transparent;
+$header-text-color: black;
+// Footer variables
+$footer-border-color: $header-border-color;
+$footer-background-color: $header-background-color;
+$footer-text-color: $header-text-color;
+
+// Nav buttons
+$nav-button-background: transparent;
+$nav-button-background-hover: $green-semi-transparent;
+$nav-button-text-color: black;
+$nav-button-text-color-hover: black;
+$nav-button-border-color: black;
+$nav-button-border-color-hover: black;
+
+// Colors for content regions
+$content-border-color: $green-semi-transparent;
+
+// Color for question text (anything italicized within a question list)
+$question-color: black;

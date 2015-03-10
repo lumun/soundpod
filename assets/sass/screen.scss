@@ -1,0 +1,167 @@
+// SASS stylesheet for web app
+// For more on SASS syntax see http://sass-lang.com/guide
+
+// All of our global color variables will be held in this file: _colors.scss
+@import 'colors';
+
+// Mixins for cross-platform continuity
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+//Sticky Footer by Ryan Fait
+//http://ryanfait.com/
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+//Sticky Footer by Ryan Fait
+//http://ryanfait.com/
+
+// Header
+div#header {
+	padding: 5px;
+	display: block;
+	border-bottom: 4px solid $header-border-color;
+	background: $header-background-color;
+	overflow: auto;
+	p {
+		float: left;
+		display: inline-block;
+		font-variant: small-caps;
+		font-size: 29px;
+		margin: 10px;
+		font-weight: bold;
+	}
+	.nav-button {
+		float: left;
+		display: inline-block;
+		margin: 10px;
+	}
+  	#logout, #my-account{
+    	float: right;
+  	}
+}
+
+body {
+	background: #ffffff $background-image;
+}
+
+h1 { 
+	margin: 30px; 
+}
+a {
+	text-decoration: none;
+	&:link, &:visited, &:hover, &:active {
+		color: inherit;
+	}
+}
+
+.content {
+	border: 4px solid $content-border-color;
+	@include border-radius(10px);
+	margin: 10px;
+	padding: 10px;
+	// Instead of floating left, use class type left-float
+	// float: left;
+}
+.left-float { float: left; }
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p.center, a.center, h1.center, h2.center, h3.center {
+	text-align:center;
+}
+
+.margined {
+	margin: 20px;
+}
+
+div#return-home {
+	// Hard coded to the width of the contained anchor
+	// Otherwise it will not truly center
+	width: 118px; 
+}
+
+.question_list {
+	font-size: 13px;
+
+	i {
+		// Makes italicized questions in a question_list another color
+		color: $question-color;
+	}
+}
+
+.nav-button {
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align:center; 
+	border: 2px solid;
+	@include border-radius(10px);
+	padding: 5px;
+	margin: 10px 0;
+
+	&:link, &:visited {
+		color: $nav-button-text-color;
+		border-color: $nav-button-border-color;
+		background: $nav-button-background;
+	}
+
+	&:hover, &:active {
+		color: $nav-button-text-color-hover;
+		border-color: $nav-button-border-color-hover;
+		// Transparent "web green"
+		background: $nav-button-background-hover;
+	}
+}
+
+// Footer
+div#footer {
+	color: $footer-text-color;
+	border-top: 4px solid $footer-border-color;
+	background: $footer-background-color;
+	padding: 5px;
+	p {
+		font-variant: small-caps;
+		padding: 5px;
+		font-weight: bold;
+	}
+}
+//Sticky Footer by Ryan Fait
+//http://ryanfait.com/
+$faitmargin: 44px;
+$faitmarginneg: -$faitmargin;
+
+#faitwrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto $faitmarginneg; /* the bottom margin is the negative value of the footer's height */
+}
+#faitfooter, #faitpush {
+	height: $faitmargin; /* .push must be the same height as .footer */
+}
+//Sticky Footer by Ryan Fait
+//http://ryanfait.com/
+
+
+// Specific styles
+
+// Data insertion
+.input-error {
+	color: red;
+}
+
+#data-input {
+	input {
+		margin: 5px;
+	}
+}

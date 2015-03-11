@@ -31,7 +31,7 @@
 
 				<li><i>How do you create a password protected directory (like I did for the class notes)? Look into htpasswd and .htaccess files.</i><br><b><code> htpasswd -c /etc/htpasswd/.htpasswd user1</code> <br> This command will create a new htpasswd file for user1, and will prompt for that user's password after that. A .htaccess file can be used to give a specific directory access to certain users only.</b></li>
 
-				<li><i>When the browser tries to access a page that doesn’t exist, the HTTP protocol issues a 404 error code. There’s a way to send the browser to a particular document upon issuing this error (like on our http://cs.pugetsound.edu site). How? Look into ErrorDocument in the config file.</i><br><b>In the config file, set ErrorDocument to be the filepath to an error file (404.html or somesuch). On error, it redirects to the error file. We have implemented this, feel free to text it out or just click the button below.</b></li>
+				<li><i>When the browser tries to access a page that doesn't exist, the HTTP protocol issues a 404 error code. There's a way to send the browser to a particular document upon issuing this error (like on our http://cs.pugetsound.edu site). How? Look into ErrorDocument in the config file.</i><br><b>In the config file, set ErrorDocument to be the filepath to an error file (404.html or somesuch). On error, it redirects to the error file. We have implemented this, feel free to text it out or just click the button below.</b></li>
 				
 				<li><i>Apache implements the HTTP protocol. The protocol is extremely simple, with just a few commands. What is the difference between the GET, POST, and HEAD commands?</i><br>
 					<ul>

@@ -11,17 +11,11 @@
     <div id="faitwrapper">
     	<!-- Header inserter here -->
     	<?php include '_header.php'; ?>
+    	
+		<h1 style="text-align:center">This is where you would see info about your account.</h1>
+		<br/>
 
-    	<?php
-    	// If there was a successful deletion or update, let the user know
-    	if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["delete"])) {
-	    	if ($_GET["delete"] = "success") {
-	    		echo "<h1 class='center'>Airplane successfully deleted</h1>";
-	    	}
-	    }
-    	?>
-
-		<?php include '_display-airplane-data.php'; ?>
+		<?php include '_display-passengers.php'; ?>
 
 		<div id="faitpush"></div>
 	</div>

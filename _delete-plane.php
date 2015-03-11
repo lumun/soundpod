@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$db = NULL;
 
 			//redirect to success page
-			header("Location: /view-airplane-data.php?delete='success'");
+			header("Location: /view-planes.php?delete='$tail_no'");
 		}
 		catch(PDOException $e) {
 			print 'Exception : '.$e -> getMessage();

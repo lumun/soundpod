@@ -33,7 +33,7 @@ div#header .nav-button {
   margin: 10px;
 }
 /* line 47, ../sass/screen.scss */
-div#header #logout, div#header #my-account {
+div#header #logout, div#header #login, div#header #my-account {
   float: right;
 }
 
@@ -99,20 +99,25 @@ img.center {
 }
 
 /* line 94, ../sass/screen.scss */
+.small-caps {
+  font-variant: small-caps;
+}
+
+/* line 98, ../sass/screen.scss */
 div#return-home {
   width: 118px;
 }
 
-/* line 100, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .question_list {
   font-size: 13px;
 }
-/* line 103, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 .question_list i {
   color: black;
 }
 
-/* line 109, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .nav-button {
   font-variant: small-caps;
   font-weight: bold;
@@ -125,34 +130,34 @@ div#return-home {
   padding: 5px;
   margin: 10px 0;
 }
-/* line 118, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 .nav-button:link, .nav-button:visited {
   color: black;
   border-color: black;
   background: transparent;
 }
-/* line 124, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 .nav-button:hover, .nav-button:active {
   color: black;
   border-color: black;
   background: rgba(102, 0, 0, 0.4);
 }
 
-/* line 133, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 div#footer {
   color: black;
   border-top: 4px solid #660000;
   background: rgba(102, 0, 0, 0.4);
   padding: 5px;
 }
-/* line 138, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 div#footer p {
   font-variant: small-caps;
   padding: 5px;
   font-weight: bold;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #faitwrapper {
   min-height: 100%;
   height: auto !important;
@@ -162,18 +167,18 @@ div#footer p {
   /* the bottom margin is the negative value of the footer's height */
 }
 
-/* line 155, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 #faitfooter, #faitpush {
   height: 44px;
   /* .push must be the same height as .footer */
 }
 
-/* line 165, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .input-error {
   color: red;
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 #data-input input {
   margin: 5px;
 }

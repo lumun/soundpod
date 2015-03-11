@@ -8,7 +8,7 @@ function clean_input($data) {
 
 // Returns an array with filename as key, filesize as value
 function get_files_in_directory($dir) {
-	$filesOnServer = []; // create a new array for filenames
+	$filesOnServer = array(); // create a new array for filenames
 	if (is_dir($dir)) {
 		if ($directoryHandle = opendir($dir)) {
 			while (($file = readdir($directoryHandle)) !== false) {

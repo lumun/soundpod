@@ -44,7 +44,7 @@ div#header {
 		display: inline-block;
 		margin: 10px;
 	}
-  	#logout, #my-account{
+  	#logout, #login, #my-account{
     	float: right;
   	}
 }
@@ -89,6 +89,10 @@ img.center {
 
 .margined {
 	margin: 20px;
+}
+
+.small-caps {
+	font-variant: small-caps;
 }
 
 div#return-home {

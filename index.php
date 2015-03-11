@@ -1,3 +1,8 @@
+<?php
+// Set the image width
+$imageWidth = "160px";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,12 +17,20 @@
     	<!-- Header inserter here -->
     	<?php include '_header.php'; ?>
 
-    	<img src="/assets/images/orca.gif" alt="Sound Pod" class="center" style="width:160px; padding:20px">
+    	<h1 class="center small-caps" style="margin-bottom:10px">Welcome to Sound Pod</h1>
+    	<img src="/assets/images/orca.gif" alt="Sound Pod" class="center" style="width:<?php echo $imageWidth ?>; padding:20px">
 
-    	<div class="center" width="200px">
-    		<a class="nav-button left-float" href="sign-up.php">Sign Up</a>
-			<a class="nav-button right-float" href="login.php">Login</a>
-		</div>
+    	<?php
+    	if (!$loggedIn) {
+	    	echo "<div class='center' style='width:$imageWidth'>";
+	    		echo "<a class='nav-button left-float' href='sign-up.php'>Sign Up</a>";
+				echo "<a class='nav-button right-float' href='login.php'>Login</a>";
+			echo "</div>";
+		}
+		else {
+			echo "<h2 class='center small-caps'>you are logged in</h2>";
+		}
+		?>
 
 		<div id="faitpush"></div>
 	</div>

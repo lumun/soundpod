@@ -12,12 +12,7 @@
     	<!-- Header inserter here -->
     	<?php include '_header.php'; ?>
 
-    	<img src="/assets/images/orca.gif" alt="Sound Pod" class="center" style="width:160px; padding:20px">
-
-    	<div class="center" width="200px">
-    		<a class="nav-button left-float" href="sign-up.php">Sign Up</a>
-			<a class="nav-button right-float" href="login.php">Login</a>
-		</div>
+		<?php include '_display-flights.php'; ?>
 
 		<div id="faitpush"></div>
 	</div>

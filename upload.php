@@ -1,4 +1,5 @@
 <?php
+include '_helpers.php';
 // Directory for uploads, to read and write
 $dir = "uploads/";
 // Set this to true if upload is successful
@@ -42,19 +43,9 @@ if(isset($_POST["submit"])) {
 }
 
 // This section deals with finding the files currently in the directory
-$filesOnServer = []; // create a new array for filenames
-if (is_dir($dir)) {
-	if ($directoryHandle = opendir($dir)) {
-		while (($file = readdir($directoryHandle)) !== false) {
-			$filetype = filetype($dir . $file);
-			$filesize = filesize($dir . $file);
-			if ($filetype !== "dir") {
-				$filesOnServer[$file] = $filesize;
-			}
-		}
-	closedir($directoryHandle);
-	}
-}
+// helper method located in _helpers
+$filesOnServer = get_files_in_directory($dir);
+
 ?>
 
 <!DOCTYPE html>

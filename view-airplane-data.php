@@ -12,12 +12,16 @@
     	<!-- Header inserter here -->
     	<?php include '_header.php'; ?>
 
-    	<img src="/assets/images/orca.gif" alt="Sound Pod" class="center" style="width:160px; padding:20px">
+    	<?php
+    	// If there was a successful deletion or update, let the user know
+    	if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["delete"])) {
+	    	if ($_GET["delete"] = "success") {
+	    		echo "<h1 class='center'>Airplane successfully deleted</h1>";
+	    	}
+	    }
+    	?>
 
-    	<div class="center" width="200px">
-    		<a class="nav-button left-float" href="sign-up.php">Sign Up</a>
-			<a class="nav-button right-float" href="login.php">Login</a>
-		</div>
+		<?php include '_display-airplane-data.php'; ?>
 
 		<div id="faitpush"></div>
 	</div>

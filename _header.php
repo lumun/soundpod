@@ -5,8 +5,10 @@
 	</a>
 	<a class="nav-button" href="/insert-data.php">Insert Data</a>
 	<a class="nav-button" href="/upload.php">File Uploads</a>	
-	<a class="nav-button" href="/view-passengers.php">View Passengers</a>
-	<a class="nav-button" href="/view-database.php">View Flight Data</a>
+	<a class="nav-button" href="/view-passengers.php">Passengers</a>
+	<a class="nav-button" href="/view-airplane-data.php">Planes</a>
+	<a class="nav-button" href="/view-flights.php">Flights</a>	
+	<!-- <a class="nav-button" href="/view-database.php">Joined Database</a>	 -->
 
 	<!-- Because both these are float: right, the LAST item goes first -->
 	<a class="nav-button" id="logout" href="/logout.php">Logout</a>

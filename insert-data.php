@@ -77,8 +77,6 @@ if (!empty($f_name) AND !empty($l_name) AND !empty($ssn) AND empty($f_nameErr) A
     	<?php include '_header.php'; ?>
 
 		<div class="content left-float">
-
-
 			<h2 style="text-decoration: underline">Data Insertion Form</h2>
 			<br/>
 			<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

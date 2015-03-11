@@ -1,5 +1,8 @@
 <div id="header">
-	<p><a href="/index.php">Group 5</a></p>
+	<a href="/index.php">
+		<p>Sound Pod</p>
+		<img src="/assets/images/orca.gif" alt="Sound Pod" class="left-float" style="height:52px">
+	</a>
 	<a class="nav-button" href="/insert-data.php">Insert Data</a>
 	<a class="nav-button" href="/upload.php">File Uploads</a>	
 	<a class="nav-button" href="/view-passengers.php">View Passengers</a>

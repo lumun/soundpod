@@ -5,6 +5,8 @@ $dir = "uploads/";
 $successfulUpload = false;
 // Set a maximum filesize in bytes
 $maxFileSize = 100000;
+// Error message string
+$errorMessage = "";
 
 // This section deals with file uploads
 if(isset($_POST["submit"])) {
@@ -25,16 +27,16 @@ if(isset($_POST["submit"])) {
 	else {
 		$errorCode = $_FILES["fileUpload"]["error"];
 		if ($errorCode == 1 || $errorCode == 2) {
-			echo "ERROR: The uploaded file exceeds the maximum filesize of " . $maxFileSize . " bytes";
+			$errorMessage = "ERROR: The uploaded file exceeds the maximum filesize of " . $maxFileSize . " bytes";
 		}
 		else if ($errorCode == 3) {
-			echo "ERROR: The uploaded file was only partially uploaded";
+			$errorMessage = "ERROR: The uploaded file was only partially uploaded";
 		}
 		else if ($errorCode == 4) {
-			echo "ERROR: No file was uploaded";
+			$errorMessage = "ERROR: No file was uploaded";
 		}
 		else {
-			echo "ERROR: There was an error uploading your file.";
+			$errorMessage = "ERROR: There was an error uploading your file.";
 		}
 	}
 }
@@ -70,9 +72,13 @@ if (is_dir($dir)) {
     	<?php include '_header.php'; ?>
 
     	<!-- If there was a successful upload, let the user know -->
+    	<!-- If not, display an error message -->
     	<?php
     	if ($successfulUpload) {
     		echo "<h1 class='center'>" . $filename . " uploaded successfully</h1>";
+    	}
+    	if ($errorMessage !== "") {
+    		echo "<h1 class='center' style='color:red'>" . $errorMessage . "</h1>";
     	}
     	?>
 
@@ -80,7 +86,8 @@ if (is_dir($dir)) {
 			<h2 style="text-decoration: underline">File Upload Form</h2>
 			<br/>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-				<p>Select file to upload:</p> 
+				<p>Select file to upload</p>
+				<p>Max file size: <?php echo $maxFileSize ?> bytes</p>
 				<br/>
 				<!-- MAX_FILE_SIZE must precede the file input field -->
     			<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize ?>" />

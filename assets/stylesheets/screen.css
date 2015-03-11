@@ -12,11 +12,12 @@ html, body {
 div#header {
   padding: 5px;
   display: block;
-  border-bottom: 4px solid green;
-  background: rgba(0, 128, 0, 0.2);
+  border-bottom: 4px solid #660000;
+  background: rgba(102, 0, 0, 0.4);
   overflow: auto;
+  color: black;
 }
-/* line 33, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 div#header p {
   float: left;
   display: inline-block;
@@ -25,39 +26,39 @@ div#header p {
   margin: 10px;
   font-weight: bold;
 }
-/* line 41, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 div#header .nav-button {
   float: left;
   display: inline-block;
   margin: 10px;
 }
-/* line 46, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 div#header #logout, div#header #my-account {
   float: right;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 body {
   background: #ffffff url("/assets/images/background/escheresque.png") repeat left top;
 }
 
-/* line 55, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 h1 {
   margin: 30px;
 }
 
-/* line 58, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 a {
   text-decoration: none;
 }
-/* line 60, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 a:link, a:visited, a:hover, a:active {
   color: inherit;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .content {
-  border: 4px solid rgba(0, 128, 0, 0.2);
+  border: 4px solid rgba(102, 0, 0, 0.4);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -66,42 +67,42 @@ a:link, a:visited, a:hover, a:active {
   padding: 10px;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .left-float {
   float: left;
 }
 
-/* line 75, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 p.center, a.center, h1.center, h2.center, h3.center {
   text-align: center;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 .margined {
   margin: 20px;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 div#return-home {
   width: 118px;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 .question_list {
   font-size: 13px;
 }
-/* line 97, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 .question_list i {
   color: black;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .nav-button {
   font-variant: small-caps;
   font-weight: bold;
@@ -114,34 +115,34 @@ div#return-home {
   padding: 5px;
   margin: 10px 0;
 }
-/* line 112, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .nav-button:link, .nav-button:visited {
   color: black;
   border-color: black;
   background: transparent;
 }
-/* line 118, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .nav-button:hover, .nav-button:active {
   color: black;
   border-color: black;
-  background: rgba(0, 128, 0, 0.2);
+  background: rgba(102, 0, 0, 0.4);
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 div#footer {
   color: black;
-  border-top: 4px solid green;
-  background: rgba(0, 128, 0, 0.2);
+  border-top: 4px solid #660000;
+  background: rgba(102, 0, 0, 0.4);
   padding: 5px;
 }
-/* line 132, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 div#footer p {
   font-variant: small-caps;
   padding: 5px;
   font-weight: bold;
 }
 
-/* line 143, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 #faitwrapper {
   min-height: 100%;
   height: auto !important;
@@ -151,18 +152,18 @@ div#footer p {
   /* the bottom margin is the negative value of the footer's height */
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 #faitfooter, #faitpush {
   height: 44px;
   /* .push must be the same height as .footer */
 }
 
-/* line 159, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 .input-error {
   color: red;
 }
 
-/* line 164, ../sass/screen.scss */
+/* line 165, ../sass/screen.scss */
 #data-input input {
   margin: 5px;
 }

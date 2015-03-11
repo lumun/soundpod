@@ -30,6 +30,7 @@ div#header {
 	border-bottom: 4px solid $header-border-color;
 	background: $header-background-color;
 	overflow: auto;
+	color: $header-text-color;
 	p {
 		float: left;
 		display: inline-block;

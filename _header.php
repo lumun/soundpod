@@ -1,5 +1,6 @@
-<?php 
-if (isset($_COOKIE["LoggedIn"])) {
+<?php
+session_start();
+if (isset($_SESSION["loggedin"])) {
 	$loggedIn = true;
 }
 else {

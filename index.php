@@ -28,7 +28,7 @@ $imageWidth = "160px";
 			echo "</div>";
 		}
 		else {
-			echo "<h2 class='center small-caps'>you are logged in</h2>";
+			echo "<h2 class='center small-caps'>YOU ARE LOGGED IN</h2>";
 		}
 		?>
 

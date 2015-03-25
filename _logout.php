@@ -1,7 +1,11 @@
 <?php
-if(isset($_COOKIE['LoggedIn'])) {
-	unset($_COOKIE['LoggedIn']);
-	setcookie('LoggedIn', '', time() - 3600); // empty value and old timestamp
+session_start();
+if(isset($_SESSION['loggedin'])) {
+	// remove all session variables
+	session_unset(); 
+	// destroy the session 
+	session_destroy();
+	
 	header('Location: /index.php');
 }
 ?>

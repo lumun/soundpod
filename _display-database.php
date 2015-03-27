@@ -3,7 +3,7 @@ echo "<div class='content left-float'>";
 	try 
 	{
 		//open the database
-		$db = new PDO('sqlite:database/airport.db');
+		$db = new PDO('sqlite:database/airport.sqlite3');
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//now output the data to a simple html table...

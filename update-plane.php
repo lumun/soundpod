@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	if ($_GET["tail_no"]) {
 		$tail_no = $_GET["tail_no"];
 		try {
-			$db = new PDO('sqlite:database/airport.db');
+			$db = new PDO('sqlite:database/airport.sqlite3');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$result = $db -> query ("SELECT * FROM plane WHERE tail_no=$tail_no");
 			$tuple = $result->fetch(PDO::FETCH_ASSOC);

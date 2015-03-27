@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Group 5: University of Puget Sound Databases 2015</title>
 	<link rel="stylesheet" href="/assets/stylesheets/screen.css">
@@ -11,8 +12,12 @@
     	<!-- Header inserter here -->
     	<?php include '_header.php'; ?>
     	
-		<h1 style="text-align:center">This is where you would see info about your account.</h1>
+		<h1 style="text-align:center">You've successfully submitted data.</h1>
 		<br/>
+
+		<div class="content left-float">
+			<?php include '_display-database.php'; ?>
+		</div>
 
 		<div id="faitpush"></div>
 	</div>

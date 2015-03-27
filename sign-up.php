@@ -1,8 +1,8 @@
 <?php
 // security and error checking
 // define variables and set to empty values
-$f_name = $m_name = $l_name = $ssn = "";
-$f_nameErr = $l_nameErr = $ssnErr = "";
+$f_name = $l_name = $email = $username = $password = "";
+$f_nameErr = $l_nameErr = $emailErr = $usernameErr = $passwordErr = "";
 
 include '_helpers.php';
 
@@ -12,52 +12,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	} 
   	else {
   		$f_name = clean_input($_POST["f_name"]);
-  		if (!preg_match("/^[a-zA-Z '-]*$/",$f_name)) {
+  		if (!preg_match("/^[a-zA-Z '-]+$/",$f_name)) {
 				$f_nameErr = "Only letters and white space allowed";
 		}
-	}
-	if (!empty($_POST["m_name"])) {
-		$m_name = clean_input($_POST["m_name"]);
 	}
   	if (empty($_POST["l_name"])) {
   		$l_nameErr = "Name is required";
   	} 
   	else {				
 		$l_name = clean_input($_POST["l_name"]);
-  		if (!preg_match("/^[a-zA-Z '-]*$/",$l_name)) {
+  		if (!preg_match("/^[a-zA-Z '-]+$/",$l_name)) {
 				$l_nameErr = "Only letters and white space allowed";
 		}
 	}
-  	if (empty($_POST["ssn"])) {
-  		$ssnErr = "SSN is required";
+  	if (empty($_POST["email"])) {
+  		$emailErr = "Email is required";
   	} else {				
-		$ssn = clean_input($_POST["ssn"]);
-  		if (!preg_match("/^(\d{3}-?\d{2}-?\d{4}|XXX-XX-XXXX)$/",$ssn)) {
-				$ssnErr = "Required format: 999-99-9999";
+		$email = clean_input($_POST["email"]);
+
+  		if (!preg_match("/^[A-Za-z0-9._%+-]+@(pugetsound\.edu|ups\.edu)$/",$email)) {
+				$emailErr = "Required format: username@pugetsound.edu";
+		}
+	}
+  	if (empty($_POST["username"])) {
+  		$usernameErr = "Username is required";
+  	} 
+  	else {
+  		$username = clean_input($_POST["username"]);
+  		if (!preg_match("/^[a-zA-Z0-9._-]+$/",$username)) {
+				$usernameErr = "Only letters and numbers allowed";
+		}
+	}
+  	if (empty($_POST["password"])) {
+  		$passwordErr = "Password is required";
+  	} 
+  	else {
+  		$password = clean_input($_POST["password"]);
+  		if (!preg_match("/^[a-zA-Z0-9_-+!@#$%^&*(),/\?]*$/",$password)) {
+				$passwordErr = "Only valid symbols allowed";
 		}
 	}
 }
 
 // Successful form submission is handled here
-if (!empty($f_name) AND !empty($l_name) AND !empty($ssn) AND empty($f_nameErr) AND empty($l_nameErr) AND empty($ssnErr)) {
-	// First, change any lack of m_name to a NULL before we insert
-	if (empty($m_name)) { $m_name = NULL; }
+if (!empty($f_name) AND !empty($l_name) AND !empty($email) AND !empty($username) AND !empty($password) AND empty($f_nameErr) AND empty($l_nameErr) AND empty($emailErr) AND empty($usernameErr) AND empty($passwordErr)) {
 	// Attempt to insert the data
-	try {
-		$db = new PDO('sqlite:database/airport.sqlite3');
-		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "INSERT INTO passengers VALUES ('$f_name', '$m_name', '$l_name', '$ssn')";
-		// insert
-		$db -> exec($sql);
-		// disconnect
-		$db = NULL;
+	// try {
+	// 	$db = new PDO('sqlite:database/airport.sqlite3');
+	// 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	// 	$sql = "INSERT INTO passengers VALUES ('$f_name', '$m_name', '$l_name', '$email')";
+	// 	// insert
+	// 	$db -> exec($sql);
+	// 	// disconnect
+	// 	$db = NULL;
 
 		//redirect to login page
 		header('Location: /login.php');
-	}
-	catch(PDOException $e) {
-		print 'Exception : '.$e -> getMessage();
-	}
+	// }
+	// catch(PDOException $e) {
+	// 	print 'Exception : '.$e -> getMessage();
+	// }
 }
 
 ?>
@@ -82,11 +96,12 @@ if (!empty($f_name) AND !empty($l_name) AND !empty($ssn) AND empty($f_nameErr) A
 			<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<p>First Name:</p> <input type="text" name="f_name" value="<?php echo $f_name;?>">*<span class="input-error"> <?php echo $f_nameErr;?></span>
 				<br/>
-				<p>Middle Name:</p> <input type="text" name="m_name" value="<?php echo $m_name;?>">
-				<br/>
 				<p>Last Name:</p> <input type="text" name="l_name" value="<?php echo $l_name;?>">*<span class="input-error" > <?php echo $l_nameErr;?></span>
 				<br/>
-				<p>SSN:</p> <input type="text" name="ssn" placeholder="999-99-9999" <?php if (!empty($ssn)) { echo "value=".$ssn; } ?> >*<span class="input-error"> <?php echo $ssnErr;?></span>
+				<p>Email (pugetsound.edu address):</p> <input type="email" name="email" placeholder="you@pugetsound.edu" <?php if (!empty($email)) { echo "value=".$email; } ?> >*<span class="input-error"> <?php echo $emailErr;?></span>
+				<p>Username:</p> <input type="text" name="username" value="<?php echo $username;?>">*<span class="input-error" > <?php echo $usernameErr;?></span>
+				<br/>
+				<p>Password:</p> <input type="password" name="password" value="<?php echo $password;?>">*<span class="input-error" > <?php echo $passwordErr;?></span>
 				<br/>
 				<input type="submit" name="submit" value="Submit">
 			</form>

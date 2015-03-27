@@ -44,7 +44,7 @@ if (!empty($f_name) AND !empty($l_name) AND !empty($ssn) AND empty($f_nameErr) A
 	if (empty($m_name)) { $m_name = NULL; }
 	// Attempt to insert the data
 	try {
-		$db = new PDO('mysql:database/airport.db');
+		$db = new PDO('sqlite:database/airport.db');
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$sql = "INSERT INTO passengers VALUES ('$f_name', '$m_name', '$l_name', '$ssn')";
 		// insert

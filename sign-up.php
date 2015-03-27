@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	} 
   	else {
   		$username = clean_input($_POST["username"]);
-  		if (!preg_match("/^[a-zA-Z0-9._-]+$/",$username)) {
+  		if (!preg_match("/^[\w]+$/",$username)) {
 				$usernameErr = "Only letters and numbers allowed";
 		}
 	}
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	} 
   	else {
   		$password = clean_input($_POST["password"]);
-  		if (!preg_match("/^[a-zA-Z0-9_-+!@#$%^&*(),/\?]*$/",$password)) {
+  		if (!preg_match("/^[\w]+$/",$password)) {
 				$passwordErr = "Only valid symbols allowed";
 		}
 	}

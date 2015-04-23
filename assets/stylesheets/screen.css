@@ -37,10 +37,7 @@ div#header #logout, div#header #login, div#header #my-account {
   float: right;
 }
 
-/* line 52, ../sass/screen.scss background: #ffffff url("/assets/images/background/escheresque.png") repeat left top;*/
-body {
-  
-}
+
 
 /* line 56, ../sass/screen.scss */
 h1 {
@@ -142,14 +139,26 @@ div#return-home {
   border-color: black;
   background: rgba(102, 0, 0, 0.4);
 }
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+}
+
+
 
 /* line 137, ../sass/screen.scss */
 div#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
   color: black;
   border-top: 4px solid #660000;
   background: white;
   padding: 5px;
-  margin-top: 30px;
+  
 }
 /* line 142, ../sass/screen.scss */
 div#footer p {

@@ -13,7 +13,7 @@ div#header {
   padding: 5px;
   display: block;
   border-bottom: 4px solid #660000;
-  background: rgba(102, 0, 0, 0.4);
+  background: white;
   overflow: auto;
   color: black;
 }
@@ -37,9 +37,9 @@ div#header #logout, div#header #login, div#header #my-account {
   float: right;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss background: #ffffff url("/assets/images/background/escheresque.png") repeat left top;*/
 body {
-  background: #ffffff url("/assets/images/background/escheresque.png") repeat left top;
+  
 }
 
 /* line 56, ../sass/screen.scss */
@@ -147,14 +147,22 @@ div#return-home {
 div#footer {
   color: black;
   border-top: 4px solid #660000;
-  background: rgba(102, 0, 0, 0.4);
+  background: white;
   padding: 5px;
+  margin-top: 30px;
 }
 /* line 142, ../sass/screen.scss */
 div#footer p {
   font-variant: small-caps;
   padding: 5px;
   font-weight: bold;
+  margin-top: 20px;
+}
+
+.caro {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 600px;
 }
 
 /* line 153, ../sass/screen.scss */

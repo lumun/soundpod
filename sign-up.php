@@ -67,7 +67,7 @@ if (!empty($f_name) AND !empty($l_name) AND !empty($email) AND !empty($username)
 	// 	$db = NULL;
 
 		//redirect to login page
-		header('Location: /login.php');
+		// header('Location: /login.php');
 	// }
 	// catch(PDOException $e) {
 	// 	print 'Exception : '.$e -> getMessage();
@@ -75,43 +75,54 @@ if (!empty($f_name) AND !empty($l_name) AND !empty($email) AND !empty($username)
 }
 
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Group 5: University of Puget Sound Databases 2015</title>
-	<link rel="stylesheet" href="/assets/stylesheets/screen.css">
-</head>
-
-<body>
-	<!-- faitwrapper class is necessary on ALL pages for sticky footer -->
-    <div id="faitwrapper">
     	<!-- Header inserter here -->
     	<?php include '_header.php'; ?>
+<div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    	<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
+    		<legend>Sign Up</legend>
+    	
+    		<div class="form-group">
+    			<label for="fname">First Name</label>
+    			<input type="text" placeholder="First Name" class="form-control" name="f_name" value="<?php echo $f_name;?>"><span class="input-error"> <?php echo $f_nameErr;?></span>
+    		</div>
+	    	<div class="form-group">
+	    		<label for="lname">Last Name</label>
+	    		<input type="text" placeholder="Last Name" class="form-control" name="l_name" value="<?php echo $l_name;?>"><span class="input-error" > <?php echo $l_nameErr;?></span>
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="email">Email</label>
+	    		<input type="text" class="form-control" name="email" placeholder="you@pugetsound.edu" <?php if (!empty($email)) { echo "value=".$email; } ?> ><span class="input-error"> <?php echo $emailErr;?></span>
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="password">Password</label>
+	    		<input type="password" class="form-control" name="password" value="<?php echo $password;?>"><span class="input-error" > <?php echo $passwordErr;?></span>
+	    	</div>
 
-		<div class="content left-float">
-			<h2 style="text-decoration: underline">Data Insertion Form</h2>
-			<br/>
-			<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-				<p>First Name:</p> <input type="text" name="f_name" value="<?php echo $f_name;?>">*<span class="input-error"> <?php echo $f_nameErr;?></span>
-				<br/>
-				<p>Last Name:</p> <input type="text" name="l_name" value="<?php echo $l_name;?>">*<span class="input-error" > <?php echo $l_nameErr;?></span>
-				<br/>
-				<p>Email (pugetsound.edu address):</p> <input type="email" name="email" placeholder="you@pugetsound.edu" <?php if (!empty($email)) { echo "value=".$email; } ?> >*<span class="input-error"> <?php echo $emailErr;?></span>
-				<p>Username:</p> <input type="text" name="username" value="<?php echo $username;?>">*<span class="input-error" > <?php echo $usernameErr;?></span>
-				<br/>
-				<p>Password:</p> <input type="password" name="password" value="<?php echo $password;?>">*<span class="input-error" > <?php echo $passwordErr;?></span>
-				<br/>
-				<input type="submit" name="submit" value="Submit">
-			</form>
-		</div>
+	    	<div class='input-group date' >
+	    		<label for="password">Show Time</label>
+                <input type='text' class="form-control" id="datetimepicker1"/>
+	    	</div>
 
-		<div id="faitpush"></div>
-	</div>
-	<div id="faitfooter">
-		<?php include '_footer.php'; ?>
-	</div>
-</body>
+	    	<!-- <a id="add"  class="btn btn-primary">Add Show Time</a> -->
+    		
+    	
+    		<button  type="submit" class="btn btn-primary">Submit</button>
+    	</form>
+	
+</div>
 
-</html>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+
+    // $('#add').click(function(){
+    // 	// $('#data-input').append("<div class='input-group date' ><label for='password'>Show Time</label><input type='text' class='form-control' id='datetimepicker1'/></div>");
+    // })
+</script>
+
+    	
+
+
+
+

@@ -1,4 +1,20 @@
 # soundpod
 Databases project
 
-Once our proposal is done, we'll put it here.
+Introduction
+We will be creating a DJ portal for KUPS, where station events, announcements, and news can be widely shared among KUPS DJs. One problem within KUPS is a lack of information continuity among station DJs. While there are semi-frequent emails that list upcoming events and announcements, this platform would provide a place for DJs to congregate online. An integrated event calendar would allow for more DJs to know what is going on with the station, and streamline preparation for large scale events and communication, as well as a sense of community, as KUPS currently has over 100 DJs. 
+This platform would be perfect for general announcements specifically geared toward current djs. For instance, announcements concerning FCC compliance, station events, and requests for subs can sometimes fly under the radar for djs in the many alternate means of communication. There are emails, facebook posts, and word of mouth can sometimes be unreliable for a typical DJ. By uniting all of these vital announcements in a single place, hopefully communication can be better between the KUPS staff and DJs. 
+It would also be good for music directors to able to make announcements aimed at DJs in their genre, but also might bear interest from other DJs outside of the genre. Music directors have “rotation,” which is a list of new albums that their djs are required to play. However, these lists are sent out just to DJ’s in the music director’s genre, meaning that no one outside of the genre can view this list. Rotation is a great source of new music, and many DJ’s would like to be able to look at the new selections to the list to find new music. By opening this channel of communication up to all DJs, more music lovers would be able find new music that they love. 
+This would also be a good place for DJs to congregate to discuss music with each other, share playlists, and help inexperienced DJs learn more about their job. There will be an online forum where DJs can come post questions, comments or interesting links. This will serve to provide a better experience for new DJs who want advice from their peers. There will also be a digital copy of the DJ handbook available online. On the homepage, we hope to integrate random tidbits from the handbook so users can constantly be reminded of their duties as a DJ. 
+This platform would hopefully be able to serve DJs by providing a steady stream of useful information to them. They will can hear about all of the station events, get access to previously closed information, and stay connected with fellow DJs.
+
+Use Cases
+Users will be able to log in and out of an account, with account details encrypted and not stored as plaintext.
+Users with admin rights will be able to edit other user accounts, even deleting, as the website is intended for KUPS DJ use only, which is conditional.
+Users with admin credentials can assign timeslots in the station schedule to one or several DJs
+DJs can post substitution requests, and any other DJ can accept the request and cover their show.
+Users can sign up for Station volunteer hours, such as tabling or street crew.
+Users can comment on events, sub requests, or other posts
+Anyone who is not a DJ can still use a guest session, and at the very minimum see the schedule of who is on air.
+Administrators of our site will be able to create sub groups, which can represent different genres of the station, or even the KUPS management itself. Posts can then be filtered by which group, so hip hop DJs won’t have to worry about the alternative rotation. These would still be accessible to DJs outside of the genre. 
+Admins will also be able to create events to put on the shared calendar. All users will then be able to see these events, unless it is an exclusive event for a group they are not in (Ex. station management is having a meeting, not everyone is invited. On the other hand, In theory anyone could attend an Alternative listening party, as long as they are a DJ).

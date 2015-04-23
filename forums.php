@@ -18,8 +18,10 @@ foreach($categories as $category)
 	?>
 	<div class="container">
 	<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		<a href=""><h4>Station Discussion</h4></a>
-		<p class="text-left">What is happening in KUPS? Have your say!</p>
+		<?php
+		echo '<a href=""><h4>'.$category.' Discussion</h4></a>'
+		echo '<p class="text-left">What is happening in '.$category.'? Have your say!</p>'
+		?>
 	</div>';
 <div class="well col-xs-4 col-sm-4 col-md-4 col-lg-4">
 <?php

@@ -57,21 +57,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Successful form submission is handled here
 if (!empty($f_name) AND !empty($l_name) AND !empty($email) AND !empty($username) AND !empty($password) AND empty($f_nameErr) AND empty($l_nameErr) AND empty($emailErr) AND empty($usernameErr) AND empty($passwordErr)) {
 	// Attempt to insert the data
-	// try {
-	// 	$db = new PDO('sqlite:database/airport.sqlite3');
-	// 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	// 	$sql = "INSERT INTO passengers VALUES ('$f_name', '$m_name', '$l_name', '$email')";
-	// 	// insert
-	// 	$db -> exec($sql);
-	// 	// disconnect
-	// 	$db = NULL;
+	try {
+	 	$db = new PDO("mysql:dbname=soundpod", 'root');
+	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	 	$sql = "INSERT INTO user(name,email,password) VALUES ('$f_name $l_name', '$email', '$password')";
+	 	// insert
+	 	$db -> exec($sql);
+	 	// disconnect
+		$db = NULL;
 
 		//redirect to login page
-		header('Location: /login.php');
-	// }
-	// catch(PDOException $e) {
-	// 	print 'Exception : '.$e -> getMessage();
-	// }
+		header('Location: /view-database.php');
+	}
+	catch(PDOException $e) {
+	 	print 'Exception : '.$e -> getMessage();
+	}
 }
 
 ?>

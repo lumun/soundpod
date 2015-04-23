@@ -3,11 +3,7 @@ echo "<div class='content left-float'>";
 	try 
 	{
 		//open the database
-		$dbLocation = 'soundpod';
-		$dbHost = '127.0.0.1';
-		$dbUser = 'root';
-		$dbPassword = '';
-		$db = new PDO("mysql:host=$dbHost;dbname=$dbLocation", $dbUser);
+		$db = new PDO("mysql:dbname=soundpod", 'root');
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//now output the data to a simple html table...

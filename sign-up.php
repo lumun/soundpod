@@ -1,28 +1,19 @@
 <?php
 // security and error checking
 // define variables and set to empty values
-$f_name = $l_name = $email = $username = $password = "";
-$f_nameErr = $l_nameErr = $emailErr = $usernameErr = $passwordErr = "";
+$name = $email = $password = "";
+$nameErr = $emailErr = $passwordErr = "";
 
 include '_helpers.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  	if (empty($_POST["f_name"])) {
-  		$f_nameErr = "Name is required";
+  	if (empty($_POST["name"])) {
+  		$nameErr = "Name is required";
   	} 
   	else {
-  		$f_name = clean_input($_POST["f_name"]);
-  		if (!preg_match("/^[a-zA-Z '-]+$/",$f_name)) {
+  		$name = clean_input($_POST["name"]);
+  		if (!preg_match("/^[a-zA-Z '-]+$/",$name)) {
 				$f_nameErr = "Only letters and white space allowed";
-		}
-	}
-  	if (empty($_POST["l_name"])) {
-  		$l_nameErr = "Name is required";
-  	} 
-  	else {				
-		$l_name = clean_input($_POST["l_name"]);
-  		if (!preg_match("/^[a-zA-Z '-]+$/",$l_name)) {
-				$l_nameErr = "Only letters and white space allowed";
 		}
 	}
   	if (empty($_POST["email"])) {
@@ -32,15 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   		if (!preg_match("/^[A-Za-z0-9._%+-]+@(pugetsound\.edu|ups\.edu)$/",$email)) {
 				$emailErr = "Required format: username@pugetsound.edu";
-		}
-	}
-  	if (empty($_POST["username"])) {
-  		$usernameErr = "Username is required";
-  	} 
-  	else {
-  		$username = clean_input($_POST["username"]);
-  		if (!preg_match("/^[\w]+$/",$username)) {
-				$usernameErr = "Only letters and numbers allowed";
 		}
 	}
   	if (empty($_POST["password"])) {
@@ -55,12 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Successful form submission is handled here
-if (!empty($f_name) AND !empty($l_name) AND !empty($email) AND !empty($username) AND !empty($password) AND empty($f_nameErr) AND empty($l_nameErr) AND empty($emailErr) AND empty($usernameErr) AND empty($passwordErr)) {
+if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) AND empty($emailErr) AND empty($passwordErr)) {
 	// Attempt to insert the data
 	try {
 	 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	 	$sql = "INSERT INTO user(name,email,password) VALUES ('$f_name $l_name', '$email', '$password')";
+	 	$sql = "INSERT INTO user(name,email,password) VALUES ('$name', '$email', '$password')";
 	 	// insert
 	 	$db -> exec($sql);
 	 	// disconnect
@@ -91,15 +73,12 @@ if (!empty($f_name) AND !empty($l_name) AND !empty($email) AND !empty($username)
     	<?php include '_header.php'; ?>
 
 		<div class="content left-float">
-			<h2 style="text-decoration: underline">Data Insertion Form</h2>
+			<h2 style="text-decoration: underline">Sign Up</h2>
 			<br/>
 			<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-				<p>First Name:</p> <input type="text" name="f_name" value="<?php echo $f_name;?>">*<span class="input-error"> <?php echo $f_nameErr;?></span>
-				<br/>
-				<p>Last Name:</p> <input type="text" name="l_name" value="<?php echo $l_name;?>">*<span class="input-error" > <?php echo $l_nameErr;?></span>
+				<p>Name:</p> <input type="text" name="name" value="<?php echo $name;?>">*<span class="input-error"> <?php echo $nameErr;?></span>
 				<br/>
 				<p>Email (pugetsound.edu address):</p> <input type="email" name="email" placeholder="you@pugetsound.edu" <?php if (!empty($email)) { echo "value=".$email; } ?> >*<span class="input-error"> <?php echo $emailErr;?></span>
-				<p>Username:</p> <input type="text" name="username" value="<?php echo $username;?>">*<span class="input-error" > <?php echo $usernameErr;?></span>
 				<br/>
 				<p>Password:</p> <input type="password" name="password" value="<?php echo $password;?>">*<span class="input-error" > <?php echo $passwordErr;?></span>
 				<br/>

@@ -9,7 +9,7 @@ function clean_input($data) {
 function getCurrentUri()
 	{
 		$basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, -1)) . '/';
-		$uri = substr($_SERVER['REQUEST_URI'], strlen($basepath)+12);
+		$uri = substr($_SERVER['REQUEST_URI'], strlen($basepath)+13);
 		if (strstr($uri, '?')) $uri = substr($uri, 0, strpos($uri, '?'));
 		$uri = '/' . trim($uri, '/');
 		return $uri;

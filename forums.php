@@ -68,5 +68,3 @@ function getCurrentUri()
 		$uri = '/' . trim($uri, '/');
 		return $uri;
 	}
-
-include '_footer.php'; ?>

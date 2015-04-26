@@ -23,8 +23,6 @@ try {
 	print 'Exception : '.$e -> getMessage();
 }
 
-include '_footer.php';
-
 function getCurrentUri()
 	{
 		$basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, -1)) . '/';

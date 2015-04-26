@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 					else {
 						$_SESSION["admin"] = 0;
-						print "Not logged in as admin";
 					}
 			 	}
 				else {

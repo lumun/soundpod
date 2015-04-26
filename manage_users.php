@@ -1,3 +1,10 @@
+<?php include '_helpers.php';
+
+if (!is_admin()) {
+	header("Location: /index.php");
+}	
+?>
+
 <!DOCTYPE html>
 <html>
 

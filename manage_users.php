@@ -1,6 +1,5 @@
-<?php include '_helpers.php';
-
-if (!is_admin()) {
+<?php
+if ($_SESSION["admin"] == 0) {
 	header("Location: /index.php");
 }	
 ?>

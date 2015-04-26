@@ -82,7 +82,7 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 	    	</div>
 
 	    	<!-- <a id="add"  class="btn btn-primary">Add Show Time</a> -->
-    		
+    		<button id="chuck" type="button">print value</button>
     	
     		<button  type="submit" class="btn btn-primary">Submit</button>
     	</form>
@@ -90,11 +90,9 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 </div>
 
 <script type="text/javascript">
+
     $(function () {
         $('#datetimepicker1').datetimepicker();
     });
 
-    // $('#add').click(function(){
-    // 	// $('#data-input').append("<div class='input-group date' ><label for='password'>Show Time</label><input type='text' class='form-control' id='datetimepicker1'/></div>");
-    // })
 </script>

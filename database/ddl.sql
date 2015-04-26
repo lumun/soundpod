@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS showInstance (
 );
 
 CREATE TABLE IF NOT EXISTS subRequest (
-	origdj INT,
-	subdj INT,
+	origdj VARCHAR(30),
+	subdj VARCHAR(30),
 	showid INT,
 	showdate DATE,
 	PRIMARY KEY (showid, showdate),

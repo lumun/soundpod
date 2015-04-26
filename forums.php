@@ -14,24 +14,24 @@ try {
 	// Set errormode to exceptions
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$categories = $db -> query("SELECT DISTINCT category From post");
+	$categories = $db -> query("SELECT name From category");
 	foreach($categories as $category)
 	{ ?>
 		<div class="container">
 		<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6">
 			<?php
-			echo '<a href=""><h4>'.$category.' Discussion</h4></a>';
-			echo '<p class="text-left">What is happening in '.$category.'? Have your say!</p>';
+			echo '<a href=""><h4>'.$category['name'].' Discussion</h4></a>';
+			echo '<p class="text-left">What is happening in '.$category['name'].'? Have your say!</p>';
 			?>
 		</div>
 		<div class="well col-xs-4 col-sm-4 col-md-4 col-lg-4">
 		<?php
-		$result = $db -> query("SELECT * from post where category == ".$category);
+		$result = $db -> query("SELECT * from post where category == '$category['name']'");
 		foreach ($result as $tuple)
 		{
 			$content = $tuple['content'];
-			$uid = $tuple['uid'];
-			$user = $db -> query("SELECT * from user where uid == ". $uid);
+			$email = $tuple['email'];
+			$user = $db -> query("SELECT * from user where email == '$email'");
 			echo "<p class='text-left'>" . $content . "</p>";
 			echo "<p class='text-left'>By " . $user['name'] . "</p>";
 			echo "<p class='text-left'>Posted at " . $tuple['time'] . " to " . $category . "</p>";

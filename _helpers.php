@@ -31,4 +31,13 @@ function get_files_in_directory($dir) {
 		return NULL;
 	}
 }
+
+function is_admin() {
+	if ($_SESSION["loggedIn"] && $_SESSION["admin"] == 1) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 ?>

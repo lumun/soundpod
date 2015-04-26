@@ -3,10 +3,10 @@ CREATE DATABASE IF NOT EXISTS soundpod;
 USE soundpod;
 
 CREATE TABLE IF NOT EXISTS user (
+	email VARCHAR(30) NOT NULL,
 	name VARCHAR(20) NOT NULL,
 	admin TINYINT(2) DEFAULT 0,
 	password VARCHAR(20) NOT NULL,
-	email VARCHAR(30) NOT NULL,
 	PRIMARY KEY (email)
 );
 
@@ -70,15 +70,15 @@ CREATE TABLE IF NOT EXISTS post (
 		ON DELETE CASCADE	
 );
 
-INSERT INTO user VALUES (1,'John Snow',1,'password','admin');
-INSERT INTO user VALUES (2,'Megan Wensel',0,'password','dj');
+INSERT INTO user VALUES ('admin','John Snow',1,'password');
+INSERT INTO user VALUES ('dj','Megan Wensel',0,'password');
 
 INSERT INTO radioShow VALUES (1,'Alternative','S2015','John lays it Down');
 INSERT INTO radioShow VALUES (2,'Hard Rock','S2015','Megan and John Are Sharks');
 
-INSERT INTO dj VALUES (1,1);
-INSERT INTO dj VALUES (1,2);
-INSERT INTO dj VALUES (2,2);
+INSERT INTO dj VALUES ('admin',1);
+INSERT INTO dj VALUES ('admin',2);
+INSERT INTO dj VALUES ('dj',2);
 
 INSERT INTO showInstance VALUES (1,'Tuesday',1500);
 INSERT INTO showInstance VALUES (2,'Monday',2200);

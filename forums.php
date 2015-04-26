@@ -3,6 +3,12 @@
 include '_helpers.php';
 
 $category = getCurrentUri();
+if(trim($category) == '')//I might use this to make sure there is no
+{
+	//if they don't have any extra url send them to forum topics list
+	header("Location: /forumTopics.php");
+	die();
+}
 // we need to pull posts from database to fill this page, 
 try {
 //open the database
@@ -11,12 +17,7 @@ $db = new PDO("mysql:dbname=soundpod", 'root');
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $result = $db -> query("SELECT * from category where name == ".$category);
 
-if(trim($category) == '')//I might use this to make sure there is no
-{
-	//if they don't have any extra url send them to forum topics list
-	header("Location: /forumTopics.php");
-	die();
-}
+
 if($result.rowCount() < 1)
 {
 	//404 if that wasn't a real category

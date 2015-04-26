@@ -12,9 +12,10 @@
 	    		<label for="password">Show Time</label>
                 <input type='text' class="form-control" id="datetimepicker1"/>
 	    	</div>
-		
-			
-		
+
+	    	
+	    	
+
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>	
 	</div>

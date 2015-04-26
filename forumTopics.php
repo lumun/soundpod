@@ -2,7 +2,7 @@
 include '_helpers.php';
 $nameErr="";
 
-if(is_admin())
+if($_SESSION["admin"] == 1)
 {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	if (empty($_POST["topic"])) {
@@ -31,7 +31,7 @@ try {
 	// Set errormode to exceptions
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	if(is_admin())
+	if($_SESSION["admin"] == 1)
 	{
 		?>
 		<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
@@ -49,20 +49,14 @@ try {
 
 
 	$categories = $db -> query("SELECT DISTINCT name From category");
-	foreach($categories as $category)
-	{
-	?>
-		<div class="container">
-		<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		<a href="/forums.php?category=<?php echo $category ?>"><h4><?php echo $category ?></h4></a>;
-			
-		
-<?php
+	foreach($categories as $category) { ?>
+<!-- 		<div class="container">
+		<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
+		<a href="/forums.php?category=<?php echo $category['name'] ?>"><h4><?php echo $category['name'] ?></h4></a>;	
+	<?php
+	}
 }
-}catch(PDOException $e) {
+catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
-
-include '_footer.php';
-
 ?>

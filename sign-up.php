@@ -95,4 +95,12 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
         $('#datetimepicker1').datetimepicker();
     });
 
-</script>
+
+
+
+//     // $('#add').click(function(){
+//     // 	// $('#data-input').append("<div class='input-group date' ><label for='password'>Show Time</label><input type='text' class='form-control' id='datetimepicker1'/></div>");
+//     // })
+// 
+</script> 
+

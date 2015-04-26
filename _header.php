@@ -39,8 +39,13 @@ else {
 	<?php }
 	if ($loggedIn) { ?>
 		<a class="nav-button" id="logout" href="/_logout.php">Logout</a>
-		<a class="nav-button" id="my-account" href="/account.php">My Account</a>
-	<?php } 
+
+		<a class="nav-button" id="forums" href="/forums.php">Forums</a>
+		<?php if ($_SESSION["admin"] == 1) { ?>
+			<a class="nav-button" id="manage" href="/manage_users.php">Manage Users</a>
+		<?php }
+	}
+
 	else { ?>
 		<a class="nav-button" id="login" href="/login.php">Login</a>
 	<?php } ?>

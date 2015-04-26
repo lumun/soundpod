@@ -6,6 +6,7 @@ function clean_input($data) {
   return $data;
 }
 
+<<<<<<< HEAD
 // Returns an array with filename as key, filesize as value
 function get_files_in_directory($dir) {
 	$filesOnServer = array(); // create a new array for filenames
@@ -29,6 +30,15 @@ function get_files_in_directory($dir) {
 	}
 	else {
 		return NULL;
+=======
+function getCurrentUri()
+	{
+		$basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, -1)) . '/';
+		$uri = substr($_SERVER['REQUEST_URI'], strlen($basepath)+11);
+		if (strstr($uri, '?')) $uri = substr($uri, 0, strpos($uri, '?'));
+		//$uri = '/' . trim($uri, '/');
+		return $uri;
+>>>>>>> f4e4b5d83ec91e89829929e10cb4c4004ad018c1
 	}
 }
 

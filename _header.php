@@ -29,7 +29,7 @@ else {
 
 
 <div id="header">
-	<a href="<?php if ($loggedIn) { echo '/account.php'; } else { echo '/index.php'; } ?>">
+	<a href="<?php if ($loggedIn) { echo '/index.php'; } else { echo '/index.php'; } ?>">
 		<p>KUPS DJ Portal</p>
 		<img src="/assets/images/kups.png" alt="Sound Pod" class="left-float" style="height:52px">
 	</a>

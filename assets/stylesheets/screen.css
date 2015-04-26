@@ -1,23 +1,12 @@
-/* line 17, ../sass/screen.scss */
-* {
-  margin: 0;
-}
-
-/* line 20, ../sass/screen.scss */
-html, body {
-  height: 100%;
-}
-
-/* line 27, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 div#header {
   padding: 5px;
   display: block;
   border-bottom: 4px solid #660000;
-  background: white;
   overflow: auto;
   color: black;
 }
-/* line 34, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 div#header p {
   float: left;
   display: inline-block;
@@ -26,34 +15,37 @@ div#header p {
   margin: 10px;
   font-weight: bold;
 }
-/* line 42, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 div#header .nav-button {
   float: left;
   display: inline-block;
   margin: 10px;
 }
-/* line 47, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 div#header #logout, div#header #login, div#header #my-account {
   float: right;
 }
 
+/* line 41, ../sass/screen.scss */
+body {
+  background: #ffffff url("/assets/images/background/escheresque.png") repeat left top;
+}
 
-
-/* line 56, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 h1 {
   margin: 30px;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 a {
   text-decoration: none;
 }
-/* line 61, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 a:link, a:visited, a:hover, a:active {
   color: inherit;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 .content {
   border: 4px solid rgba(102, 0, 0, 0.4);
   -webkit-border-radius: 10px;
@@ -64,61 +56,48 @@ a:link, a:visited, a:hover, a:active {
   padding: 10px;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 .left-float {
   float: left;
 }
 
-/* line 75, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 .right-float {
   float: right;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 p.center, a.center, h1.center, h2.center, h3.center {
   text-align: center;
 }
 
-/* line 86, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 img.center {
   display: block;
 }
 
-/* line 90, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .margined {
   margin: 20px;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .small-caps {
   font-variant: small-caps;
 }
 
-/* line 98, ../sass/screen.scss */
-div#return-home {
-  width: 118px;
-}
-
-/* line 104, ../sass/screen.scss */
-.question_list {
-  font-size: 13px;
-}
-/* line 107, ../sass/screen.scss */
-.question_list i {
-  color: black;
-}
-
-/* line 113, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 .nav-button {
   font-variant: small-caps;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
   border: 2px solid;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -127,75 +106,34 @@ div#return-home {
   padding: 5px;
   margin: 10px 0;
 }
-/* line 122, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 .nav-button:link, .nav-button:visited {
   color: black;
   border-color: black;
   background: transparent;
 }
-/* line 128, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .nav-button:hover, .nav-button:active {
   color: black;
   border-color: black;
   background: rgba(102, 0, 0, 0.4);
 }
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 40px;
-}
 
-
-
-/* line 137, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 div#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 40px;
-  background-color: #f5f5f5;
   color: black;
   border-top: 4px solid #660000;
-  background: white;
+  background: rgba(102, 0, 0, 0.4);
   padding: 5px;
-  
 }
-/* line 142, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 div#footer p {
   font-variant: small-caps;
   padding: 5px;
   font-weight: bold;
-  margin-top: 20px;
 }
 
-.caro {
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 600px;
-}
-
-/* line 153, ../sass/screen.scss */
-#faitwrapper {
-  min-height: 100%;
-  height: auto !important;
-  /* This line and the next line are not necessary unless you need IE6 support */
-  height: 100%;
-  margin: 0 auto -44px;
-  /* the bottom margin is the negative value of the footer's height */
-}
-
-/* line 159, ../sass/screen.scss */
-#faitfooter, #faitpush {
-  height: 44px;
-  /* .push must be the same height as .footer */
-}
-
-/* line 169, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 .input-error {
   color: red;
-}
-
-/* line 174, ../sass/screen.scss */
-#data-input input {
-  margin: 5px;
 }

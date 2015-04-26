@@ -12,23 +12,12 @@
           border-radius: $radius;
 }
 
-//Sticky Footer by Ryan Fait
-//http://ryanfait.com/
-* {
-	margin: 0;
-}
-html, body {
-	height: 100%;
-}
-//Sticky Footer by Ryan Fait
-//http://ryanfait.com/
-
 // Header
 div#header {
 	padding: 5px;
 	display: block;
 	border-bottom: 4px solid $header-border-color;
-	background: $header-background-color;
+	// background: $header-background-color;
 	overflow: auto;
 	color: $header-text-color;
 	p {
@@ -95,25 +84,11 @@ img.center {
 	font-variant: small-caps;
 }
 
-div#return-home {
-	// Hard coded to the width of the contained anchor
-	// Otherwise it will not truly center
-	width: 118px; 
-}
-
-.question_list {
-	font-size: 13px;
-
-	i {
-		// Makes italicized questions in a question_list another color
-		color: $question-color;
-	}
-}
-
 .nav-button {
 	font-variant: small-caps;
 	font-weight: bold;
 	text-align:center; 
+	text-decoration: none;
 	border: 2px solid;
 	@include border-radius(10px);
 	padding: 5px;
@@ -145,33 +120,8 @@ div#footer {
 		font-weight: bold;
 	}
 }
-//Sticky Footer by Ryan Fait
-//http://ryanfait.com/
-$faitmargin: 44px;
-$faitmarginneg: -$faitmargin;
-
-#faitwrapper {
-	min-height: 100%;
-	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
-	height: 100%;
-	margin: 0 auto $faitmarginneg; /* the bottom margin is the negative value of the footer's height */
-}
-#faitfooter, #faitpush {
-	height: $faitmargin; /* .push must be the same height as .footer */
-}
-//Sticky Footer by Ryan Fait
-//http://ryanfait.com/
-
-
-// Specific styles
 
 // Data insertion
 .input-error {
 	color: red;
-}
-
-#data-input {
-	input {
-		margin: 5px;
-	}
 }

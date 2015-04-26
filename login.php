@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 		 	$db = new PDO("mysql:dbname=soundpod", 'root');
 		 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		 	$result = $db -> query ("SELECT * FROM user WHERE Email=$email");
+		 	$result = $db -> query ("SELECT * FROM user WHERE email='$email'");
 		 	echo $result[0].email;
 			echo $result[0].password;
 			echo $result[0].name;
@@ -57,14 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     	if (!$loggedIn) { ?>
 			<div class="content left-float">
-				<h2 style="text-decoration: underline">Login Form</h2>
-				<br/>
 				<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 					<p>Email:</p> <input type="text" name="email" value="<?php if (!empty($email)){echo $email;}?>">
 					<br/>
 					<p>Password:</p> <input type="text" name="password">
 					<br/>
-					<input type="submit" name="submit" value="Submit">
+					<input type="submit" name="submit" value="Log In">
 				</form>
 			</div>
 		<?php }

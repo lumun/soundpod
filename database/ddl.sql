@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS dj (
 
 CREATE TABLE IF NOT EXISTS showInstance (
 	showid INT,
-	day TEXT,
+	day VARCHAR(10),
 	time INT,
 	PRIMARY KEY (showid, day, time),
 	FOREIGN KEY (showid) REFERENCES radioShow(showid)
@@ -58,14 +58,14 @@ CREATE TABLE IF NOT EXISTS category (
 
 CREATE TABLE IF NOT EXISTS post (
 	postid INT NOT NULL,
-	email TEXT NOT NULL,
+	email VARCHAR(30) NOT NULL,
 	time TIMESTAMP,
-	content TEXT NOT NULL,
-	category TEXT NOT NULL,
+	content VARCHAR(2000) NOT NULL,
+	category VARCHAR(20) NOT NULL,
 	PRIMARY KEY (postid),
 	FOREIGN KEY (category) REFERENCES category(name)
 		ON UPDATE CASCADE
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	FOREIGN KEY(email) REFERENCES user(email)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE	

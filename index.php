@@ -27,8 +27,8 @@ $imageWidth = "160px";
 			// }
 			?>
 
-	        <div class="item">
-	            <img class="caro" alt="First slide" src="assets/images/info.jpg">
+	        <div class="item active">
+	            <img class="caro image-responsive" alt="First slide" src="assets/images/info.jpg">
 	            <div class="container">
 	                <div class="carousel-caption">
 	                    <h1>Station News</h1>
@@ -38,7 +38,7 @@ $imageWidth = "160px";
 	            </div>
 	        </div>
 	        <div class="item">
-	            <img class="caro" alt="Second slide" src="assets/images/sub.jpg">
+	            <img class="caro text-center" alt="Second slide" src="assets/images/sub.jpg">
 	            <div class="container">
 	                <div class="carousel-caption">
 	                    <h1>Request A Sub</h1>
@@ -47,8 +47,8 @@ $imageWidth = "160px";
 	                </div>
 	            </div>
 	        </div>
-	        <div class="item active">
-	            <img class="caro" alt="Third slide" src="assets/images/bear.jpg">
+	        <div class="item">
+	            <img class="caro text-center" alt="Third slide" src="assets/images/bear.jpg">
 	            <div class="container">
 	                <div class="carousel-caption">
 	                    <h1>DJ Resources</h1>

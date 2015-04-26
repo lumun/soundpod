@@ -23,11 +23,13 @@ $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $result = $db -> query("SELECT * from category where name = '$category'");
 
 
-if($result.rowCount() < 1)
+if($result->rowCount() < 1)
 {
 	//404 if that wasn't a real category
-	header("Location: /404.php");
-	die();
+	// header("Location: /404.php");
+	// die();
+	print "Sorry, there's nothing here";
+	echo "<a href='/forumTopics.php'>Forums</a>";
 }
 
 

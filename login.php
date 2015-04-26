@@ -1,9 +1,10 @@
 <?php
 include '_helpers.php';
 
+$email = $password = '';
+
 // Successful form submission is handled here
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if (!empty($email) AND !empty($password) {
 	  	$email = clean_input($_POST["email"]);				
 		$password = clean_input($_POST["password"]);
 
@@ -11,15 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 		 	$db = new PDO("mysql:dbname=soundpod", 'root');
 		 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		 	$result = $db -> query ("SELECT uid,password FROM user WHERE email = $email");
-		 	if ($result) {
-		 		if ($result.password == $password) {
-		 				session_start();
-						session_regenerate_id(true);
-						$_SESSION["loggedin"] = "true";
-						$_SESSION["user"] = $result.uid;
-		 		}
+		 	$result = $db -> query ("SELECT * FROM user WHERE Email=$email");
+		 	echo $result[0].email;
+			echo $result[0].password;
+			echo $result[0].name;
+			
+			if ($result && $result[0].password == $password) {
+		 		session_start();
+				session_regenerate_id(true);
+				$_SESSION["loggedin"] = "true";
+				$_SESSION["user"] = $result[0].uid;
 		 	}
+			else {
+				echo "That email and password combination did not match our records";
+			}
 
 		 	// disconnect
 			$db = NULL;
@@ -34,9 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		catch(PDOException $e) {
 		 	print 'Exception : '.$e -> getMessage();
 		}
-	}
-
-
 }
 ?>
 

@@ -1,9 +1,3 @@
-<?php
-if ($_SESSION["admin"] == 0) {
-	header("Location: /index.php");
-}	
-?>
-
 <!DOCTYPE html>
 <html>
 

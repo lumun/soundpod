@@ -16,7 +16,7 @@ echo "<div class='content left-float'>";
 			echo "<td>".$tuple['name']."</td>";
 			echo "<td>".$email."</td>";
 			$ad = $tuple['admin'];
-			if ($ad == 1) {
+			if ($ad == 0) {
 				echo "<td>Yes</td>";
 				echo "<td><form id='admin_form_$email' method='post' action='/_admin-user.php'>";
 				echo "<input type='hidden' name='email' value='$email' />";

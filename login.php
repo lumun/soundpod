@@ -14,28 +14,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		 	$result = $db -> query ("SELECT * FROM user WHERE email='$email'");
 		 	foreach ($result as $tuple) {
-				echo $tuple['email'];
-				echo $tuple['password'];
-				echo $tuple['name'];
-			
-			if ($tuple['password'] == $password) {
-		 		session_start();
-				session_regenerate_id(true);
-				$_SESSION["loggedin"] = "true";
-				$_SESSION["user"] = $tuple['email'];
-		 	}
-			else {
-				echo "That email and password combination did not match our records";
+				if ($tuple['password'] == $password) {
+			 		session_start();
+					session_regenerate_id(true);
+					$_SESSION["loggedin"] = "true";
+					$_SESSION["email"] = $tuple['email'];
+					if ($tuple['admin'] == 1) {
+						$_SESSION["admin"] = 1;
+					}
+					else {
+						$_SESSION["admin"] = 0;
+					}
+			 	}
+				else {
+					$error = "That email and password combination did not match our records";
+				}
 			}
-}
 	 	// disconnect
 		$db = NULL;
 
 		if (isset($_SESSION["loggedin"])) {
-			header('Location: /account.php');
+			header('Location: /index.php');
 		}
 		else {
-			echo "There was an error logging in";
+			if (!$error) { $error = "There was an error logging in"; }
 		}
 	}
 	catch(PDOException $e) {
@@ -57,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<?php 
 		include '_header.php';
 
-    	if (!$loggedIn) { ?>
+    	if (!isset($loggedIn)) { ?>
 			<div class="content left-float">
 				<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 					<p>Email:</p> <input type="text" name="email" value="<?php if (!empty($email)){echo $email;}?>">
@@ -67,7 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<input type="submit" name="submit" value="Log In">
 				</form>
 			</div>
-		<?php }
+
+			<?php
+			if (isset($error)) {
+				echo "<p>$error</p>";
+			}
+		}
 		else {
 			echo "<h2 class='center small-caps'>YOU ARE ALREADY LOGGED IN</h2>";
 		}

@@ -33,7 +33,7 @@ div#header {
 		display: inline-block;
 		margin: 10px;
 	}
-  	#logout, #login, #my-account{
+  	#logout, #login, #my-account, #manage{
     	float: right;
   	}
 }
@@ -124,4 +124,10 @@ div#footer {
 // Data insertion
 .input-error {
 	color: red;
+}
+
+.carousel-inner > .item > .caro  {
+	height: 500px;	
+	margin-left: auto;
+	margin-right: auto;
 }

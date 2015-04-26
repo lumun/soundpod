@@ -2,19 +2,19 @@
 // This form processes tuples to be deleted from the database
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if ($_POST["tail_no"]) {
-		$tail_no = $_POST["tail_no"];
+	if ($_POST["email"]) {
+		$email = $_POST["email"];
 		try {
-			$db = new PDO('sqlite:database/airport.sqlite3');
+			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "DELETE FROM plane WHERE tail_no=$tail_no";
+			$sql = "UPDATE user SET admin = 1 WHERE email = '$email'";
 			// delete
 			$db -> exec($sql);
 			// disconnect
 			$db = NULL;
 
 			//redirect to success page
-			header("Location: /view-planes.php?delete='$tail_no'");
+			header("Location: /manage_users.php?update='$email'");
 		}
 		catch(PDOException $e) {
 			print 'Exception : '.$e -> getMessage();

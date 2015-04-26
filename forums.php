@@ -2,7 +2,12 @@
 <?php 
 include '_helpers.php';
 
-$category = getCurrentUri();
+// $category = getCurrentUri();
+$category = '';
+if (isset($_GET['category'])) {
+	$category = $_GET['category'];
+}
+
 if(trim($category) == '')//I might use this to make sure there is no
 {
 	//if they don't have any extra url send them to forum topics list
@@ -15,7 +20,7 @@ try {
 $db = new PDO("mysql:dbname=soundpod", 'root');
 // Set errormode to exceptions
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$result = $db -> query("SELECT * from category where name == '$category'");
+$result = $db -> query("SELECT * from category where name = '$category'");
 
 
 if($result.rowCount() < 1)

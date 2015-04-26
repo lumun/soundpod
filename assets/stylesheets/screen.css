@@ -22,7 +22,7 @@ div#header .nav-button {
   margin: 10px;
 }
 /* line 36, ../sass/screen.scss */
-div#header #logout, div#header #login, div#header #my-account {
+div#header #logout, div#header #login, div#header #my-account, div#header #manage {
   float: right;
 }
 

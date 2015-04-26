@@ -35,7 +35,7 @@ else {
 	</a>
 	<?php 
 	if ($loggedIn && $_SESSION["admin"] == 1) { ?>
-		<a class="nav-button" href="/manage_users.php">Manage Users</a>
+		<a class="nav-button" id="manage" href="/manage_users.php">Manage Users</a>
 	<?php }
 	if ($loggedIn) { ?>
 		<a class="nav-button" id="logout" href="/_logout.php">Logout</a>

@@ -137,3 +137,10 @@ div#footer p {
 .input-error {
   color: red;
 }
+
+/* line 129, ../sass/screen.scss */
+.carousel-inner > .item > .caro {
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}

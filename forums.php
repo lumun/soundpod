@@ -15,7 +15,7 @@ try {
 $db = new PDO("mysql:dbname=soundpod", 'root');
 // Set errormode to exceptions
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$result = $db -> query("SELECT * from category where name == ".$category);
+$result = $db -> query("SELECT * from category where name == '$category'");
 
 
 if($result.rowCount() < 1)

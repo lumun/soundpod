@@ -20,10 +20,10 @@ CREATE TABLE IF NOT EXISTS radioShow (
 );
 
 CREATE TABLE IF NOT EXISTS dj (
-	uid INT,
+	email VARCHAR(30),
 	showid INT,
-	PRIMARY KEY (uid, showid),
-	FOREIGN KEY (uid) REFERENCES user(uid)
+	PRIMARY KEY (email, showid),
+	FOREIGN KEY (email) REFERENCES user(email)
 		ON DELETE CASCADE,
 	FOREIGN KEY (showid) REFERENCES radioShow(showid)
 		ON DELETE CASCADE
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS dj (
 
 CREATE TABLE IF NOT EXISTS showInstance (
 	showid INT,
-	day VARCHAR(10),
+	day TEXT,
 	time INT,
 	PRIMARY KEY (showid, day, time),
 	FOREIGN KEY (showid) REFERENCES radioShow(showid)
@@ -58,12 +58,15 @@ CREATE TABLE IF NOT EXISTS category (
 
 CREATE TABLE IF NOT EXISTS post (
 	postid INT NOT NULL,
-	uid INT NOT NULL,
+	email TEXT NOT NULL,
 	time TIMESTAMP,
-	content VARCHAR(1000) NOT NULL,
-	category VARCHAR(30) NOT NULL,
+	content TEXT NOT NULL,
+	category TEXT NOT NULL,
 	PRIMARY KEY (postid),
 	FOREIGN KEY (category) REFERENCES category(name)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
+	FOREIGN KEY(email) REFERENCES user(email)
+		ON UPDATE CASCADE
+		ON DELETE CASCADE	
 );

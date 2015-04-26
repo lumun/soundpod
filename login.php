@@ -26,20 +26,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			else {
 				echo "That email and password combination did not match our records";
 			}
+	 	// disconnect
+		$db = NULL;
 
-		 	// disconnect
-			$db = NULL;
-
-			if (isset($_SESSION["loggedin"])) {
-				header('Location: /account.php');
-			}
-			else {
-				echo "There was an error logging in";
-			}
+		if (isset($_SESSION["loggedin"])) {
+			header('Location: /account.php');
 		}
-		catch(PDOException $e) {
-		 	print 'Exception : '.$e -> getMessage();
+		else {
+			echo "There was an error logging in";
 		}
+	}
+	catch(PDOException $e) {
+	 	print 'Exception : '.$e -> getMessage();
+	}
 }
 ?>
 
@@ -52,8 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-	<!-- faitwrapper class is necessary on ALL pages for sticky footer -->
-    <div id="faitwrapper">
     	<!-- Header inserter here -->
 		<?php 
 		include '_header.php';
@@ -63,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				<h2 style="text-decoration: underline">Login Form</h2>
 				<br/>
 				<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-					<p>Email:</p> <input type="text" name="email" value="<?php echo $email;?>">
+					<p>Email:</p> <input type="text" name="email" value="<?php if (!empty($email)){echo $email;}?>">
 					<br/>
 					<p>Password:</p> <input type="text" name="password">
 					<br/>
@@ -75,11 +72,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo "<h2 class='center small-caps'>YOU ARE ALREADY LOGGED IN</h2>";
 		}
 		?>
-
-		<div id="faitpush"></div>
-	</div>
-	<div id="faitfooter">
-		<?php include '_footer.php'; ?>
-	</div>
 </body>
 </html>

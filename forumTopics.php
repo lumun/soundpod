@@ -57,22 +57,11 @@ try {
 			
 		
 <?php
+}
 }catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
 
-<<<<<<< HEAD
 include '_footer.php';
 
-
-=======
-function getCurrentUri()
-	{
-		$basepath = implode('/', array_slice(explode('/', $_SERVER['SCRIPT_NAME']), 0, -1)) . '/';
-		$uri = substr($_SERVER['REQUEST_URI'], strlen($basepath));
-		if (strstr($uri, '?')) $uri = substr($uri, 0, strpos($uri, '?'));
-		$uri = '/' . trim($uri, '/');
-		return $uri;
-	}
->>>>>>> b9e2b090bb0fe8d3d9a0a8141259223cd0f8fd57
 ?>

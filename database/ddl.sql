@@ -38,13 +38,13 @@ CREATE TABLE IF NOT EXISTS showInstance (
 );
 
 CREATE TABLE IF NOT EXISTS subRequest (
-	origdj INT,
-	subdj INT,
+	origdj VARCHAR(30),
+	subdj VARCHAR(30),
 	showid INT,
 	showdate DATE,
 	PRIMARY KEY (showid, showdate),
-	FOREIGN KEY (origdj) REFERENCES user(uid),
-	FOREIGN KEY (subdj) REFERENCES user(uid)
+	FOREIGN KEY (origdj) REFERENCES user(email),
+	FOREIGN KEY (subdj) REFERENCES user(email)
 		ON DELETE CASCADE,
 	FOREIGN KEY (showid) REFERENCES radioShow(showid)
 		ON DELETE CASCADE
@@ -69,3 +69,16 @@ CREATE TABLE IF NOT EXISTS post (
 		ON UPDATE CASCADE
 		ON DELETE CASCADE	
 );
+
+INSERT INTO user VALUES (1,'John Snow',1,'password','admin');
+INSERT INTO user VALUES (2,'Megan Wensel',0,'password','dj');
+
+INSERT INTO radioShow VALUES (1,'Alternative','S2015','John lays it Down');
+INSERT INTO radioShow VALUES (2,'Hard Rock','S2015','Megan and John Are Sharks');
+
+INSERT INTO dj VALUES (1,1);
+INSERT INTO dj VALUES (1,2);
+INSERT INTO dj VALUES (2,2);
+
+INSERT INTO showInstance VALUES (1,'Tuesday',1500);
+INSERT INTO showInstance VALUES (2,'Monday',2200);

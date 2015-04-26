@@ -1,5 +1,6 @@
-<?php include '_header.php'; include '_helpers.php';
-$nameErr;
+<?php include '_header.php'; 
+include '_helpers.php';
+$nameErr="";
 
 if(is_admin())
 {

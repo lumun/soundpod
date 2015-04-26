@@ -1,6 +1,7 @@
 
 <?php 
 include '_helpers.php';
+
 $category = getCurrentUri();
 // we need to pull posts from database to fill this page, 
 try {

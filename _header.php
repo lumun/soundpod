@@ -34,14 +34,14 @@ else {
 		<img src="/assets/images/kups.png" alt="Sound Pod" class="left-float" style="height:52px">
 	</a>
 	<?php 
-	if ($loggedIn && $_SESSION["admin"] == 1) { ?>
-		<a class="nav-button" id="manage" href="/manage_users.php">Manage Users</a>
-	<?php }
 	if ($loggedIn) { ?>
 		<a class="nav-button" id="logout" href="/_logout.php">Logout</a>
-		<a class="nav-button" id="my-account" href="/account.php">My Account</a>
-	<?php } 
+		<?php if ($_SESSION["admin"] == 1) { ?>
+			<a class="nav-button" id="manage" href="/manage_users.php">Manage Users</a>
+		<?php }
+	}
 	else { ?>
 		<a class="nav-button" id="login" href="/login.php">Login</a>
+		<a class="nav-button" id="sign-up" href="/sign-up.php">Sign Up</a>
 	<?php } ?>
 </div>

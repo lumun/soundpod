@@ -16,16 +16,20 @@ echo "<div class='content left-float'>";
 			echo "<td>".$tuple['name']."</td>";
 			echo "<td>".$email."</td>";
 			$ad = $tuple['admin'];
-			if ($tuple['admin'] == 1) {
-				echo "<td>Yes</td>";
+			if ($ad == 0) {
+				echo "<td>No</td>";
+				echo "<td><form id='admin_form_$email' method='post' action='/_admin-user.php'>";
+				echo "<input type='hidden' name='email' value='$email' />";
+				echo "<input type='submit' name='submit_$email' value='Make Admin' />";
+				echo "</form></td>";
 			}
 			else {
-				echo "<td>No</td>";		
+				echo "<td>Yes</td>";
+				echo "<td><form id='admin_form_$email' method='post' action='/_admin-user.php'>";
+				echo "<input type='hidden' name='email' value='$email' />";
+				echo "<input type='submit' name='submit_$email' value='Unmake' />";
+				echo "</form></td>";
 			}
-			echo "<td><form id='admin_form_$email' method='post' action='/_make-admin-user.php'>";
-			echo "<input type='hidden' name='email' value='$email' />";
-			echo "<input type='submit' name='submit_$email' value='Make Admin' />";
-			echo "</form></td>";
 			echo "<td><form id='delete_form_$email' method='post' action='/_delete-user.php'>";
 			echo "<input type='hidden' name='email' value='$email' />";
 			echo "<input type='submit' name='submit_$email' value='Delete' />";

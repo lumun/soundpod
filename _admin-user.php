@@ -7,7 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE user SET admin = 1 WHERE email = '$email'";
+
+			$sql = "UPDATE user SET admin = (1-admin) WHERE email = '$email'";
 			// delete
 			$db -> exec($sql);
 			// disconnect

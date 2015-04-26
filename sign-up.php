@@ -114,4 +114,3 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 //     // 	// $('#data-input').append("<div class='input-group date' ><label for='password'>Show Time</label><input type='text' class='form-control' id='datetimepicker1'/></div>");
 //     // })
 // </script> -->
->>>>>>> 8b2b21a96d861a5b08bb6972306114bb53b96bf3

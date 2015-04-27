@@ -1,14 +1,20 @@
 <?php
-
-session_start();
+include '_session.php';
+//session_start();
+//session_regenerate_id(true);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$email = $_SESSION['email'];
+	$email = $_SESSION['email']; 
+	print $email;
+
 	$content = $_POST['content'];
+
 	$category = $_POST['category'];
-	$sql = "INSERT INTO post(email,content,category) values('$email','$content','$category')";
 	try{
 	$db = new PDO("mysql:dbname=soundpod", 'root');
+	
+	$sql = "INSERT INTO post(email,content,category) values('$email','$content','$category')";
+	$sql = $db->prepare($sql);
 	// Set errormode to exceptions
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$db->exec($sql);
@@ -18,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 }
 
-header("Location: /forums.php?category=$category");
-die();
+//header("Location: /forums.php?category=$category");
+//die();
 
 ?>

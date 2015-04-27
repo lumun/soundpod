@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS showInstance (
 CREATE TABLE IF NOT EXISTS subRequest (
 	origdj VARCHAR(30),
 	subdj VARCHAR(30),
+	comment VARCHAR(2000),
 	showid INT,
 	showdate DATE,
 	PRIMARY KEY (showid, showdate),
@@ -50,7 +51,7 @@ CREATE TABLE IF NOT EXISTS subRequest (
 );
 
 CREATE TABLE IF NOT EXISTS category (
-	name VARCHAR(20) NOT NULL,
+	name VARCHAR(60) NOT NULL,
 	PRIMARY KEY (name)
 );
 
@@ -59,7 +60,7 @@ CREATE TABLE IF NOT EXISTS post (
 	email VARCHAR(30) NOT NULL,
 	time TIMESTAMP,
 	content VARCHAR(2000) NOT NULL,
-	category VARCHAR(20) NOT NULL,
+	category VARCHAR(60) NOT NULL,
 	PRIMARY KEY (postid),
 	FOREIGN KEY (category) REFERENCES category(name)
 		ON UPDATE CASCADE

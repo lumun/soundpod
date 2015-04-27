@@ -1,11 +1,4 @@
-<?php include '_header.php'; ?>
 
-<div class="container">
-<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<h1>Forums<br><small>Talk to Each Other!</small></h1>
-	</div>
-	<hr>
-</div>
 <?php 
 
 include '_helpers.php';
@@ -42,8 +35,14 @@ if($result->rowCount() < 1)
 
 
 
-//We have to do the redirection above before any <!doctype stuff happens
-include '_header.php'; 
+include '_header.php'; ?>
+
+<div class="container">
+<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+		<h1>Forums<br><small>Talk to Each Other!</small></h1>
+	</div>
+	<hr>
+</div>
 
 
 
@@ -71,26 +70,7 @@ foreach ($result as $thisPost)
 }
 		// close the db
 	$db = NULL;	
-	?>
-
-		</div>
-		<div class="well col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<?php
-		$result = $db -> query("SELECT * from post where category == '$category['name']'");
-		foreach ($result as $tuple)
-		{
-			$content = $tuple['content'];
-			$email = $tuple['email'];
-			$user = $db -> query("SELECT * from user where email == '$email'");
-			echo "<p class='text-left'>" . $content . "</p>";
-			echo "<p class='text-left'>By " . $user['name'] . "</p>";
-			echo "<p class='text-left'>Posted at " . $tuple['time'] . " to " . $category . "</p>";
-
-		}
-		// close the db
-		$db = NULL;	
-		echo "</div> </div>";
-	}
+	
 }
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();

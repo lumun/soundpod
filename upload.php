@@ -98,6 +98,4 @@ $filesOnServer = get_files_in_directory($dir);
 		</div>
 
 		
-<?php include '_footer.php'; 
-}
-?>
+<?php include '_footer.php'; ?>

@@ -1,4 +1,5 @@
 <?php
+include '_session.php';
 // Set the image width
 $imageWidth = "160px";
 ?>
@@ -43,7 +44,7 @@ $imageWidth = "160px";
 	                <div class="carousel-caption">
 	                    <h1>Request A Sub</h1>
 	                    <p>Find a DJ to sub your show!</p>
-	                    <p><a class="btn btn-lg btn-primary" href="/requestSub.php" role="button">Requests</a></p>
+	                    <p><a class="btn btn-lg btn-primary" href="/substitutions.php" role="button">Requests</a></p>
 	                </div>
 	            </div>
 	        </div>

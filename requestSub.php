@@ -1,4 +1,6 @@
-<?php include '_header.php'; ?>
+<?php 
+include '_session.php';
+include '_header.php'; ?>
 
 
 <div class="container">

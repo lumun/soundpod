@@ -1,6 +1,5 @@
-
 <?php 
-
+include '_session.php';
 include '_helpers.php';
 
 // $category = getCurrentUri();

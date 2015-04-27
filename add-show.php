@@ -1,4 +1,6 @@
-<?php include '_header.php'; ?>
+<?php 
+include '_session.php';
+include '_header.php'; ?>
 
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 	<form action="/_add-show.php" method="POST" role="form">

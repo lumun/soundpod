@@ -1,5 +1,7 @@
-<?php include '_header.php'; 
+<?php 
+include '_session.php';
 include '_helpers.php';
+include '_header.php'; 
 $nameErr="";
 
 if($_SESSION["admin"] == 1)

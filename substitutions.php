@@ -1,5 +1,12 @@
 <?php
+include '_session.php';
 include '_helpers.php';
+if (!$loggedin) { 
+	header("Location: /login.php"); 
+	die(); 
+}
+
+include '_header.php';
 
 echo "<div class='content left-float'>";
 	try 
@@ -8,27 +15,19 @@ echo "<div class='content left-float'>";
 		$db = new PDO("mysql:dbname=soundpod", 'root');
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		echo "<legend>Your Shows</legend>";
 		//now output the data to a simple html table...
+		if (isset($_SESSION['email'])) { $myemail = $_SESSION['email']; }
+		$shows = $db -> query ("SELECT * FROM radioShow NATURAL JOIN dj WHERE email='$myemail'");
 		echo '<table border="1">';
-		echo '<tr><td>ID</td><td>Title</td><td>Genre</td><td>DJ(s)</td><td>Showtime(s)</td><td></td></tr>';
-		$shows = $db -> query ("SELECT * FROM radioShow ORDER BY genre, showid");
-		foreach ($shows as $show)
-		{
+		echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td></td></tr>';
+		foreach ($shows as $show) {
 			$showid = $show['showid'];
 			$title = $show['title'];
 			// get_genre method found in helpers
 			$genre = get_genre($show['genre']);
-			echo "<tr><td>".$showid."</td>";
 			echo "<td>".$title."</td>";
 			echo "<td>".$genre."</td>";
-
-			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showid=$showid");
-			echo "<td>";
-			foreach ($djs as $dj) {
-				$n = $dj['name'];
-				echo "<p>$n</p>";
-			}
-			echo "</td>";
 
 			$showtimes = $db -> query ("SELECT * FROM showInstance WHERE showid=$showid");
 			echo "<td>";
@@ -41,17 +40,16 @@ echo "<div class='content left-float'>";
 			echo "</td>";
 
 			// This is all the delete button
-			echo "<td><form id='delete_form_$showid' method='post' action='/_delete-show.php'>";
+			echo "<td><form id='sub_request_$showid' method='post' action='/requestSub.php'>";
 			echo "<input type='hidden' name='showid' value='$showid' />";
-			echo "<input type='submit' name='submit_$showid' value='Delete' /></form></td>";
+			echo "<input type='submit' name='submit_$showid' value='Request Sub' /></form></td>";
 
 			echo "</tr>";
 		}
 		echo "</table>";
 
-		echo "<a href='/add-show.php'>Add a new show</a>";
+		$subRequests = $db -> query ("SELECT * FROM subRequest WHERE active=1");
 
-	 	// close the database connection
 		$db = NULL;
 	}
 	catch(PDOException $e) {

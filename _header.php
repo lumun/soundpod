@@ -1,13 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["loggedin"])) {
-	$loggedIn = true;
-}
-else {
-	$loggedIn = false;
-}
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -29,14 +19,15 @@ else {
 
 
 <div id="header">
-	<a href="<?php if ($loggedIn) { echo '/index.php'; } else { echo '/index.php'; } ?>">
+	<a href="<?php if ($loggedin) { echo '/index.php'; } else { echo '/index.php'; } ?>">
 		<p>KUPS DJ Portal</p>
 		<img src="/assets/images/kups.png" alt="Sound Pod" class="left-float" style="height:52px">
 	</a>
-	<?php if ($loggedIn) { ?>
+	<?php if ($loggedin) { ?>
 		<a class="nav-button" id="logout" href="/_logout.php">Logout</a>
 		<a class="nav-button" id="forums" href="/forums.php">Forums</a>
 		<a class="nav-button" id="shows" href="/manage-shows.php">Shows</a>
+		<a class="nav-button" id="sub-requests" href="/substitutions.php">Sub Requests</a>
 		<?php 
 		if ($_SESSION["admin"] == 1) { ?>
 			<a class="nav-button" id="manage" href="/manage-users.php">Manage Users</a>

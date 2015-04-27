@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 function clean_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -15,6 +16,25 @@ function getCurrentUri()
 		return $uri;
 	}
 
-
+function get_genre($shortform) {
+	if ($shortform == 'alt') {
+		return "Alternative";
+	}
+	else if ($shortform == 'hip') {
+		return "Hip Hop";
+	}
+	else if ($shortform == 'loud') {
+		return "Loud Rock";
+	}
+	else if ($shortform == 'ele') {
+		return "Electronic";
+	}
+	else if ($shortform == 'spe') {
+		return "Specialty";
+	}
+	else {
+		return "N/A";
+	}
+}
 
 ?>

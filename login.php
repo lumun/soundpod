@@ -1,4 +1,5 @@
 <?php
+include '_session.php';
 include '_helpers.php';
 
 $email = $password = '';
@@ -59,24 +60,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<?php 
 		include '_header.php';
 
-    	if (isset($loggedin)) {
+    	if ($loggedin) {
     		echo "<h2 class='center small-caps'>YOU ARE ALREADY LOGGED IN</h2>";
 		}
 		else { ?>
-			<div class="content left-float">
-				<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-					<p>Email:</p> <input type="text" name="email" value="<?php if (!empty($email)){echo $email;}?>">
-					<br/>
-					<p>Password:</p> <input type="text" name="password">
-					<br/>
-					<input type="submit" name="submit" value="Log In">
-				</form>
+			<div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		    	<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
+		    		<legend>Log In</legend>
+		    	
+		    		<div class="form-group">
+		    			<label for="email">Email</label>
+		    			<input type="text" placeholder="you@pugetsound.edu" class="form-control" name="email" value=<?php echo "\"".$email."\"";?>>
+		    		</div>
+			    	<div class="form-group">
+			    		<label for="password">Password</label>
+			    		<input type="password" class="form-control" name="password">
+			    	</div>
+		    	
+		    		<button  type="submit" class="btn btn-primary" name="submit">Log In</button>
+		    	</form>
+	
 			</div>
-
-			<?php
-			if (isset($error)) {
-				echo "<p>$error</p>";
-			}
+		<?php
+		}
+		if (isset($error)) {
+			echo "<p>$error</p>";
 		}
 		?>
 </body>

@@ -1,4 +1,5 @@
 <?php
+include '_session.php';
 // security and error checking
 // define variables and set to empty values
 $name = $email = $password = "";
@@ -65,7 +66,7 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
     	
     		<div class="form-group">
     			<label for="name">Name</label>
-    			<input type="text" placeholder="Name" class="form-control" name="name" value=<?php echo "\"".$name."\"";?>><span class="input-error"> <?php echo $nameErr;?></span>
+    			<input type="text" placeholder="First Last" class="form-control" name="name" value=<?php echo "\"".$name."\"";?>><span class="input-error"> <?php echo $nameErr;?></span>
     		</div>
 	    	<div class="form-group">
 	    		<label for="email">Email</label>
@@ -76,10 +77,10 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 	    		<input type="password" class="form-control" name="password" value=<?php echo "\"".$password."\"";?>><span class="input-error" > <?php echo $passwordErr;?></span>
 	    	</div>
 
-	    	<div class='input-group date' >
+	    	<!-- <div class='input-group date' >
 	    		<label for="password">Show Time</label>
                 <input type='text' class="form-control" id="datetimepicker1"/>
-	    	</div>
+	    	</div> -->
 
 	    	<!-- <a id="add"  class="btn btn-primary">Add Show Time</a> -->
     		<!-- <button id="chuck" type="button">print value</button> -->

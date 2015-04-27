@@ -19,7 +19,8 @@ try {
 $db = new PDO("mysql:dbname=soundpod", 'root');
 // Set errormode to exceptions
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$result = $db -> query("SELECT * from category where name = '$category'");
+$category = $db->quote($category);
+$result = $db -> query("SELECT * from category where name = $category");
 
 
 if($result->rowCount() < 1)
@@ -67,7 +68,7 @@ if($catErr!= '')
 <div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <?php
 	
-$result = $db -> query("SELECT * from post where category = '$category' ORDER BY time");
+$result = $db -> query("SELECT * from post where category = $category ORDER BY time");
 foreach ($result as $thisPost)
 {
 	$content = $thisPost['content'];

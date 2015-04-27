@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS user (
 );
 
 CREATE TABLE IF NOT EXISTS radioShow (
-	showid INT NOT NULL AUTO_INCREMENT,
+	showid INT NOT NULL,
 	genre VARCHAR(20),
 	title VARCHAR(40),
 	PRIMARY KEY (showid)

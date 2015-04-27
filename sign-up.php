@@ -77,10 +77,6 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 	    		<input type="password" class="form-control" name="password" value=<?php echo "\"".$password."\"";?>><span class="input-error" > <?php echo $passwordErr;?></span>
 	    	</div>
 
-	    	<!-- <div class='input-group date' >
-	    		<label for="password">Show Time</label>
-                <input type='text' class="form-control" id="datetimepicker1"/>
-	    	</div> -->
 
 	    	<!-- <a id="add"  class="btn btn-primary">Add Show Time</a> -->
     		<!-- <button id="chuck" type="button">print value</button> -->

@@ -56,7 +56,7 @@ include '_header.php'; ?>
 <div class="well col-xs-4 col-sm-4 col-md-4 col-lg-4">
 <?php
 	
-$result = $db -> query("SELECT * from posts where category = '$category'");
+$result = $db -> query("SELECT * from post where category = '$category'");
 foreach ($result as $thisPost)
 {
 	$content = $thisPost['content'];

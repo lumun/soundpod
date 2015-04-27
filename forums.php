@@ -69,26 +69,7 @@ foreach ($result as $thisPost)
 }
 		// close the db
 	$db = NULL;	
-	?>
-
-		</div>
-		<div class="well col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<?php
-		$result = $db -> query("SELECT * from post where category == '$category['name']'");
-		foreach ($result as $tuple)
-		{
-			$content = $tuple['content'];
-			$email = $tuple['email'];
-			$user = $db -> query("SELECT * from user where email == '$email'");
-			echo "<p class='text-left'>" . $content . "</p>";
-			echo "<p class='text-left'>By " . $user['name'] . "</p>";
-			echo "<p class='text-left'>Posted at " . $tuple['time'] . " to " . $category . "</p>";
-
-		}
-		// close the db
-		$db = NULL;	
-		echo "</div> </div>";
-	}
+	
 }
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();

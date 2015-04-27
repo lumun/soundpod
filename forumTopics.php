@@ -4,8 +4,6 @@ include '_helpers.php';
 include '_header.php'; 
 $nameErr="";
 
-
-
 if($_SESSION["admin"] == 1)
 {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,8 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		try {
 	 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	 	$topic = $db->prepare($topic);
-	 	$sql = "INSERT INTO category(name) VALUES ('$topic')";
+
+	 	$topic = $db->quote($topic);
+	 	$sql = "INSERT INTO category(name) VALUES ($topic)";
 	 	// insert
 	 	$db -> exec($sql);
 	 	// disconnect

@@ -3,7 +3,7 @@ include '_session.php';
 include '_helpers.php';
 
 // $category = getCurrentUri();
-$category = $catErr = '';
+$category = '';
 if (isset($_GET['category'])) {
 	$category = $_GET['category'];
 }
@@ -19,25 +19,21 @@ try {
 $db = new PDO("mysql:dbname=soundpod", 'root');
 // Set errormode to exceptions
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$result = $db -> query("SELECT * from category where name = '$category'");
+$cat = $db->quote($category);
+$result = $db -> query("SELECT * from category where name = $cat");
 
 
+
+
+include '_header.php'; 
 if($result->rowCount() < 1)
 {
 	//404 if that wasn't a real category
 	// header("Location: /404.php");
 	// die();
-	$catErr = "Category Error";
+	//print "Sory, there's nothing here";
+	echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forumsss</p>";
 }
-
-include '_header.php'; 
-
-if($catErr!= '')
-{
-	?>
-	<p> There's nothing here. This could be a problem with your URL. For actual content, check out the list of our <a href='/forumTopics.php'>Forums</a></p>
-	<?php
-}else{
 ?>
 
 
@@ -55,6 +51,7 @@ if($catErr!= '')
 	<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
 </div>
 
+<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
 <input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
 
 <button  type="submit" class="btn btn-primary">Submit</button>
@@ -67,13 +64,12 @@ if($catErr!= '')
 <div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <?php
 	
-$result = $db -> query("SELECT * from post where category = '$category' ORDER BY time");
+$result = $db -> query("SELECT * from post where category = $cat ORDER BY time");
 foreach ($result as $thisPost)
 {
 	$content = $thisPost['content'];
 	$email = $thisPost['email'];
 	$users = $db -> query("SELECT * from user where email = '$email'");
-
 	$user = $users->fetch();
 	?>
 	<p class='text-left'> <?php echo $content ?> </p><br>
@@ -85,10 +81,6 @@ foreach ($result as $thisPost)
 	$db = NULL;	
 	
 }
-}
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
-
-
-?>

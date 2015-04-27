@@ -61,7 +61,8 @@ foreach ($result as $thisPost)
 {
 	$content = $thisPost['content'];
 	$email = $thisPost['email'];
-	$user = $db -> query("SELECT * from user where email = '$email'");
+	$users = $db -> query("SELECT * from user where email = '$email'");
+	$user = $users->fetch();
 	?>
 	<p class='text-left'> <?php echo $content ?> </p>;
 	<p class='text-left'>By <?php echo $user['name'] ?></p>;

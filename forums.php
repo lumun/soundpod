@@ -37,9 +37,9 @@ include '_header.php';
 if($catErr!= '')
 {
 	?>
-	<p> There's nothing here. This could be a problem with your URL. For actual content, check out the list of our <a href='/forumTopics.php'>Forums</a>
+	<p> There's nothing here. This could be a problem with your URL. For actual content, check out the list of our <a href='/forumTopics.php'>Forums</a></p>
 	<?php
-}
+}else{
 ?>
 
 
@@ -86,6 +86,10 @@ foreach ($result as $thisPost)
 	$db = NULL;	
 	
 }
+}
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
+
+
+?>

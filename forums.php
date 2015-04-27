@@ -12,8 +12,8 @@ if (isset($_GET['category'])) {
 if(trim($category) == '')//I might use this to make sure there is no
 {
 	//if they don't have any extra url send them to forum topics list
-	header("Location: /forumTopics.php");
-	die();
+	//header("Location: /forumTopics.php");
+	//die();
 }
 try {
 //open the database

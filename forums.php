@@ -39,7 +39,7 @@ include '_header.php'; ?>
 
 <div class="container">
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<h1>Forums<br><small>Talk to Each Other about life in the <?php $category ?> world!</small></h1>
+		<h1>Forums<br><small>Talk to Each Other about life in the <?php echo $category; ?> world!</small></h1>
 	</div>
 	<hr>
 </div>
@@ -60,7 +60,7 @@ foreach ($result as $thisPost)
 	?>
 	<p class='text-left'> <?php echo $content ?> </p><br>
 	<p class='text-left'>By <?php echo $user['name'] ?></p>
-	<p class='text-left'>Posted at <?php echo $thisPost['time'] ?> to <?php echo $category ?></p>
+	<p class='text-left'>Posted at <?php echo $thisPost['time'] ?> to <?php echo $category ?></p><br><br>
 	<?php
 }
 		// close the db

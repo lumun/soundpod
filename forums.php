@@ -39,21 +39,15 @@ include '_header.php'; ?>
 
 <div class="container">
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<h1>Forums<br><small>Talk to Each Other!</small></h1>
+		<h1>Forums<br><small>Talk to Each Other about life in the <?php $category ?> world!</small></h1>
 	</div>
 	<hr>
 </div>
 
-
-
-?>
-
-
-
 <hr>
 <div class="container">
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-<div class="well col-xs-4 col-sm-4 col-md-4 col-lg-4">
+<div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <?php
 	
 $result = $db -> query("SELECT * from post where category = '$category'");
@@ -64,9 +58,9 @@ foreach ($result as $thisPost)
 	$users = $db -> query("SELECT * from user where email = '$email'");
 	$user = $users->fetch();
 	?>
-	<p class='text-left'> <?php echo $content ?> </p>;
-	<p class='text-left'>By <?php echo $user['name'] ?></p>;
-	<p class='text-left'>Posted at <?php echo $thisPost['time'] ?> to <?php echo $category ?></p>;
+	<p class='text-left'> <?php echo $content ?> </p><br>
+	<p class='text-left'>By <?php echo $user['name'] ?></p>
+	<p class='text-left'>Posted at <?php echo $thisPost['time'] ?> to <?php echo $category ?></p>
 	<?php
 }
 		// close the db

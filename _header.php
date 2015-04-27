@@ -33,11 +33,11 @@ else {
 		<p>KUPS DJ Portal</p>
 		<img src="/assets/images/kups.png" alt="Sound Pod" class="left-float" style="height:52px">
 	</a>
-	<?php }
-	if ($loggedIn) { ?>
+	<?php if ($loggedIn) { ?>
 		<a class="nav-button" id="logout" href="/_logout.php">Logout</a>
 		<a class="nav-button" id="forums" href="/forums.php">Forums</a>
-		<?php if ($_SESSION["admin"] == 1) { ?>
+		<?php 
+		if ($_SESSION["admin"] == 1) { ?>
 			<a class="nav-button" id="manage" href="/manage_users.php">Manage Users</a>
 		<?php }
 	}

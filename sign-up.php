@@ -49,7 +49,7 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 		$db = NULL;
 
 		//redirect to login page
-		header('Location: /view-database.php');
+		header('Location: /add-show.php');
 	}
 	catch(PDOException $e) {
 	 	print 'Exception : '.$e -> getMessage();

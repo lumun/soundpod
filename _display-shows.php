@@ -15,9 +15,9 @@ echo "<div class='content left-float'>";
 			$id = $tuple['showid'];
 			$title = $tuple['title'];
 			$genre = $tuple['genre'];
-			echo "<td>".$id."</td>";
+			echo "<tr><td>".$id."</td>";
 			echo "<td>".$title."</td>";
-			echo "<td>".$genre."</td>";
+			echo "<td>".$genre."</td></tr>";
 		}
 		echo "</table>";
 

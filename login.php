@@ -59,7 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<?php 
 		include '_header.php';
 
-    	if (!isset($loggedIn)) { ?>
+    	if (isset($loggedin)) {
+    		echo "<h2 class='center small-caps'>YOU ARE ALREADY LOGGED IN</h2>";
+		}
+		else { ?>
 			<div class="content left-float">
 				<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 					<p>Email:</p> <input type="text" name="email" value="<?php if (!empty($email)){echo $email;}?>">
@@ -74,9 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			if (isset($error)) {
 				echo "<p>$error</p>";
 			}
-		}
-		else {
-			echo "<h2 class='center small-caps'>YOU ARE ALREADY LOGGED IN</h2>";
 		}
 		?>
 </body>

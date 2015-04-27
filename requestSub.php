@@ -6,7 +6,7 @@ include '_header.php'; ?>
 <div class="container">
 	<div class="center col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
 		<form action="" method="POST" role="form">
-			<legend>Sub request for '<?php echo $_POST['title'] ?>'</legend>
+			<legend>When Do You Need A Sub?</legend>
 		
 	
 

@@ -1,11 +1,9 @@
 <?php
 
 session_start();
-session_regenerate_id(true);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = $_SESSION['email'];
-	print $email;
 	$content = $_POST['content'];
 	$category = $_POST['category'];
 	$sql = "INSERT INTO post(email,content,category) values('$email','$content','$category')";
@@ -20,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 }
 
-//header("Location: /forums.php?category=$category");
-//die();
+header("Location: /forums.php?category=$category");
+die();
 
 ?>

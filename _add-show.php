@@ -1,5 +1,7 @@
 <?php
 include '_helpers.php';
+include '_session.php';
+
 
 // This form processes shows to be added
 
@@ -23,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$sql2 = "INSERT INTO dj(email,showid) VALUES ('$userEmail','$showID')";
 			$db -> exec($sql2);
 
-			
+
 			// disconnect
 			$db = NULL;
 

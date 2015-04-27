@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$db = NULL;
 
 			//redirect to success page
-			header("Location: /manage_users.php?update='$email'");
+			header("Location: /manage-users.php?update='$email'");
 		}
 		catch(PDOException $e) {
 			print 'Exception : '.$e -> getMessage();

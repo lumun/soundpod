@@ -23,7 +23,3 @@
 		<h3 class="text-center">Contact</h3>
 	</div>
 </div>
-
-
-
-<?php include '_footer.php'; ?>

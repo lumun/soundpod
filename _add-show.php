@@ -1,20 +1,19 @@
 <?php
-// This form processes tuples to be deleted from the database
+// This form processes shows to be added
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if ($_POST["email"]) {
-		$email = $_POST["email"];
+	if (!empty($_POST["name"]) && !empty($_POST["show"]) && !empty($_POST["genre"]) && !empty($_POST["datetimepicker1"])) {
 		try {
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "DELETE FROM user WHERE email='$email'";
-			// delete
+			$sql = "INSERT INTO radioShow(genre,title) VALUES ($_POST['genre'],$_POST['name'])";
+			// insert
 			$db -> exec($sql);
 			// disconnect
 			$db = NULL;
 
 			//redirect to success page
-			header("Location: /manage-users.php?delete='$email'");
+			header("Location: /index.php");
 		}
 		catch(PDOException $e) {
 			print 'Exception : '.$e -> getMessage();

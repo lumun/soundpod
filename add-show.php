@@ -1,18 +1,14 @@
 <?php include '_header.php'; ?>
 
-
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-	<form action="" method="POST" role="form">
+	<form action="/_add-show.php" method="POST" role="form">
 		<legend>Add Your Show</legend>
-
-
 
 		<div class="form-group">
 			<label for="">Is your show an hour or two hours a week?</label>
 
 			<label class="radio-inline"><input type="radio" name="show" id="oneHour" value="1">One</label>
 			<label class="radio-inline"><input type="radio" name="show" id="twoHour" value="2">Two</label>
-
 		</div>
 
 		<div class="form-group">
@@ -28,7 +24,6 @@
 			<label class="radio-inline"><input type="radio" name="genre" value="loud">Loud Rock</label>
 			<label class="radio-inline"><input type="radio" name="genre" value="ele">Electronic</label>
 			<label class="radio-inline"><input type="radio" name="genre" value="spe">Specialty</label>
-		
 		</div>
 
 		<div class='input-group date' >
@@ -41,9 +36,7 @@
 	        <input type='text' class="form-control" id="datetimepicker2"/>
 		</div>
 
-
-
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-primary">Add Show</button>
 	</form>
 </div>
 
@@ -69,5 +62,3 @@
 	});
 
 </script>
-
-<?php include '_footer.php'; ?>

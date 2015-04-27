@@ -42,21 +42,14 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 	try {
 	 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	 	$sql = "INSERT INTO user(email,name,password) VALUES ('$email', '$name', '$password')";
+	 	$sql = "INSERT INTO user(name,email,password) VALUES ('$name', '$email', '$password')";
 	 	// insert
 	 	$db -> exec($sql);
 	 	// disconnect
 		$db = NULL;
 
-		// Do all the login stuff
-		session_start();
-		session_regenerate_id(true);
-		$_SESSION["loggedin"] = "true";
-		$_SESSION["email"] = $email;
-		$_SESSION["admin"] = 0;
-
 		//redirect to login page
-		header('Location: /index.php');
+		header('Location: /view-database.php');
 	}
 	catch(PDOException $e) {
 	 	print 'Exception : '.$e -> getMessage();
@@ -83,10 +76,10 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 	    		<input type="password" class="form-control" name="password" value=<?php echo "\"".$password."\"";?>><span class="input-error" > <?php echo $passwordErr;?></span>
 	    	</div>
 
-	    <!-- 	<div class='input-group date' >
+	    	<div class='input-group date' >
 	    		<label for="password">Show Time</label>
                 <input type='text' class="form-control" id="datetimepicker1"/>
-	    	</div> -->
+	    	</div>
 
 	    	<!-- <a id="add"  class="btn btn-primary">Add Show Time</a> -->
     		<button id="chuck" type="button">print value</button>
@@ -95,22 +88,19 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
     	</form>
 	
 </div>
-<!---
-// <script type="text/javascript">
-//     $(function () {
-//         $('#datetimepicker1').datetimepicker();
-//     });
 
-<<<<<<< HEAD
 <script type="text/javascript">
 
     $(function () {
         $('#datetimepicker1').datetimepicker();
     });
 
-</script>
-=======
+
+
+
 //     // $('#add').click(function(){
 //     // 	// $('#data-input').append("<div class='input-group date' ><label for='password'>Show Time</label><input type='text' class='form-control' id='datetimepicker1'/></div>");
 //     // })
-// </script> -->
+// 
+</script> 
+

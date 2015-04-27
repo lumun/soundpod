@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<?php 
 		include '_header.php';
 
-    	if (!$loggedIn) { ?>
+    	if (!isset($loggedIn)) { ?>
 			<div class="content left-float">
 				<form id="data-input" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 					<p>Email:</p> <input type="text" name="email" value="<?php if (!empty($email)){echo $email;}?>">

@@ -49,6 +49,7 @@ try {
 
 
 	$categories = $db -> query("SELECT DISTINCT name From category");
+<<<<<<< HEAD
 	foreach($categories as $category)
 	{
 	?>
@@ -61,8 +62,16 @@ try {
 			
 		
 <?php
+=======
+	foreach($categories as $category) { ?>
+<!-- 		<div class="container">
+		<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
+		<a href="/forums.php?category=<?php echo $category['name'] ?>"><h4><?php echo $category['name'] ?></h4></a>;	
+	<?php
+	}
+>>>>>>> 2e64c10fac8eae126b9d29ddb5e144b18528a7d8
 }
-}catch(PDOException $e) {
+catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
 ?>

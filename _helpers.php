@@ -14,4 +14,7 @@ function getCurrentUri()
 		//$uri = '/' . trim($uri, '/');
 		return $uri;
 	}
+}
+
+
 ?>

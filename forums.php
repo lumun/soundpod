@@ -33,16 +33,6 @@ if($result->rowCount() < 1)
 }
 
 include '_header.php'; 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$email = $_SESSION['email'];
-	$content = $_POST['content'];
-	$sql = "INSERT INTO post(email,content,category) values($email,$content,$category)";
-
-	$db->exec($sql);
-}
-
-
 ?>
 
 
@@ -55,10 +45,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 
-<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
+<form id="data-input" action="/_submit-post" method="POST" role="form">
 <div class="form-group">
-	<input type="text" class="form-control" name="content" placeholder="Post here" width = "300px" height = "100px" >
+	<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
 </div>
+
+<input type="hidden" name="category" value="<?php $category?>" class="form-control">
 
 <button  type="submit" class="btn btn-primary">Submit</button>
 </form>

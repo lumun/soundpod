@@ -1,9 +1,13 @@
 <?php 
 include '_session.php';
 include '_helpers.php';
+if (!$loggedin) { 
+	header("Location: /login.php"); 
+	die(); 
+}
 
 // $category = getCurrentUri();
-$category = $catErr ='';
+$category = '';
 if (isset($_GET['category'])) {
 	$category = $_GET['category'];
 }
@@ -27,9 +31,8 @@ if($result->rowCount() < 1)
 	//404 if that wasn't a real category
 	// header("Location: /404.php");
 	// die();
-	//print "Sorry, there's nothing here";
-	$catErr = "Category error";
-	//echo "<a href='/forumTopics.php'>Forums</a>";
+	print "Sorry, there's nothing here";
+	echo "<a href='/forumTopics.php'>Forums</a>";
 }
 
 include '_header.php'; 

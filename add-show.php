@@ -38,6 +38,8 @@ include '_header.php'; ?>
 	        <input type='text' class="form-control" id="datetimepicker2"/>
 		</div>
 
+		
+		
 		<button type="submit" class="btn btn-primary">Add Show</button>
 	</form>
 </div>

@@ -12,23 +12,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 		 	$db = new PDO("mysql:dbname=soundpod", 'root');
 		 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		 	$result = $db -> query ("SELECT * FROM user WHERE email='$email'");
-		 	foreach ($result as $tuple) {
-				if ($tuple['password'] == $password) {
-			 		session_start();
-					session_regenerate_id(true);
-					$_SESSION["loggedin"] = "true";
-					$_SESSION["email"] = $tuple['email'];
-					if ($tuple['admin'] == 1) {
-						$_SESSION["admin"] = 1;
-					}
-					else {
-						$_SESSION["admin"] = 0;
-					}
-			 	}
-				else {
-					$error = "That email and password combination did not match our records";
+		 	$tuple = ($db -> query ("SELECT * FROM user WHERE email='$email'")) -> fetch();
+
+			if ($tuple['password'] == $password) {
+		 		session_start();
+				session_regenerate_id(true);
+				$_SESSION["loggedin"] = "true";
+				$_SESSION["email"] = $tuple['email'];
+				if ($tuple['admin'] == 1) {
+					$_SESSION["admin"] = 1;
 				}
+				else {
+					$_SESSION["admin"] = 0;
+				}
+		 	}
+			else {
+				$error = "That email and password combination did not match our records";
 			}
 	 	// disconnect
 		$db = NULL;

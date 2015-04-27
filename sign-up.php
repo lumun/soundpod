@@ -1,5 +1,4 @@
 <?php
-include '_session.php';
 // security and error checking
 // define variables and set to empty values
 $name = $email = $password = "";
@@ -46,6 +45,12 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 	 	$sql = "INSERT INTO user(name,email,password) VALUES ('$name', '$email', '$password')";
 	 	// insert
 	 	$db -> exec($sql);
+	 	session_start();
+		session_regenerate_id(true);
+		$_SESSION["loggedin"] = "true";
+		$_SESSION["email"] = $email;
+		$_SESSION["admin"] = 0;
+		
 	 	// disconnect
 		$db = NULL;
 

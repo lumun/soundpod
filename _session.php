@@ -14,4 +14,5 @@ if (isset($_SESSION["admin"]) && $_SESSION["admin"] == 1) {
 else {
 	$isAdmin = false;
 }
+
 ?>

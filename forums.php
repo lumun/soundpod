@@ -82,5 +82,3 @@ foreach ($result as $thisPost)
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
-
-include '_footer.php'; ?>

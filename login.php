@@ -12,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 		 	$db = new PDO("mysql:dbname=soundpod", 'root');
 		 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		 	$tuple = ($db -> query ("SELECT * FROM user WHERE email='$email'")) -> fetch();
+		 	$results = $db -> query ("SELECT * FROM user WHERE email='$email'");
+		 	$tuple = $results -> fetch();
 
 			if ($tuple['password'] == $password) {
 		 		session_start();
@@ -33,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$db = NULL;
 
 		if (isset($_SESSION["loggedin"])) {
-			header('Location: /add-show.php');
+			header('Location: /index.php');
 		}
 		else {
 			if (!$error) { $error = "There was an error logging in"; }

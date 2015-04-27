@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db = new PDO("mysql:dbname=soundpod", 'root');
 
 	$content = $db->quote($content);
-	$category = $db->quote($category);
 	$sql = "INSERT INTO post(email,content,category) values('$email',$content,$category)";
 	// Set errormode to exceptionsgi
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

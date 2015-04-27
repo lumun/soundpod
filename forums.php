@@ -51,7 +51,7 @@ if($result->rowCount() < 1)
 	<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
 </div>
 
-<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
+<input type="hidden" name="category" value="<?php echo $cat; ?>" class="form-control">
 
 <button  type="submit" class="btn btn-primary">Submit</button>
 </form>

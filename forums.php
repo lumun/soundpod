@@ -15,7 +15,6 @@ if(trim($category) == '')//I might use this to make sure there is no
 	header("Location: /forumTopics.php");
 	die();
 }
-// we need to pull posts from database to fill this page, 
 try {
 //open the database
 $db = new PDO("mysql:dbname=soundpod", 'root');
@@ -33,9 +32,10 @@ if($result->rowCount() < 1)
 	echo "<a href='/forumTopics.php'>Forums</a>";
 }
 
+include '_header.php'; 
+?>
 
 
-include '_header.php'; ?>
 
 <div class="container">
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
@@ -44,13 +44,25 @@ include '_header.php'; ?>
 	<hr>
 </div>
 
+
+<form id="data-input" action="/_submit-post" method="POST" role="form">
+<div class="form-group">
+	<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
+</div>
+
+<input type="hidden" name="category" value="<?php $category?>" class="form-control">
+
+<button  type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
 <hr>
 <div class="container">
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 <div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <?php
 	
-$result = $db -> query("SELECT * from post where category = '$category'");
+$result = $db -> query("SELECT * from post where category = '$category' ORDER BY time");
 foreach ($result as $thisPost)
 {
 	$content = $thisPost['content'];

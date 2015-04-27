@@ -1,4 +1,5 @@
 <?php
+include '_session.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = $_SESSION['email'];
 	$content = $_POST['content'];

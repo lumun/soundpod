@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS user (
 );
 
 CREATE TABLE IF NOT EXISTS radioShow (
-	showid INT NOT NULL AUTO_INCREMENT,
+	showid INT NOT NULL,
 	genre VARCHAR(20),
 	title VARCHAR(40),
 	PRIMARY KEY (showid)
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS subRequest (
 	comment VARCHAR(2000),
 	showid INT,
 	showdate DATE,
-	active TINYINT(2) DEFAULT 1,
+	active TINYINT(2) DEFAULT 1;
 	PRIMARY KEY (showid, showdate),
 	FOREIGN KEY (origdj) REFERENCES user(email),
 	FOREIGN KEY (subdj) REFERENCES user(email)
@@ -105,7 +105,3 @@ INSERT INTO user(email,name,admin,password) VALUES ('k@pugetsound.edu','Maury Ca
 INSERT INTO user(email,name,admin,password) VALUES ('l@pugetsound.edu','Joe Anne Tenpe',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('m@pugetsound.edu','Jon Snow',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('n@pugetsound.edu','Tyrion Lannister',1,'password');
-
-INSERT INTO subRequest(origdj,comment,showid,showdate,active) VALUES ('dj','This is a sub request',1,'2015-05-10',1);
-INSERT INTO subRequest(origdj,comment,showid,showdate,active) VALUES ('admin','Sub request',2,'2015-05-08',1);
-INSERT INTO subRequest(origdj,comment,showid,showdate,active) VALUES ('a@pugetsound.edu','Ert',1,'2015-05-07',0);

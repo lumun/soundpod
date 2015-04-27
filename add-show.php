@@ -30,16 +30,16 @@ include '_header.php'; ?>
 
 		<div class='input-group date' >
 			<label for="password">Show Time</label>
-	        <input type='text' class="form-control" id="datetimepicker1"/>
+	        <input type='text' name="show1" class="form-control" id="datetimepicker1"/>
 		</div>
 
 		<div id="extraHour" class='input-group date' >
 			<label for="password">Show Time</label>
-	        <input type='text' class="form-control" id="datetimepicker2"/>
+	        <input type='text' name="show2" class="form-control" id="datetimepicker2"/>
 		</div>
 
-		
-		
+
+
 		<button type="submit" class="btn btn-primary">Add Show</button>
 	</form>
 </div>
@@ -55,10 +55,12 @@ include '_header.php'; ?>
 	});
 
 	$(function () {
-	    $('#datetimepicker1').datetimepicker();
+	    $('#datetimepicker1').datetimepicker({
+	    	format: "ddd, hA" 
+	    });
 	});
 	$(function () {
-	    $('#datetimepicker2').datetimepicker();
+	    $('#datetimepicker2').datetimepicker({format: "ddd, hA" });
 	});
 
 	$('#twoHour').click(function(){

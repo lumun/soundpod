@@ -1,6 +1,10 @@
 <?php 
 include '_session.php';
 include '_helpers.php';
+if (!$loggedin) { 
+	header("Location: /login.php"); 
+	die(); 
+}
 
 // $category = getCurrentUri();
 $category = '';

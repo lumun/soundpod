@@ -44,7 +44,7 @@ else {
 	}
 
 	else { ?>
-		<a class="nav-button" id="sign-up" href="/sign-up.php">Login</a>
+		<a class="nav-button" id="sign-up" href="/sign-up.php">Sign Up</a>
 		<a class="nav-button" id="login" href="/login.php">Login</a>
 	<?php } ?>
 </div>

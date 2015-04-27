@@ -9,10 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		$nameErr = "Forum name is required";
   	} 
 	else{
+		$topic = $_POST['topic'];
   		try {
 	 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	 	$sql = "INSERT INTO category VALUES ('$topic')";
+	 	$sql = "INSERT INTO category(name) VALUES ('$topic')";
 	 	// insert
 	 	$db -> exec($sql);
 	 	// disconnect

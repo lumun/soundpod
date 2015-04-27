@@ -21,7 +21,8 @@ echo "<div class='content left-float'>";
 			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showid=$id");
 			echo "<td>";
 			foreach ($djs as $dj) {
-				echo "$dj['name']\n";
+				$n = $dj['name'];
+				echo "<p>$n</p>";
 			}
 			echo "</td></tr>";
 		}

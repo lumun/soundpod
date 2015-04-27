@@ -49,6 +49,7 @@ try {
 
 
 	$categories = $db -> query("SELECT DISTINCT name From category");
+
 	foreach($categories as $category) { ?>
 <!-- 		<div class="container">
 		<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->

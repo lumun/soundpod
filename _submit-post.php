@@ -19,8 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 }
 
-echo "<a type="text" href= /forums.php?category=$category> Go back to the forum</a>";
 //header("Location: /forums.php?category=$category");
 //die();
 
 ?>
+
+<a href="/forums.php?category=<?php echo $category?>">Go back to the forum</a>"
+
+

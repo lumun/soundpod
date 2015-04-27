@@ -52,7 +52,7 @@ if($result->rowCount() < 1)
 </div>
 
 <input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
-<input type="hidden" name="category" value="<?php echo $cat; ?>" class="form-control">
+<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
 
 <button  type="submit" class="btn btn-primary">Submit</button>
 </form>

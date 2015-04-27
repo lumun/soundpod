@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = $_SESSION['email'];
 	$content = $_POST['content'];
 	$category = $_POST['category'];
-	$sql = "INSERT INTO post(email,content,category) values($email,$content,$category)";
-	echo $sql;
+	$sql = "INSERT INTO post(email,content,category) values('$email','$content','$category')";
+	//echo $sql;
 	try{
 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	// Set errormode to exceptions
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 }
 
-//header("Location: /forums.php?category=$category");
-//die();
+header("Location: /forums.php?category=$category");
+die();
 
 ?>

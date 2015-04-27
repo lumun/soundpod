@@ -9,7 +9,7 @@ echo "<div class='content left-float'>";
 		//now output the data to a simple html table...
 		echo '<table border="1">';
 		echo '<tr><td>ID</td><td>Title</td><td>Genre</td><td></td><td></td></tr>';
-		$result = $db -> query ("SELECT * FROM show");
+		$result = $db -> query ("SELECT * FROM radioShow");
 		foreach ($result as $tuple)
 		{
 			$id = $tuple['showid'];

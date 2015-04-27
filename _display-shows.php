@@ -8,16 +8,22 @@ echo "<div class='content left-float'>";
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//now output the data to a simple html table...
 		echo '<table border="1">';
-		echo '<tr><td>ID</td><td>Title</td><td>Genre</td><td></td><td></td></tr>';
-		$result = $db -> query ("SELECT * FROM radioShow");
-		foreach ($result as $tuple)
+		echo '<tr><td>ID</td><td>Title</td><td>Genre</td><td>Person</td><td></td></tr>';
+		$shows = $db -> query ("SELECT * FROM radioShow");
+		foreach ($shows as $show)
 		{
-			$id = $tuple['showid'];
-			$title = $tuple['title'];
-			$genre = $tuple['genre'];
+			$id = $show['showid'];
+			$title = $show['title'];
+			$genre = $show['genre'];
 			echo "<tr><td>".$id."</td>";
 			echo "<td>".$title."</td>";
-			echo "<td>".$genre."</td></tr>";
+			echo "<td>".$genre."</td>";
+			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showid=$id");
+			echo "<td>";
+			foreach ($djs as $dj) {
+				echo "$dj['name']\n";
+			}
+			echo "</td></tr>";
 		}
 		echo "</table>";
 

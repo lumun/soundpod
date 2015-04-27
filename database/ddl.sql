@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS user (
 CREATE TABLE IF NOT EXISTS radioShow (
 	showid INT NOT NULL AUTO_INCREMENT,
 	genre VARCHAR(20),
-	semester VARCHAR(8),
 	title VARCHAR(40),
 	PRIMARY KEY (showid)
 );
@@ -69,3 +68,23 @@ CREATE TABLE IF NOT EXISTS post (
 		ON UPDATE CASCADE
 		ON DELETE CASCADE	
 );
+
+INSERT INTO user(email,name,admin,password) VALUES ('admin','John Snow',1,'password');
+INSERT INTO user(email,name,admin,password) VALUES ('dj','Megan Wensel',0,'password');
+ 
+INSERT INTO radioShow(showid,genre,title) VALUES (1,'alt','John lays it Down');
+INSERT INTO radioShow(showid,genre,title) VALUES (2,'loud','Megan and John Are Sharks');
+
+INSERT INTO dj(email,showid) VALUES ('admin',1);
+INSERT INTO dj(email,showid) VALUES ('admin',2);
+INSERT INTO dj(email,showid) VALUES ('dj',2);
+
+INSERT INTO showInstance(showid,day,time) VALUES (1,'Tuesday',1500);
+INSERT INTO showInstance(showid,day,time) VALUES (2,'Monday',2200);
+
+INSERT INTO category(name) VALUES ('New Users');
+INSERT INTO category(name) VALUES ('Dummy');
+
+INSERT INTO post(postid,email,content,category) VALUES (1,'admin','Welcome to the Category!','New Users');
+INSERT INTO post(postid,email,content,category) VALUES (2,'dj','Im stoked to be here','New Users');
+INSERT INTO post(postid,email,content,category) VALUES (3,'dj','dummy dummy dummy dummy','Dummy');

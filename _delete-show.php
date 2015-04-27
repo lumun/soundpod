@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "DELETE FROM show WHERE showid=$showid";
+			$sql = "DELETE FROM radioShow WHERE showid=$showid";
 			// delete
 			$db -> exec($sql);
 			// disconnect

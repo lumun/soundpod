@@ -81,7 +81,8 @@ echo "<div class='content left-float'>";
 				// This is where you select
 				echo "<td><form id='sub_accept_$showid' method='post' action='/_acceptSub.php'>";
 				echo "<input type='hidden' name='showid' value='$showid' />";
-				echo "<input type='hidden' name='showdate' value='$date' />";
+				echo "<input type='hidden' name='month' value='$month' />";
+				echo "<input type='hidden' name='day' value='$day' />";
 				echo "<input type='submit' name='submit_$showid' value='Sub this Show' /></form></td>";
 
 				echo "</tr>";

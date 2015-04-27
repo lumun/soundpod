@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS subRequest (
 	showid INT,
 	showdate DATE,
 	PRIMARY KEY (showid, showdate),
-	FOREIGN KEY (origdj) REFERENCES user(uid),
-	FOREIGN KEY (subdj) REFERENCES user(uid)
+	FOREIGN KEY (origdj) REFERENCES user(email),
+	FOREIGN KEY (subdj) REFERENCES user(email)
 		ON DELETE CASCADE,
 	FOREIGN KEY (showid) REFERENCES radioShow(showid)
 		ON DELETE CASCADE

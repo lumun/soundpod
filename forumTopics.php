@@ -41,6 +41,8 @@ try {
     		<label for="name">Topic</label>
     		<input type="text" placeholder="Topic" class="form-control" name="topic" ><span class="input-error"> <?php echo $nameErr;?></span>
     	</div>
+    	<button  type="submit" class="btn btn-primary">Submit</button>
+    </form>
     	<?php
     
 	}

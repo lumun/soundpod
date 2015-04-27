@@ -29,9 +29,9 @@ CREATE TABLE IF NOT EXISTS dj (
 
 CREATE TABLE IF NOT EXISTS showInstance (
 	showid INT,
-	day VARCHAR(10),
-	time INT,
-	PRIMARY KEY (showid, day, time),
+	weekday VARCHAR(10),
+	time VARCHAR(10),
+	PRIMARY KEY (showid, weekday, time),
 	FOREIGN KEY (showid) REFERENCES radioShow(showid)
 		ON DELETE CASCADE
 );
@@ -41,9 +41,12 @@ CREATE TABLE IF NOT EXISTS subRequest (
 	subdj VARCHAR(30),
 	comment VARCHAR(2000),
 	showid INT,
-	showdate DATE,
-	active TINYINT(2) DEFAULT 1;
-	PRIMARY KEY (showid, showdate),
+	weekday VARCHAR(10),
+	time VARCHAR(10),
+	month VARCHAR(10),
+	day VARCHAR (5),
+	active TINYINT(2) DEFAULT 1,
+	PRIMARY KEY (showid, month, day),
 	FOREIGN KEY (origdj) REFERENCES user(email),
 	FOREIGN KEY (subdj) REFERENCES user(email)
 		ON DELETE CASCADE,
@@ -97,7 +100,7 @@ INSERT INTO user(email,name,admin,password) VALUES ('c@pugetsound.edu','Glenna B
 INSERT INTO user(email,name,admin,password) VALUES ('d@pugetsound.edu','Tim Wise',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('e@pugetsound.edu','Bob Corker',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('f@pugetsound.edu','Tatiana Williams',0,'password');
-INSERT INTO user(email,name,admin,password) VALUES ('j@pugetsound.edu','Cory Gerber',0,'password');
+INSERT INTO user(email,name,admin,password) VALUES ('g@pugetsound.edu','Cory Gerber',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('h@pugetsound.edu','Sam Stone',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('i@pugetsound.edu','Wensley Went',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('j@pugetsound.edu','Storm Harder',0,'password');
@@ -105,3 +108,7 @@ INSERT INTO user(email,name,admin,password) VALUES ('k@pugetsound.edu','Maury Ca
 INSERT INTO user(email,name,admin,password) VALUES ('l@pugetsound.edu','Joe Anne Tenpe',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('m@pugetsound.edu','Jon Snow',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('n@pugetsound.edu','Tyrion Lannister',1,'password');
+
+INSERT INTO subRequest(origdj,comment,showid,showdate,active) VALUES ('dj','This is a sub request',1,'2015-05-10',1);
+INSERT INTO subRequest(origdj,comment,showid,showdate,active) VALUES ('admin','Sub request',1,'2015-05-08',0);
+INSERT INTO subRequest(origdj,comment,showid,showdate,active) VALUES ('a@pugetsound.edu','Ert',2,'2015-05-07',1);

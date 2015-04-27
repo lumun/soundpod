@@ -33,7 +33,7 @@ if($result->rowCount() < 1)
 	// die();
 	//print "Sory, there's nothing here";
 	echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forumsss</p>";
-}
+}else{
 ?>
 
 
@@ -80,6 +80,7 @@ foreach ($result as $thisPost)
 		// close the db
 	$db = NULL;	
 	
+}
 }
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();

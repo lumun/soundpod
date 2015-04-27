@@ -33,7 +33,7 @@ echo "<div class='content left-float'>";
 			$showtimes = $db -> query ("SELECT * FROM showInstance WHERE showid=$showid");
 			echo "<td>";
 			foreach ($showtimes as $showtime) {
-				$day = $showtime['day'];
+				$day = $showtime['weekday'];
 				$time = $showtime['time'];
 				echo $day."s at ";
 				echo $time;

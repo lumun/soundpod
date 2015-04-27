@@ -56,12 +56,12 @@ include '_header.php'; ?>
 <div class="well col-xs-4 col-sm-4 col-md-4 col-lg-4">
 <?php
 	
-$result = $db -> query("SELECT * from posts where category == ".$category);
+$result = $db -> query("SELECT * from posts where category == '$category'");
 foreach ($result as $thisPost)
 {
 	$content = $thisPost['content'];
 	$email = $thisPost['email'];
-	$user = $db -> query("SELECT * from user where email == ".$email);
+	$user = $db -> query("SELECT * from user where email == '$email'");
 	?>
 	<p class='text-left'> <?php echo $content ?> </p>;
 	<p class='text-left'>By <?php echo $user['name'] ?></p>;

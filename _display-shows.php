@@ -12,13 +12,13 @@ echo "<div class='content left-float'>";
 		$shows = $db -> query ("SELECT * FROM radioShow");
 		foreach ($shows as $show)
 		{
-			$showid = $show['showshowid'];
+			$showid = $show['showid'];
 			$title = $show['title'];
 			$genre = $show['genre'];
 			echo "<tr><td>".$showid."</td>";
 			echo "<td>".$title."</td>";
 			echo "<td>".$genre."</td>";
-			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showshowid=$showid");
+			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showid=$showid");
 			echo "<td>";
 			foreach ($djs as $dj) {
 				$n = $dj['name'];
@@ -32,6 +32,8 @@ echo "<div class='content left-float'>";
 			echo "</tr>";
 		}
 		echo "</table>";
+
+		echo "<a href='/add-show.php'>Add a new show</a>";
 
 	 	// close the database connection
 		$db = NULL;

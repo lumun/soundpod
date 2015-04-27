@@ -7,14 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "DELETE FROM show WHERE showid='$showid'";
+			$sql = "DELETE FROM show WHERE showid=$showid";
 			// delete
 			$db -> exec($sql);
 			// disconnect
 			$db = NULL;
 
 			//redirect to success page
-			header("Location: /manage-shows.php?delete='$showid'");
+			header("Location: /manage-shows.php?delete=$showid");
 		}
 		catch(PDOException $e) {
 			print 'Exception : '.$e -> getMessage();

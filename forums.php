@@ -7,7 +7,7 @@ if (!$loggedin) {
 }
 
 // $category = getCurrentUri();
-$category = '';
+$category = $catErr = '';
 if (isset($_GET['category'])) {
 	$category = $_GET['category'];
 }
@@ -31,8 +31,7 @@ if($result->rowCount() < 1)
 	//404 if that wasn't a real category
 	// header("Location: /404.php");
 	// die();
-	print "Sorry, there's nothing here";
-	echo "<a href='/forumTopics.php'>Forums</a>";
+	$catErr = "Category Error";
 }
 
 include '_header.php'; 
@@ -78,6 +77,7 @@ foreach ($result as $thisPost)
 	$content = $thisPost['content'];
 	$email = $thisPost['email'];
 	$users = $db -> query("SELECT * from user where email = '$email'");
+
 	$user = $users->fetch();
 	?>
 	<p class='text-left'> <?php echo $content ?> </p><br>

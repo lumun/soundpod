@@ -26,7 +26,7 @@ include '_header.php'; ?>
 </div>
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker1').datetimepicker({format: "ddd, hA" });
     });
 
 </script>

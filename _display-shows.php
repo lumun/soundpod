@@ -37,6 +37,7 @@ echo "<div class='content left-float'>";
 				$time = $showtime['time'];
 				echo $day."s at ";
 				echo $time;
+				echo " ";
 			}
 			echo "</td>";
 

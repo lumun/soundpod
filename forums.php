@@ -1,11 +1,4 @@
-<?php include '_header.php'; ?>
 
-<div class="container">
-<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<h1>Forums<br><small>Talk to Each Other!</small></h1>
-	</div>
-	<hr>
-</div>
 <?php 
 
 include '_helpers.php';
@@ -34,14 +27,20 @@ $result = $db -> query("SELECT * from category where name = '$category'");
 if($result->rowCount() < 1)
 {
 	//404 if that wasn't a real category
-	header("Location: /404.php");
+	header("Location: /forums.php");
 	die();
 }
 
 
 
-//We have to do the redirection above before any <!doctype stuff happens
-include '_header.php'; 
+include '_header.php'; ?>
+
+<div class="container">
+<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+		<h1>Forums<br><small>Talk to Each Other!</small></h1>
+	</div>
+	<hr>
+</div>
 
 
 

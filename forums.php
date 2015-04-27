@@ -19,20 +19,21 @@ try {
 $db = new PDO("mysql:dbname=soundpod", 'root');
 // Set errormode to exceptions
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$category = $db->quote($category);
+//$category = $db->quote($category);
 $result = $db -> query("SELECT * from category where name = $category");
 
 
+
+
+include '_header.php'; 
 if($result->rowCount() < 1)
 {
 	//404 if that wasn't a real category
 	// header("Location: /404.php");
 	// die();
-	print "Sorry, there's nothing here";
-	echo "<a href='/forumTopics.php'>Forums</a>";
+	//print "Sory, there's nothing here";
+	echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forumsss</p>";
 }
-
-include '_header.php'; 
 ?>
 
 

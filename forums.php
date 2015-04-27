@@ -12,8 +12,8 @@ if (isset($_GET['category'])) {
 if(trim($category) == '')//I might use this to make sure there is no
 {
 	//if they don't have any extra url send them to forum topics list
-	//header("Location: /forumTopics.php");
-	//die();
+	header("Location: /forumTopics.php");
+	die();
 }
 try {
 //open the database
@@ -50,7 +50,7 @@ include '_header.php';
 	<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
 </div>
 
-<input type="hidden" name="category" value="<?php $category?>" class="form-control">
+<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
 
 <button  type="submit" class="btn btn-primary">Submit</button>
 </form>

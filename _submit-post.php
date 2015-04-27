@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+session_regenerate_id(true);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = $_SESSION['email'];

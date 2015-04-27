@@ -19,7 +19,7 @@ try {
 $db = new PDO("mysql:dbname=soundpod", 'root');
 // Set errormode to exceptions
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//$category = $db->quote($category);
+$category = $db->quote($category);
 $result = $db -> query("SELECT * from category where name = $category");
 
 

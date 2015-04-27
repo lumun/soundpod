@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$db = NULL;
 
 		if (isset($_SESSION["loggedin"])) {
-			header('Location: /index.php');
+			header('Location: /add-show.php');
 		}
 		else {
 			if (!$error) { $error = "There was an error logging in"; }

@@ -21,6 +21,7 @@ $db = new PDO("mysql:dbname=soundpod", 'root');
 $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $cat = $db->quote($category);
 $result = $db -> query("SELECT * from category where name = $cat");
+$cat = stripslashes($cat);
 
 
 
@@ -33,14 +34,14 @@ if($result->rowCount() < 1)
 	// die();
 	//print "Sory, there's nothing here";
 	echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forumsss</p>";
-}
+}else{
 ?>
 
 
 
 <div class="container">
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<h1>Forums<br><small>Talk to Each Other about life in the <?php echo $category; ?> world!</small></h1>
+		<h1>Forums<br><small>Talk to Each Other about life in the <?php echo $cat; ?> world!</small></h1>
 	</div>
 	<hr>
 </div>
@@ -63,7 +64,7 @@ if($result->rowCount() < 1)
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 <div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <?php
-	
+$cat = $db->quote($cat);
 $result = $db -> query("SELECT * from post where category = $cat ORDER BY time");
 foreach ($result as $thisPost)
 {
@@ -80,6 +81,7 @@ foreach ($result as $thisPost)
 		// close the db
 	$db = NULL;	
 	
+}
 }
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();

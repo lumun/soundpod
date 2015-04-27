@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db=null;
 }
 
-//if they don't have any extra url send them to forum topics list
 header("Location: /forums.php?category=$category");
 die();
 

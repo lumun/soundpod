@@ -45,7 +45,7 @@ include '_header.php';
 </div>
 
 
-<form id="data-input" action="/_submit-post" method="POST" role="form">
+<form id="data-input" action="/_submit-post.php" method="POST" role="form">
 <div class="form-group">
 	<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
 </div>

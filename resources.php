@@ -47,7 +47,7 @@ if(isset($_POST["submit"])) {
 }
 if(isset($_POST["delete"])){
 	$filename += $_POST["filename"];
-	unlink($filename);
+	unlink(realpath($filename));
 }
 
 // This section deals with finding the files currently in the directory

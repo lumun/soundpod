@@ -1,4 +1,5 @@
 <?php
+include '_session.php';
 // security and error checking
 // define variables and set to empty values
 $name = $email = $password = "";

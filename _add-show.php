@@ -16,26 +16,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$title = clean_input($_POST['name']);
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = $db -> prepare("INSERT INTO radioShow(showid,genre,title) VALUES ($showID,$genre,$title)");
+			$sql = $db -> prepare("INSERT INTO radioShow(showid,genre,title) VALUES ($showID,'$genre','$title')");
 			// insert
 			$sql->execute();
 			// now insert showID into DJ
 			$userEmail = $_SESSION["email"];
-			echo $userEmail . " - > user email!!";
-			$sql2 = "INSERT INTO dj(email,showid) VALUES ('$userEmail','$showID')";
+			$sql2 = "INSERT INTO dj(email,showid) VALUES ('$userEmail',$showID)";
 			$db -> exec($sql2);
 
 			// now we need to add a "show instance", first check if they have 2 differnt times.
 			$showTime1 = $_POST["show1"];
 			echo $showTime1;
 			$dateTime1 = explode(",", $showTime1);
-			$sql3 = "INSERT INTO showInstance(showid,day,time) VALUES ('$showID', '$dateTime1[0]', '$dateTime1[1]')";
+			$sql3 = "INSERT INTO showInstance(showid,weekday,time) VALUES ('$showID', '$dateTime1[0]', '$dateTime1[1]')";
 			$db -> exec($sql3);
 			if($_POST["show"] == 2){
 				$showTime2 = $_POST["show2"];
 				echo $showTime2;
 				$dateTime2 = explode(",", $showTime2);
-				$sql4 = "INSERT INTO showInstance(showid,day,time) VALUES ('$showID', '$dateTime2[0]', '$dateTime2[1]')";
+				$sql4 = "INSERT INTO showInstance(showid,weekday,time) VALUES ('$showID', '$dateTime2[0]', '$dateTime2[1]')";
 				$db -> exec($sql4);
 			}
 

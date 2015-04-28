@@ -26,25 +26,27 @@ echo "<div class='content left-float'>";
 			echo "<td>";
 			foreach ($djs as $dj) {
 				$n = $dj['name'];
-				echo "<p>$n</p>";
+				echo "$n<br />";
 			}
 			echo "</td>";
 
 			$showtimes = $db -> query ("SELECT * FROM showInstance WHERE showid=$showid");
 			echo "<td>";
 			foreach ($showtimes as $showtime) {
-				$day = $showtime['weekday'];
+				$day = get_weekday($showtime['weekday']);
 				$time = $showtime['time'];
 				echo $day."s at ";
 				echo $time;
-				echo " ";
+				echo "<br />";
 			}
 			echo "</td>";
 
-			// This is all the delete button
-			echo "<td><form id='delete_form_$showid' method='post' action='/_delete-show.php'>";
-			echo "<input type='hidden' name='showid' value='$showid' />";
-			echo "<input type='submit' name='submit_$showid' value='Delete' /></form></td>";
+			if ($isAdmin) {
+				// This is all the delete button
+				echo "<td><form id='delete_form_$showid' method='post' action='/_delete-show.php'>";
+				echo "<input type='hidden' name='showid' value='$showid' />";
+				echo "<input type='submit' name='submit_$showid' value='Delete' /></form></td>";
+			}
 
 			echo "</tr>";
 		}

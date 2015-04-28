@@ -37,4 +37,31 @@ function get_genre($shortform) {
 	}
 }
 
+function get_weekday($shortform) {
+	if ($shortform == 'Mon') {
+		return "Monday";
+	}
+	else if ($shortform == 'Tue') {
+		return "Tuesday";
+	}
+	else if ($shortform == 'Wed') {
+		return "Wednesday";
+	}
+	else if ($shortform == 'Thu') {
+		return "Thursday";
+	}
+	else if ($shortform == 'Fri') {
+		return "Friday";
+	}
+	else if ($shortform == 'Sat') {
+		return "Saturday";
+	}
+	else if ($shortform == 'Sun') {
+		return "Sunday";
+	}
+	else {
+		return "Unknown";
+	}
+}
+
 ?>

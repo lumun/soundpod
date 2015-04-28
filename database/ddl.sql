@@ -109,6 +109,6 @@ INSERT INTO user(email,name,admin,password) VALUES ('l@pugetsound.edu','Joe Anne
 INSERT INTO user(email,name,admin,password) VALUES ('m@pugetsound.edu','Jon Snow',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('n@pugetsound.edu','Tyrion Lannister',1,'password');
 
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('dj','This is a sub request',1,'Tuesday','1500','May','05',1);
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('admin','Sub request',1,'Tuesday','1500','May','12',0);
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('a@pugetsound.edu','Ert',2,'Monday','2200','May','11',1);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('dj','This is a sub request',1,'Tue','3PM','May','05',1);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('admin','Sub request',1,'Tue','3PM','May','12',0);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('a@pugetsound.edu','Ert',2,'Mon','10PM','May','11',1);

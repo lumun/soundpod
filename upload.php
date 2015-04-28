@@ -70,7 +70,8 @@ $filesOnServer = scanDir($dir);
 			<h2 style="text-decoration: underline">File Upload Form</h2>
 			<br/>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-				<p>Select file to upload</p>
+				<p>Welcome KUPS Admin</p>
+				<p>Select files to upload!</p>
 				<p>Max file size: <?php echo $maxFileSize ?> bytes</p>
 				<br/>
 				<!-- MAX_FILE_SIZE must precede the file input field -->
@@ -90,8 +91,14 @@ $filesOnServer = scanDir($dir);
 			<table>
 				<tr><td><p style="text-decoration: underline">File (click to access)</p></td><td><p style="text-decoration: underline">Size</p></td></tr>
 				<?php 
+				$dirFiles
+				for ($index =0; $index<$filesOnServer.count(); $index++) {
+    					if($index<2)
+    						continue;
+    					$dirFiles[$index-2] = $filesOnServer[$index];
+					} 
 				foreach ($filesOnServer as $f => $s) {
-					echo "<tr><td><a href='uploads/" . $s . "'>" . $s . "</a></td><td>" . $s . "</td></tr>"; 
+					echo "<tr><td><a href='uploads/" . $s . "'>" . $s . "</a></td>"; 
 				}
 				?>
 			</table>

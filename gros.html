@@ -1,0 +1,133 @@
+<?php
+include '_session.php';
+include '_helpers.php';
+if (!$loggedin) { 
+	header("Location: /login.php"); 
+	die(); 
+}
+
+include '_header.php';
+
+echo "<div class='content left-float'>";
+	try 
+	{
+		//open the database
+		$db = new PDO("mysql:dbname=soundpod", 'root');
+		// Set errormode to exceptions
+		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		echo "<legend>Your Shows</legend>";
+		//now output the data to a simple html table...
+		if (isset($_SESSION['email'])) { $myemail = $_SESSION['email']; }
+		$shows = $db -> query ("SELECT * FROM radioShow NATURAL JOIN dj WHERE email='$myemail'");
+		echo '<table border="1">';
+		echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td></td></tr>';
+		foreach ($shows as $show) {
+			$showid = $show['showid'];
+			$title = $show['title'];
+			// get_genre method found in helpers
+			$genre = get_genre($show['genre']);
+			echo "<td>".$title."</td>";
+			echo "<td>".$genre."</td>";
+
+			$showtimes = $db -> query ("SELECT * FROM showInstance WHERE showid=$showid");
+			echo "<td>";
+			foreach ($showtimes as $showtime) {
+				$day = $showtime['day'];
+				$time = $showtime['time'];
+				echo $day."s at ";
+				echo $time;
+			}
+			echo "</td>";
+
+			// This is all the delete button
+			echo "<td><form id='sub_request_$showid' method='post' action='/requestSub.php'>";
+			echo "<input type='hidden' name='showid' value='$showid' />";
+			echo "<input type='submit' name='submit_$showid' value='Request Sub' /></form></td>";
+
+			echo "</tr>";
+		}
+		echo "</table>";
+
+		$subRequests = $db -> query ("SELECT * FROM subRequest WHERE active=1");
+
+		echo "<legend>Sub Oppritunities</legend>";
+		echo '<table border="1">';
+		echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time</td><td></td></tr>';
+		foreach ($subRequests as $show) {
+
+		}
+
+
+		//close connection
+		$db = NULL;
+	}
+	catch(PDOException $e) {
+		print 'Exception : '.$e -> getMessage();
+	}
+echo "</div>";
+?>
+
+
+
+
+-- 
+
+request sub
+<?php
+include '_helpers.php';
+
+if(!empty($_POST["date"])){
+	$dateInfo = explode(",", $_POST["date"]);
+	$dayOfWeek = $dateInfo[0];
+	$monthInfo = explode(" ", $dateInfo[1]);
+	$time = $dateInfo[2];
+
+
+	$db = new PDO("mysql:dbname=soundpod", 'root');
+	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$sql = "INSERT INTO subRequest(showid,genre,title) VALUES ('$showID','$genre','$title')";
+	// insert
+	$db -> exec($sql);
+
+
+	//close connection
+	$db = NULL;
+
+}
+
+?>
+
+
+
+--- 
+
+<?php 
+include '_session.php';
+include '_header.php'; ?>
+
+
+<div class="container">
+	<div class="center col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<form action="/_requestSub.php" method="POST" role="form">
+			<legend>When Do You Need A Sub?</legend>
+
+	    	<div class='input-group date' >
+	    		<label for="password">Show Time</label>
+                <input type='text' name="date" class="form-control" id="datetimepicker1"/>
+	    	</div>
+
+	    	
+	    	
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>	
+	</div>
+	
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({format: "ddd, MMMM Do, hA" });
+    });
+
+</script>

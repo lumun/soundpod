@@ -1,7 +1,12 @@
 <?php 
 include '_session.php';
-include '_header.php'; ?>
+include '_header.php';
 
+if (!$loggedin) {
+	header('Location: /login.php');
+	die();
+}
+?>
 
 <div class="container">
 	<h1>Get all the Resources you need here!</h1>

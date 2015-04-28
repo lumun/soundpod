@@ -74,11 +74,11 @@ CREATE TABLE IF NOT EXISTS post (
 		ON UPDATE CASCADE
 );
 
-INSERT INTO user(email,name,admin,password) VALUES ('admin','John Snow',1,'password');
+INSERT INTO user(email,name,admin,password) VALUES ('admin','Bob Belcher',1,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('dj','Megan Wensel',0,'password');
  
-INSERT INTO radioShow(showid,genre,title) VALUES (1,'alt','John lays it Down');
-INSERT INTO radioShow(showid,genre,title) VALUES (2,'loud','Megan and John Are Sharks');
+INSERT INTO radioShow(showid,genre,title) VALUES (1,'alt','Bob lays it Down');
+INSERT INTO radioShow(showid,genre,title) VALUES (2,'loud','Megan and Bob Are Sharks');
 
 INSERT INTO dj(email,showid) VALUES ('admin',1);
 INSERT INTO dj(email,showid) VALUES ('admin',2);
@@ -109,6 +109,6 @@ INSERT INTO user(email,name,admin,password) VALUES ('l@pugetsound.edu','Joe Anne
 INSERT INTO user(email,name,admin,password) VALUES ('m@pugetsound.edu','Jon Snow',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('n@pugetsound.edu','Tyrion Lannister',1,'password');
 
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('dj','This is a sub request',1,'Tue','3PM','May','05',1);
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('admin','Sub request',1,'Tue','3PM','May','12',0);
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('a@pugetsound.edu','Ert',2,'Mon','10PM','May','11',1);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('dj','This is a sub request',1,'Tue','3PM','May','5th',1);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('admin','Sub request',1,'Tue','3PM','May','12th',0);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('a@pugetsound.edu','Ert',2,'Mon','10PM','May','11th',1);

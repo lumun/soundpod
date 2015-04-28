@@ -17,17 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	 	$topic = $db->quote($topic);
-
-	 	print $topic;//debug
-	 	$sql = "INSERT INTO category(name) VALUES ($topic)";
-	 	// insert
-	 	$db -> exec($sql);
+	 	$sql = $db -> prepare("INSERT INTO category(name) VALUES ($topic)");
+		// insert
+		$sql->execute();
 	 	// disconnect
 		$db = NULL;
-	}
-	catch(PDOException $e) {
-	 	print 'Exception : '.$e -> getMessage();
-	}
+		}
+		catch(PDOException $e) {
+		 	print 'Exception : '.$e -> getMessage();
+		}
 	}
 }
 
@@ -38,7 +36,7 @@ try {
 	// Set errormode to exceptions
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	if($_SESSION["admin"] == 1)
+	if($isAdmin)
 	{
 		?>
 		<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
@@ -46,7 +44,7 @@ try {
     	
     	<div class="form-group">
     		<label for="name">Topic</label>
-    		<input type="text" placeholder="Topic" class="form-control" name="topic" ><span class="input-error"> <?php echo $nameErr;?></span>
+    		<input type="text" placeholder="Topic" class="form-control" name="topic" >
     	</div>
     	<button  type="submit" class="btn btn-primary">Submit</button>
     </form>

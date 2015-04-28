@@ -16,7 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$title = clean_input($_POST['name']);
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = $db -> prepare("INSERT INTO radioShow(showid,genre,title) VALUES ($showID,'$genre','$title')");
+	 		$title = $db->quote($title);
+			$sql = $db -> prepare("INSERT INTO radioShow(showid,genre,title) VALUES ($showID,'$genre',$title)");
 			// insert
 			$sql->execute();
 			// now insert showID into DJ

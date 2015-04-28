@@ -22,7 +22,7 @@ echo "<div class='content left-float'>";
 			echo "<td>".$title."</td>";
 			echo "<td>".$genre."</td>";
 
-			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showid=$showid");
+			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showid=$showid ORDER BY name");
 			echo "<td>";
 			foreach ($djs as $dj) {
 				$n = $dj['name'];

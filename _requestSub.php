@@ -1,34 +1,32 @@
 <?php
 include '_helpers.php';
+include '_session.php';
 
-if(!empty($_POST["date"])){
-	$dateInfo = explode(",", $_POST["date"]);
-	$dayOfWeek = $dateInfo[0];
-	$monthInfo = explode(" ", $dateInfo[1]);
-	$time = $dateInfo[2];
-	$currentDj = $_SESSION['email'];
+if(isset($_POST["date"])) {
+	try {
+		$showid = $_POST['showid'];
+		$dateInfo = explode(",", $_POST["date"]);
+		$weekday = $dateInfo[0];
+		$monthAndDate = explode(" ", $dateInfo[1]);
+		$month = $monthAndDate[1];
+		$day = $monthAndDate[2];
+		$time = $dateInfo[2];
+		$currentDj = $_SESSION['email'];
 
-	$db = new PDO("mysql:dbname=soundpod", 'root');
-	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "INSERT INTO subRequest(showid,,title) VALUES ('$showID','$genre','$title')";
-	// insert
+		$db = new PDO("mysql:dbname=soundpod", 'root');
+		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = $db->prepare("INSERT INTO subRequest(origdj,showid,weekday,time,month,day,active) VALUES ('$currentDj', $showid, '$weekday','$time','$month','$day',1)");
+		$sql -> execute();
 
-	origdj VARCHAR(30),
-	subdj VARCHAR(30),
-	comment VARCHAR(2000),
-	showid INT,
-	weekday VARCHAR(10),
-	time VARCHAR(10),
-	month VARCHAR(10),
-	day VARCHAR (5),
-	active TINYINT(2) DEFAULT 1,
-
-	$db -> exec($sql);
-
-
-	//close connection
-	$db = NULL;
-
+		//close connection
+		$db = NULL;
+	}
+	catch(PDOException $e) {
+		print 'Exception : '.$e -> getMessage();
+	}
 }
+
+//redirect
+header("Location: /substitutions.php");
 
 ?>

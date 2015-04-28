@@ -9,8 +9,9 @@ echo "<div class='content left-float'>";
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//now output the data to a simple html table...
-		echo '<table border="1">';
-		echo '<tr><td>ID</td><td>Title</td><td>Genre</td><td>DJ(s)</td><td>Showtime(s)</td><td></td></tr>';
+		echo '<table  border="1" cellpadding="3" cellspacing="0" >';
+		echo '<tbody align="center"'>;
+		echo '<tr><th>Title</th><th>Genre</th><th>DJ(s)</th><th>Showtime(s)</th><th></th></tr>';
 		$shows = $db -> query ("SELECT * FROM radioShow ORDER BY genre, showid");
 		foreach ($shows as $show)
 		{
@@ -50,6 +51,7 @@ echo "<div class='content left-float'>";
 
 			echo "</tr>";
 		}
+		echo '</tbody>';
 		echo "</table>";
 
 		echo "<a href='/add-show.php'>Add a new show</a>";

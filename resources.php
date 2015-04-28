@@ -104,7 +104,7 @@ $filesOnServer = scanDir($dir);
 						?>
 						<td>
 						<form method="post" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-						<input type="submit" name="delete" value="delete">
+						<input type="submit" name="filename" value="$s">
 						</td>
 					</form>
 					<?php

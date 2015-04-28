@@ -67,7 +67,7 @@ if($isAdmin)
 	<h2 style="text-decoration: underline">File Upload Form</h2>
 	<br/>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-		<p>Select file to upload</p>
+		<p>Upload a file</p>
 		<p>Max file size: <?php echo $maxFileSize ?> bytes</p>
 		<br/>
 		<!-- MAX_FILE_SIZE must precede the file input field -->
@@ -80,7 +80,7 @@ if($isAdmin)
 </div>
 <?php }//for admin only uploads ?>
 <div class="content left-float">
-	<h2 style="text-decoration: underline">Files on Server</h2>
+	<h2 style="text-decoration: underline">Helpful KUPS resources!</h2>
 	<br/>
 	<table>
 		<tr><td><p style="text-decoration: underline">File (click to access)</p></td><td><p style="text-decoration: underline">Size</p></td></tr>
@@ -92,3 +92,20 @@ if($isAdmin)
 		?>
 	</table>
 </div>
+
+<div class="container">
+	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<img src="/assets/images/air.jpg" class="center-block img-responsive" alt="Image">
+	</div>
+	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<img src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
+	</div>
+	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+		<img src="/assets/images/tom.jpg" class="center-block img-responsive" alt="Image">
+	</div>
+</div>
+
+<h3>Contact us!</h3>
+<p>The Spot<a href="https://www.google.com/maps/place/KUPS+90.1FM+Tacoma+%22The+Sound%22/@47.26322,-122.478836,17z/data=!3m1!4b1!4m2!3m1!1s0x549054e23edb113d:0x2295ea3f4cc7466a">1500 N Warner Street
+Tacoma, WA 98416</a></p>
+<p>The phone 253-879-2415</p>

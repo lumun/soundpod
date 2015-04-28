@@ -1,16 +1,6 @@
 <?php
 include '_session.php';
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Group 5: University of Puget Sound Databases 2015</title>
-	<link rel="stylesheet" href="/assets/stylesheets/screen.css">
-</head>
-
-<body>
 	<!-- Header inserter here -->
 	<?php include '_header.php'; ?>
 
@@ -26,6 +16,4 @@ include '_session.php';
     }
 	?>
 
-	<?php include '_display-shows.php'; ?>
-</body>
-</html>
+	<?php include '_display-shows.php';?>

@@ -11,7 +11,7 @@ include '_header.php';
 echo "<div class='content left-float'>";
 	try 
 	{
-		//open the database
+		//open the databas
 		$db = new PDO("mysql:dbname=soundpod", 'root');
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -19,6 +19,12 @@ echo "<div class='content left-float'>";
 		//now output the data to a simple html table...
 		if (isset($_SESSION['email'])) { $myemail = $_SESSION['email']; }
 		$shows = $db -> query ("SELECT * FROM radioShow NATURAL JOIN dj WHERE email='$myemail'");
+		if($shows.sizeof()<1)
+		{
+			?>
+			<p>You don't have a show in the schedule :(  ...maybe you should make one? <a href="/add-show.php"> Click Here for show creation</a></p>
+			<?php
+		}else{
 		echo '<table border="1">';
 		echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td></td></tr>';
 		foreach ($shows as $show) {
@@ -47,6 +53,7 @@ echo "<div class='content left-float'>";
 			echo "</tr>";
 		}
 		echo "</table>";
+	}
 
 		echo "<br /><br /><br /><br />";
  

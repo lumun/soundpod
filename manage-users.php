@@ -26,6 +26,4 @@ include '_session.php';
     }
 	?>
 
-	<?php include '_display-users.php'; ?>
-</body>
-</html>
+	<?php include '_display-users.php';?>

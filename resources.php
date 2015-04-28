@@ -45,6 +45,10 @@ if(isset($_POST["submit"])) {
 		}
 	}
 }
+if(isset($_POST["delete"])){
+	$filename += $_POST["filename"];
+	unlink($filename);
+}
 
 // This section deals with finding the files currently in the directory
 // helper method located in _helpers
@@ -90,17 +94,21 @@ $filesOnServer = scanDir($dir);
 			<br/>
 			<table>
 				<tr><td><p style="text-decoration: underline">File (click to access)</p></td><td><p style="text-decoration: underline">Size</p></td></tr>
-				<?php 
-				// $dirFiles;
-				// for($index =0; $index<$filesOnServer.sizeof(); $index++) {
-    // 					if($index<2)
-    // 						continue;
-    // 					$dirFiles[$index-2] = $filesOnServer[$index];
-				// 	} 
+				<?php
 				foreach ($filesOnServer as $f => $s) {
 					if($s == '.' || $s == '..')
 						continue;
 					echo "<tr><td><a href='uploads/" . $s . "'>" . $s . "</a></td>"; 
+					if($isAdmin)
+					{
+						?>
+						<td>
+						<form method="post" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+						<input type="submit" name="delete" value="delete">
+						</td>
+					</form>
+					<?php
+					}
 				}
 				?>
 			</table>

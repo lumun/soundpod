@@ -19,7 +19,7 @@ echo "<div class='content left-float'>";
 		//now output the data to a simple html table...
 		if (isset($_SESSION['email'])) { $myemail = $_SESSION['email']; }
 		$shows = $db -> query ("SELECT * FROM radioShow NATURAL JOIN dj WHERE email='$myemail'");
-		if($shows.sizeof()<1)
+		if($shows->rowCount()<1)
 		{
 			?>
 			<p>You don't have a show in the schedule :(  ...maybe you should make one? <a href="/add-show.php"> Click Here for show creation</a></p>

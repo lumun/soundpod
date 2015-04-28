@@ -10,9 +10,10 @@ if(!empty($_POST["showid"]) && !empty($_POST["month"]) && !empty($_POST["day"]))
 	$day = $_POST["day"];
 	// Set errormode to exceptions
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	//now output the data to a simple html table...
-	$shows = $db -> query ("UPDATE subRequest SET subdj='$guestDJ', active='2' WHERE showid='$showID', month='$month', day='$day'");
 	
+	$sql = $db -> prepare("UPDATE subRequest SET subdj='$guestDJ', active='2' WHERE showid='$showID', month='$month', day='$day'");
+	// insert
+	$sql->execute();
 	$db = null;
 }
 ?>

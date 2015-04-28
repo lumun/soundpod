@@ -97,7 +97,7 @@ echo "<div class='content left-float'>";
 				if($active == 0)
 					echo "<td> Subbed! </td>";
 				if($active == 1)
-					echo "<td> I need a sub! </td>"
+					echo "<td> I need a sub! </td>";
 				//I changed it from binary to text for humans
 				//echo "<td>".$active."</td>";
 

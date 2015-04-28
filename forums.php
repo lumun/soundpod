@@ -26,22 +26,23 @@ $cat = stripslashes($cat);
 
 
 
-include '_header.php'; 
+
 if($result->rowCount() < 1)
 {
 	//404 if that wasn't a real category
-	// header("Location: /404.php");
-	// die();
+	header("Location: /forumTopics.php");
+	die();
 	//print "Sory, there's nothing here";
-	echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forumsss</p>";
+	//echo "<h2>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forumsss</h2>";
 }else{
+include '_header.php'; 
 ?>
 
 
 
 <div class="container">
 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<h1>Forums<br><small>Talk to Each Other about life in the <?php echo $category; ?> world!</small></h1>
+		<h1><a href="/forumTopics.php">Forums</a><br><small>Talk to Each Other about life in the <?php echo $category; ?> world!</small></h1>
 	</div>
 	<hr>
 </div>
@@ -49,7 +50,7 @@ if($result->rowCount() < 1)
 
 <form id="data-input" action="/_submit-post.php" method="POST" role="form">
 <div class="form-group">
-	<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
+	<input type="text" class="form-control" name="content" placeholder="Type something..." width = "30px" height = "100px" >
 </div>
 
 <input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">

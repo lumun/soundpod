@@ -15,13 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// Set errormode to exceptionsgi
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$db->exec($sql);
+	
 	$db=null;
 	}catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 	}
 }
 
-header("Location: /forums.php?category=$category");
-die();
+//header("Location: /forums.php?category=$category");
+//die();
 
 ?>

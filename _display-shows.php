@@ -10,7 +10,7 @@ echo "<div class='content left-float'>";
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//now output the data to a simple html table...
 		echo '<table  border="1" cellpadding="3" cellspacing="0" >';
-		echo '<tbody align="center"'>;
+		echo '<tbody align="center">';
 		echo '<tr><th>Title</th><th>Genre</th><th>DJ(s)</th><th>Showtime(s)</th><th></th></tr>';
 		$shows = $db -> query ("SELECT * FROM radioShow ORDER BY genre, showid");
 		foreach ($shows as $show)

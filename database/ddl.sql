@@ -77,15 +77,15 @@ CREATE TABLE IF NOT EXISTS post (
 INSERT INTO user(email,name,admin,password) VALUES ('admin','Bob Belcher',1,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('dj','Megan Wensel',0,'password');
  
-INSERT INTO radioShow(showid,genre,title) VALUES (1,'alt','Bob lays it Down');
-INSERT INTO radioShow(showid,genre,title) VALUES (2,'loud','Megan and Bob Are Sharks');
+INSERT INTO radioShow(showid,genre,title) VALUES (67584563,'alt','Bob lays it Down');
+INSERT INTO radioShow(showid,genre,title) VALUES (22349008,'loud','Megan and Bob Are Sharks');
 
-INSERT INTO dj(email,showid) VALUES ('admin',1);
-INSERT INTO dj(email,showid) VALUES ('admin',2);
-INSERT INTO dj(email,showid) VALUES ('dj',2);
+INSERT INTO dj(email,showid) VALUES ('admin',67584563);
+INSERT INTO dj(email,showid) VALUES ('admin',22349008);
+INSERT INTO dj(email,showid) VALUES ('dj',22349008);
 
-INSERT INTO showInstance(showid,weekday,time) VALUES (1,'Tuesday','1500');
-INSERT INTO showInstance(showid,weekday,time) VALUES (2,'Monday','2200');
+INSERT INTO showInstance(showid,weekday,time) VALUES (67584563,'Tuesday','1500');
+INSERT INTO showInstance(showid,weekday,time) VALUES (22349008,'Monday','2200');
 
 INSERT INTO category(name) VALUES ('New Users');
 INSERT INTO category(name) VALUES ('Dummy');
@@ -109,6 +109,6 @@ INSERT INTO user(email,name,admin,password) VALUES ('l@pugetsound.edu','Joe Anne
 INSERT INTO user(email,name,admin,password) VALUES ('m@pugetsound.edu','Jon Snow',0,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('n@pugetsound.edu','Tyrion Lannister',1,'password');
 
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('dj','This is a sub request',1,'Tue','3PM','May','5th',1);
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('admin','Sub request',1,'Tue','3PM','May','12th',0);
-INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('a@pugetsound.edu','Ert',2,'Mon','10PM','May','11th',1);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('dj','This is a sub request',67584563,'Tue','3PM','May','5th',1);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('admin','Sub request',67584563,'Tue','3PM','May','12th',0);
+INSERT INTO subRequest(origdj,comment,showid,weekday,time,month,day,active) VALUES ('a@pugetsound.edu','Ert',22349008,'Mon','10PM','May','11th',1);

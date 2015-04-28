@@ -65,7 +65,7 @@ echo "<div class='content left-float'>";
 		else {
 			?>
 			<h2>Sub Requests! Help someone out!</h2>
-			<table border="1" cellpadding = "10">
+			<table border="1">
 				<tbody align="center">
 			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><th>Subbing DJ</th><th>Active</th><th></th></tr>
 			<?php

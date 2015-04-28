@@ -18,20 +18,20 @@ echo "<div class='content left-float'>";
 			$title = $show['title'];
 			// get_genre method found in helpers
 			$genre = get_genre($show['genre']);
-			echo "<tr><td>".$showid."</td>";
-			echo "<td>".$title."</td>";
-			echo "<td>".$genre."</td>";
+			//echo "<tr><td>".$showid."</td>";//we don't need to show users the show ID
+			echo "<td>  ".$title."  </td>";
+			echo "<td>  ".$genre."  </td>";
 
 			$djs = $db -> query ("SELECT * FROM user NATURAL JOIN dj WHERE showid=$showid ORDER BY name");
-			echo "<td>";
+			echo "<td>  ";
 			foreach ($djs as $dj) {
 				$n = $dj['name'];
 				echo "$n<br />";
 			}
-			echo "</td>";
+			echo "  </td>";
 
 			$showtimes = $db -> query ("SELECT * FROM showInstance WHERE showid=$showid");
-			echo "<td>";
+			echo "<td>  ";
 			foreach ($showtimes as $showtime) {
 				$day = get_weekday($showtime['weekday']);
 				$time = $showtime['time'];
@@ -39,7 +39,7 @@ echo "<div class='content left-float'>";
 				echo $time;
 				echo "<br />";
 			}
-			echo "</td>";
+			echo "  </td>";
 
 			if ($isAdmin) {
 				// This is all the delete button

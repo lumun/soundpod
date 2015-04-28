@@ -99,9 +99,10 @@ INSERT INTO category(name) VALUES ('Tabling');
 
 
 
-INSERT INTO post(postid,email,content,category) VALUES (1,'admin','Welcome to the Category!','New Users');
-INSERT INTO post(postid,email,content,category) VALUES (2,'dj','Im stoked to be here','New Users');
-INSERT INTO post(postid,email,content,category) VALUES (3,'dj','dummy dummy dummy dummy','Dummy');
+INSERT INTO post(postid,email,content,category) VALUES (1,'admin','Welcome to KUPS! Ask questions and get advice here. And don\'t forget to have fun!','New DJ\'s');
+INSERT INTO post(postid,email,content,category) VALUES (2,'dj','Im stoked to be here','New DJ\'s');
+INSERT INTO post(postid,email,content,category) VALUES (3,'dj','Post any general station news that you have here!','KUPS');
+INSERT INTO post(postid,email,content,category) VALUES (4,'dj','Who is tabling today?','tabling');
 
 INSERT INTO user(email,name,admin,password) VALUES ('a@pugetsound.edu','Tom Riddle',1,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('b@pugetsound.edu','Avery Richert',0,'password');

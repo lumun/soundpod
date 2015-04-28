@@ -28,7 +28,7 @@ echo "<div class='content left-float'>";
 		}
 		else{
 			echo '<table border="1">';
-			echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td></td></tr>';
+			echo '<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th></th></tr>';
 			foreach ($shows as $show) {
 				$showid = $show['showid'];
 				$title = $show['title'];
@@ -64,8 +64,10 @@ echo "<div class='content left-float'>";
 		}
 		else {
 			?>
-			<table border="1">
-			<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td>Posting DJ</td><td>Subbing DJ</td><td>Active</td><td></td></tr>
+			<h2>Sub Requests! Help someone out!</h2>
+			<table border="1" cellpadding = "10">
+				<tbody align="center">
+			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><th>Subbing DJ</th><th>Active</th><th></th></tr>
 			<?php
 			foreach ($subRequests as $sub) {
 				$showid = $sub['showid'];
@@ -113,6 +115,7 @@ echo "<div class='content left-float'>";
 				echo "</tr>";
 			}
 			echo "</table>";
+			echo "</tbody>";
 		}
 
 		$db = NULL;

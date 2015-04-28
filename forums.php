@@ -76,7 +76,7 @@ try {
 				?>
 				<p class='text-left'> <?php echo $content ?> </p><br>
 				<p class='text-left'>By <?php echo $user['name'] ?></p>
-				<p class='text-left'>Posted <?php echo date("F j, g:i:s A", strtotime($timestamp)) ?></p><br><br>
+				<p class='text-left'>Posted <?php date_default_timezone_set('America/Los_Angeles'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p><br><br>
 				<?php
 			}
 		}

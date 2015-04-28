@@ -6,7 +6,7 @@ $dir = "uploads/";
 // Set this to true if upload is successful
 $successfulUpload = false;
 // Set a maximum filesize in bytes
-$maxFileSize = 100000;
+$maxFileSize = 100000000;
 // Error message string
 $errorMessage = "";
 
@@ -91,7 +91,7 @@ $filesOnServer = scanDir($dir);
 				<tr><td><p style="text-decoration: underline">File (click to access)</p></td><td><p style="text-decoration: underline">Size</p></td></tr>
 				<?php 
 				foreach ($filesOnServer as $f => $s) {
-					echo "<tr><td><a href='uploads/" . $f . "'>" . $f . "</a></td><td>" . $s . "</td></tr>"; 
+					echo "<tr><td><a href='uploads/" . $s . "'>" . $s . "</a></td><td>" . $s . "</td></tr>"; 
 				}
 				?>
 			</table>

@@ -59,6 +59,7 @@ include '_header.php'; ?>
 	    	format: "ddd, hA" 
 	    });
 	});
+	
 	$(function () {
 	    $('#datetimepicker2').datetimepicker({format: "ddd, hA" });
 	});
@@ -66,5 +67,4 @@ include '_header.php'; ?>
 	$('#twoHour').click(function(){
 		$('#extraHour').show();
 	});
-
 </script>

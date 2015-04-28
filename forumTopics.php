@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	 	$topic = $db->quote($topic);
+
 	 	print $topic;//debug
 	 	$sql = "INSERT INTO category(name) VALUES ($topic)";
 	 	// insert

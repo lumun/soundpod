@@ -2,7 +2,8 @@
 include '_session.php';
 include '_helpers.php';
 
-if(!empty($_POST["showid"]) && !empty($_POST["month"]) && !empty($_POST["day"])){
+
+if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["showid"]) && !empty($_POST["month"]) && !empty($_POST["day"])){
 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	$guestDJ = $_SESSION["email"];
 	$showID = $_POST["showid"];
@@ -15,4 +16,10 @@ if(!empty($_POST["showid"]) && !empty($_POST["month"]) && !empty($_POST["day"]))
 
 	$db = null;
 }
+
+include '_header.php';
 ?>
+
+<p> Wowwwweeeeee thanks so much for subbing the show! Here's the details of the show you agreed to sub, ROCKSTAR</p>
+<p> It is on <?php echo "$month $day";?></P>
+	<p>To go back to the subrequests page, <a href="/substitutions.php">click here!</a></p>

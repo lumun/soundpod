@@ -91,8 +91,8 @@ $filesOnServer = scanDir($dir);
 			<table>
 				<tr><td><p style="text-decoration: underline">File (click to access)</p></td><td><p style="text-decoration: underline">Size</p></td></tr>
 				<?php 
-				$dirFiles
-				for ($index =0; $index<$filesOnServer.count(); $index++) {
+				$dirFiles;
+				for($index =0; $index<$filesOnServer.count(); $index++) {
     					if($index<2)
     						continue;
     					$dirFiles[$index-2] = $filesOnServer[$index];

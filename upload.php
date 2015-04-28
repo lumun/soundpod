@@ -91,13 +91,15 @@ $filesOnServer = scanDir($dir);
 			<table>
 				<tr><td><p style="text-decoration: underline">File (click to access)</p></td><td><p style="text-decoration: underline">Size</p></td></tr>
 				<?php 
-				$dirFiles;
-				for($index =0; $index<$filesOnServer.sizeof(); $index++) {
-    					if($index<2)
-    						continue;
-    					$dirFiles[$index-2] = $filesOnServer[$index];
-					} 
+				// $dirFiles;
+				// for($index =0; $index<$filesOnServer.sizeof(); $index++) {
+    // 					if($index<2)
+    // 						continue;
+    // 					$dirFiles[$index-2] = $filesOnServer[$index];
+				// 	} 
 				foreach ($filesOnServer as $f => $s) {
+					if($s == '.' || $s == '..')
+						continue;
 					echo "<tr><td><a href='uploads/" . $s . "'>" . $s . "</a></td>"; 
 				}
 				?>

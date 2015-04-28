@@ -28,9 +28,6 @@ try {
 	$result = $db -> query("SELECT * from category where name = $cat");
 	$cat = stripslashes($cat);
 
-
-
-
 	include '_header.php'; 
 	if($result->rowCount() < 1)
 	{
@@ -38,25 +35,22 @@ try {
 		// header("Location: /404.php");
 		// die();
 		//print "Sory, there's nothing here";
-		echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forumsss</p>";
+		echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forums</p>";
 	}
 	else{ ?>
 		<div class="container">
 		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-				<h1>Forums<br><small>Talk to Each Other about life in the <?php echo $category; ?> world!</small></h1>
-			</div>
-			<hr>
+			<h1><a href="/forumTopics.php">Forums</a><br><small>Talk to Each Other about life in the <?php echo $category; ?> world!</small></h1>
 		</div>
-
+		<hr>
+		</div>
 
 		<form id="data-input" action="/_submit-post.php" method="POST" role="form">
 		<div class="form-group">
 			<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
 		</div>
-
 		<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
 		<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
-
 		<button  type="submit" class="btn btn-primary">Submit</button>
 		</form>
 

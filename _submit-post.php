@@ -1,4 +1,6 @@
 <?php
+
+include '_session.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = $_SESSION['email'];
 	$content = $_POST['content'];
@@ -8,7 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$db = new PDO("mysql:dbname=soundpod", 'root');
 
 	$content = $db->quote($content);
-	$cat = $db->quote($cat);
+	$cat = '';
+	$cat = $db->quote($category);
 	$sql = "INSERT INTO post(email,content,category) values('$email',$content,$cat)";
 	print($sql);
 	// Set errormode to exceptionsgi

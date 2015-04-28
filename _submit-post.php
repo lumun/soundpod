@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = $_SESSION['email'];
 	$content = $_POST['content'];
 	$category = $_POST['category'];
-	$cat = $_POST['categoryClean'];
+	//$cat = $_POST['categoryClean'];
 	try{
 	$db = new PDO("mysql:dbname=soundpod", 'root');
 

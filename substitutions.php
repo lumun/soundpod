@@ -63,8 +63,10 @@ echo "<div class='content left-float'>";
 			print "There are zero active subRequests...";
 		}
 		else {
-			echo '<table border="1">';
-			echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td>Posting DJ</td><td>Subbing DJ</td><td>Active</td><td></td></tr>';
+			?>
+			<table border="1">
+			<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td>Posting DJ</td><td>Subbing DJ</td><td>Active</td><td></td></tr>
+			<?php
 			foreach ($subRequests as $sub) {
 				$showid = $sub['showid'];
 				$title = $sub['title'];
@@ -92,7 +94,12 @@ echo "<div class='content left-float'>";
 				echo "<td>".$thesubdj['name']."</td>";
 
 				// echo "<td>".$comment."</td>";
-				echo "<td>".$active."</td>";
+				if($active == 0)
+					echo "<td> Subbed! </td>";
+				if($active == 1)
+					echo "<td> I need a sub! </td>"
+				//I changed it from binary to text for humans
+				//echo "<td>".$active."</td>";
 
 				// This is where you select
 				if ($active == 1) {

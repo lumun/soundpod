@@ -95,17 +95,17 @@ if($isAdmin)
 
 <div class="container">
 	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<img src="/assets/images/air.jpg" class="center-block img-responsive" alt="Image">
+		<img style="float:right" src="/assets/images/air.jpg" class="center-block img-responsive" alt="Image">
 	</div>
 	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<img src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
+		<img style="float:right" src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
 	</div>
 	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<img src="/assets/images/tom.jpg" class="center-block img-responsive" alt="Image">
+		<img style="float:right" src="/assets/images/tom.jpg" class="center-block img-responsive" alt="Image">
 	</div>
 </div>
 
 <h3>Contact us!</h3>
-<p>The Spot<a href="https://www.google.com/maps/place/KUPS+90.1FM+Tacoma+%22The+Sound%22/@47.26322,-122.478836,17z/data=!3m1!4b1!4m2!3m1!1s0x549054e23edb113d:0x2295ea3f4cc7466a">1500 N Warner Street
+<p>The Spot ~ <br><a href="https://www.google.com/maps/place/KUPS+90.1FM+Tacoma+%22The+Sound%22/@47.26322,-122.478836,17z/data=!3m1!4b1!4m2!3m1!1s0x549054e23edb113d:0x2295ea3f4cc7466a">1500 N Warner Street
 Tacoma, WA 98416</a></p>
-<p>The phone 253-879-2415</p>
+<p>The phone <br>253-879-2415</p>

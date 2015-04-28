@@ -50,13 +50,14 @@ echo "<div class='content left-float'>";
 
 		echo "<br /><br /><br /><br />";
  
-		$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active=1) AS rqs NATURAL JOIN radioShow");
+		//$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active=1) AS rqs NATURAL JOIN radioShow");
+		$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest) AS rqs NATURAL JOIN radioShow");
 		if($subRequests->rowCount() < 1){
 			print "There are zero active subRequests...";
 		}
 		else {
 			echo '<table border="1">';
-			echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td>Posting DJ</td><td>Comment</td><td></td></tr>';
+			echo '<tr><td>Show Title</td><td>Genre</td><td>Show Time(s)</td><td>Posting DJ</td><td>Active</td><td></td></tr>';
 			foreach ($subRequests as $sub) {
 				$showid = $sub['showid'];
 				$title = $sub['title'];
@@ -67,6 +68,7 @@ echo "<div class='content left-float'>";
 				$month = $sub['month'];
 				$day = $sub['day'];
 				$comment = $sub['comment'];
+				$active = $sub['active'];
 				$orig = $sub['origdj'];
 
 				echo "<td>".$title."</td>";
@@ -76,7 +78,8 @@ echo "<div class='content left-float'>";
 				$djs = $db -> query ("SELECT * FROM user WHERE email='$orig'");
 				$dj = $djs -> fetch();
 				echo "<td>".$dj['name']."</td>";
-				echo "<td>".$comment."</td>";
+				// echo "<td>".$comment."</td>";
+				echo "<td>".$active."</td>";
 
 				// This is where you select
 				echo "<td><form id='sub_accept_$showid' method='post' action='/_acceptSub.php'>";

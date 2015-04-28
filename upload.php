@@ -93,15 +93,11 @@ if($isAdmin)
 	</table>
 </div>
 
-	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<img style="float:right" src="/assets/images/air.jpg" class="center-block img-responsive" alt="Image">
-	</div>
+	
 	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 		<img style="float:right" src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
 	</div>
-	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<img style="float:right" src="/assets/images/tom.jpg" class="center-block img-responsive" alt="Image">
-	</div>
+	
 
 
 <h3>Contact us!</h3>

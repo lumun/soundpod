@@ -48,7 +48,7 @@ if(isset($_POST["submit"])) {
 
 // This section deals with finding the files currently in the directory
 // helper method located in _helpers
-$filesOnServer = get_files_in_directory($dir);
+$filesOnServer = scanDir($dir);
 
 ?>
     <?php include '_header.php'; ?>

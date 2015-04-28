@@ -65,7 +65,7 @@ if($result->rowCount() < 1)
 <div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
 <?php
 $cat = $db->quote($cat);
-$result = $db -> query("SELECT * from post where category = $category ORDER BY time");
+$result = $db -> query("SELECT * from post where category = '$category' ORDER BY time");
 foreach ($result as $thisPost)
 {
 	$content = $thisPost['content'];

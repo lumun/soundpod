@@ -59,7 +59,8 @@ try {
 	
 	echo "<div class='jumbotron'>";
 		echo "<div class='container'>";
-			echo "<h1>Talk to your fellow DJs</h1>";
+			echo "<h1 class='text-center'>DJ Forum</h1>";
+				echo "<hr>";
 
 	foreach($categories as $category) { ?>
 <!-- 		<div class="container">

@@ -68,7 +68,7 @@ try {
 				$users = $db -> query("SELECT * from user where email = '$email'");
 				$user = $users->fetch();
 				?>
-				<div class="row well posting">
+				<div class="row">
 					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 							<h4 class='text-left'> <?php echo $content ?> </h4>

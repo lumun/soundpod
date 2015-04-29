@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["showid"]) && !empty($_
 		$db = new PDO("mysql:dbname=soundpod", 'root');
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "UPDATE subRequest SET subdj='NULL', active=1 WHERE showid=$showID AND month='$month' AND day='$day'";
+		$sql = "UPDATE subRequest SET active=1 WHERE showid=$showID AND month='$month' AND day='$day'";
 		$shows = $db -> query ($sql);
 
 		if (empty($shows)) {

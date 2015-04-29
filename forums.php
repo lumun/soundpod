@@ -39,26 +39,32 @@ try {
 	}
 	else{ ?>
 		<div class="container">
-		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-			<h1><a href="/forumTopics.php">Forums</a><br><small>Talk to Each Other about life in the <?php echo $category; ?> world!</small></h1>
-		</div>
-		<hr>
+			<div class="row">
+			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<h1><a class="text-center" href="/forumTopics.php"><?php echo $category; ?> Forums</a></h1>
+				</div>
+			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
+			</div>
+			<div class="row">
+				<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<form id="data-input" action="/_submit-post.php" method="POST" role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
+					</div>
+					<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
+					<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
+					<button  type="submit" class="text-center btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
 		</div>
 
-		<form id="data-input" action="/_submit-post.php" method="POST" role="form">
-		<div class="form-group">
-			<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
-		</div>
-		<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
-		<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
-		<button  type="submit" class="btn btn-primary">Submit</button>
-		</form>
-
-
-		<hr>
 		<div class="container">
-		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-		<div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+				
+		
 		<?php
 		$cat = $db->quote($category);
 		$result = $db -> query("SELECT * from post where category = $cat ORDER BY time");
@@ -74,9 +80,15 @@ try {
 				$users = $db -> query("SELECT * from user where email = '$email'");
 				$user = $users->fetch();
 				?>
-				<p class='text-left'> <?php echo $content ?> </p><br>
-				<p style='font-size:80%' class='text-left'>By <?php echo $user['name'] ?></p>
-				<p style='font-size:80%' class='text-left'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p><br><br>
+				<div class="row">
+					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<p class='text-left'> <?php echo $content ?> </p><br>
+							<p style='font-size:80%' class='text-left'>By <?php echo $user['name'] ?></p>
+							<p style='font-size:80%' class='text-left'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>
+						</div>
+					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>	
+				</div>
 				<?php
 			}
 		}

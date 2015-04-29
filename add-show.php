@@ -2,46 +2,54 @@
 include '_session.php';
 include '_header.php'; ?>
 
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-	<form action="/_add-show.php" method="POST" role="form">
-		<legend>Add Your Show</legend>
-
-		<div class="form-group">
-			<label for="">Is your show an hour or two hours a week?</label>
-
-			<label class="radio-inline"><input type="radio" name="show" id="oneHour" value="1">One</label>
-			<label class="radio-inline"><input type="radio" name="show" id="twoHour" value="2">Two</label>
-		</div>
-
-		<div class="form-group">
-			<label for="">What is the name of your show?</label>
-			<input type="text" name="name" class="form-control">
-		</div>
-
-		<div class="form-group">
-			<label for="">Genre?</label>
-
-			<label class="radio-inline"><input type="radio" name="genre" value="alt">Alternative</label>
-			<label class="radio-inline"><input type="radio" name="genre" value="hip">Hip Hop</label>
-			<label class="radio-inline"><input type="radio" name="genre" value="loud">Loud Rock</label>
-			<label class="radio-inline"><input type="radio" name="genre" value="ele">Electronic</label>
-			<label class="radio-inline"><input type="radio" name="genre" value="spe">Specialty</label>
-		</div>
-
-		<div class='input-group date' >
-			<label for="password">Show Time</label>
-	        <input type='text' name="show1" class="form-control" id="datetimepicker1"/>
-		</div>
-
-		<div id="extraHour" class='input-group date' >
-			<label for="password">Show Time</label>
-	        <input type='text' name="show2" class="form-control" id="datetimepicker2"/>
-		</div>
+<div class="container">
+	<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		
 
 
+		<form action="/_add-show.php" method="POST" role="form">
+			<legend>Add Your Show</legend>
 
-		<button type="submit" class="btn btn-primary">Add Show</button>
-	</form>
+			<div class="form-group">
+				<label for="">Is your show an hour or two hours a week?</label>
+
+				<label class="radio-inline"><input type="radio" name="show" id="oneHour" value="1">One</label>
+				<label class="radio-inline"><input type="radio" name="show" id="twoHour" value="2">Two</label>
+			</div>
+
+			<div class="form-group">
+				<label for="">What is the name of your show?</label>
+				<input type="text" name="name" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="">Genre?</label>
+
+				<label class="radio-inline"><input type="radio" name="genre" value="alt">Alternative</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="hip">Hip Hop</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="loud">Loud Rock</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="ele">Electronic</label>
+				<label class="radio-inline"><input type="radio" name="genre" value="spe">Specialty</label>
+			</div>
+
+			<div class='input-group date' >
+				<label for="password">Show Time</label>
+		        <input type='text' name="show1" class="form-control" id="datetimepicker1"/>
+			</div>
+
+			<div id="extraHour" class='text-center input-group date' >
+				<label for="password">Show Time</label>
+		        <input type='text' name="show2" class="form-control" id="datetimepicker2"/>
+			</div>
+
+			<br>
+			<br>
+			<br>
+
+			<button type="submit" class="text-center btn btn-primary">Add Show</button>
+		</form>
+	</div>
 </div>
 
 

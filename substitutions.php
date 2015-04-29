@@ -7,8 +7,9 @@ if (!$loggedin) {
 }
 
 include '_header.php';
-
-echo "<div class='content left-float'>";
+echo "<div class='container'>";
+echo "<span class='col-xs-3 col-sm-3 col-md-3 col-lg-3'></span>";
+echo "<div class='content left-float col-xs-6 col-sm-6 col-md-6 col-lg-6'>";
 	try 
 	{
 		//open the databas
@@ -27,7 +28,7 @@ echo "<div class='content left-float'>";
 			<?php
 		}
 		else{
-			echo '<table border="1">';
+			echo '<table class="table table-striped" border="1">';
 			echo '<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th></th></tr>';
 			foreach ($shows as $show) {
 				$showid = $show['showid'];
@@ -49,7 +50,7 @@ echo "<div class='content left-float'>";
 
 				echo "<td><form id='sub_request_$showid' method='post' action='/requestSub.php'>";
 				echo "<input type='hidden' name='showid' value='$showid' />";
-				echo "<input type='submit' name='submit_$showid' value='Request Sub' /></form></td>";
+				echo "<input type='submit' class='btn btn-primary' name='submit_$showid' value='Request Sub' /></form></td>";
 
 				echo "</tr>";
 			}
@@ -58,16 +59,16 @@ echo "<div class='content left-float'>";
 		echo "<br /><br /><br /><br />";
  
 		//$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active=1) AS rqs NATURAL JOIN radioShow");
-		$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest) AS rqs NATURAL JOIN radioShow");
+		$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active='1') AS rqs NATURAL JOIN radioShow");
 		if($subRequests->rowCount() < 1){
 			print "There are zero active subRequests...";
 		}
 		else {
 			?>
 			<h2>Sub Requests! Help someone out!</h2>
-			<table border="1">
+			<table class="table table-striped" border="1">
 				<tbody align="center">
-			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><th>Subbing DJ</th><th>Active</th><th></th></tr>
+			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><!-- <th>Subbing DJ</th> --><th>Active</th></tr>
 			<?php
 			foreach ($subRequests as $sub) {
 				$showid = $sub['showid'];
@@ -91,15 +92,15 @@ echo "<div class='content left-float'>";
 				$theorigdj = $origdjs -> fetch();
 				echo "<td>".$theorigdj['name']."</td>";
 
-				$subdjs = $db -> query ("SELECT * FROM user WHERE email='$subdj'");
-				$thesubdj = $subdjs -> fetch();
-				echo "<td>".$thesubdj['name']."</td>";
+				// $subdjs = $db -> query ("SELECT * FROM user WHERE email='$subdj'");
+				// $thesubdj = $subdjs -> fetch();
+				// echo "<td>".$thesubdj['name']."</td>";
 
 				// echo "<td>".$comment."</td>";
-				if($active == 0)
-					echo "<td> Subbed! </td>";
-				if($active == 1)
-					echo "<td> I need a sub! </td>";
+				// if($active == 0)
+				// 	echo "<td> Subbed! </td>";
+				// if($active == 1)
+				// 	echo "<td> I need a sub! </td>";
 				//I changed it from binary to text for humans
 				//echo "<td>".$active."</td>";
 
@@ -109,7 +110,8 @@ echo "<div class='content left-float'>";
 					echo "<input type='hidden' name='showid' value='$showid'/>";
 					echo "<input type='hidden' name='month' value='$month'/>";
 					echo "<input type='hidden' name='day' value='$day'/>";
-					echo "<input type='submit' name='submit_$showid' value='Sub this Show' /></form></td>";
+					echo "<input class='btn btn-primary' type='submit' name='submit_$showid' value='Sub this Show' /></form></td>";
+				
 				}
 
 				echo "</tr>";
@@ -124,4 +126,6 @@ echo "<div class='content left-float'>";
 		print 'Exception : '.$e -> getMessage();
 	}
 echo "</div>";
+echo "</div>";
+
 ?>

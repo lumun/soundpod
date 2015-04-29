@@ -7,7 +7,7 @@ echo "<div class='content left-float'>";
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//now output the data to a simple html table...
-		echo '<table border="1">';
+		echo '<table class="table table-bordered" border="1">';
 		echo '<tr><td>Name</td><td>Email</td><td>Admin?</td><td></td><td></td></tr>';
 		$result = $db -> query ("SELECT * FROM user ORDER BY name");
 		foreach ($result as $tuple)

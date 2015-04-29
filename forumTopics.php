@@ -56,13 +56,21 @@ try {
 
 
 	$categories = $db -> query("SELECT DISTINCT name From category");
+	
+	echo "<div class='jumbotron'>";
+		echo "<div class='container'>";
+			echo "<h1 class='text-center'>DJ Forum</h1>";
+				echo "<hr>";
 
 	foreach($categories as $category) { ?>
 <!-- 		<div class="container">
 		<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
-		<a href="/forums.php?category=<?php echo $category['name'] ?>"><h4><?php echo stripslashes($category['name']) ?></h4></a>	
+		<a class="text-center" href="/forums.php?category=<?php echo $category['name'] ?>"><h2 ><?php echo stripslashes($category['name']) ?></h2 class="text-center"></a>	
 	<?php
+
 	}
+		echo "</div>";
+	echo "</div>";
 }
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();

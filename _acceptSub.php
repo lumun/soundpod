@@ -19,7 +19,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["showid"]) && !empty($_
 
 include '_header.php';
 ?>
+<div class="jumbotron">
+	<div class="container">
+		<h1>Wowwwweeeeee!</h1>
+		<p>thanks so much for subbing the show! Here's the details of the show you agreed to sub, ROCKSTAR</p>
+		<p>It is on <?php echo "$month $day";?></p>
+		<p>To go back to the subrequests page,
+			<a href="/substitutions.php" class="btn btn-primary">Here</a>
+		</p>
+	</div>
+</div>
 
-<p> Wowwwweeeeee thanks so much for subbing the show! Here's the details of the show you agreed to sub, ROCKSTAR</p>
-<p> It is on <?php echo "$month $day";?></P>
-	<p>To go back to the subrequests page, <a href="/substitutions.php">click here!</a></p>

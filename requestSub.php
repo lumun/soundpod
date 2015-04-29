@@ -9,7 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['showid'])) {
 ?>
 
 <div class="container">
-	<div class="center col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	<span class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></span>
+	<br>
+	<br>
+
+	<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6">
 		<form action="/_requestSub.php" method="POST" role="form">
 			<legend>When Do You Need A Sub?</legend>
 
@@ -17,8 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['showid'])) {
 	    		<label for="password">Show Time</label>
                 <input type='text' name="date" class="form-control" id="datetimepicker1"/>
 	    	</div>
+	    	<br>
+	    	<br>
 	    	<input type='hidden' name='showid' value='<?php echo $showid ?>' />
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="text-center btn btn-primary">Submit</button>
 		</form>	
 	</div>
 	

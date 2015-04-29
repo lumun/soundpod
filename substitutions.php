@@ -67,7 +67,7 @@ echo "<div class='content left-float'>";
 			<h2>Sub Requests! Help someone out!</h2>
 			<table class="table table-striped" border="1">
 				<tbody align="center">
-			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><th>Subbing DJ</th><th>Active</th></tr>
+			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><!-- <th>Subbing DJ</th> --><th>Active</th></tr>
 			<?php
 			foreach ($subRequests as $sub) {
 				$showid = $sub['showid'];
@@ -91,9 +91,9 @@ echo "<div class='content left-float'>";
 				$theorigdj = $origdjs -> fetch();
 				echo "<td>".$theorigdj['name']."</td>";
 
-				$subdjs = $db -> query ("SELECT * FROM user WHERE email='$subdj'");
-				$thesubdj = $subdjs -> fetch();
-				echo "<td>".$thesubdj['name']."</td>";
+				// $subdjs = $db -> query ("SELECT * FROM user WHERE email='$subdj'");
+				// $thesubdj = $subdjs -> fetch();
+				// echo "<td>".$thesubdj['name']."</td>";
 
 				// echo "<td>".$comment."</td>";
 				// if($active == 0)

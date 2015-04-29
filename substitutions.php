@@ -67,7 +67,7 @@ echo "<div class='content left-float'>";
 			<h2>Sub Requests! Help someone out!</h2>
 			<table class="table table-striped" border="1">
 				<tbody align="center">
-			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><th>Subbing DJ</th><th>Active</th><th></th></tr>
+			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><th>Subbing DJ</th><th>Active</th></tr>
 			<?php
 			foreach ($subRequests as $sub) {
 				$showid = $sub['showid'];
@@ -96,10 +96,10 @@ echo "<div class='content left-float'>";
 				echo "<td>".$thesubdj['name']."</td>";
 
 				// echo "<td>".$comment."</td>";
-				if($active == 0)
-					echo "<td> Subbed! </td>";
-				if($active == 1)
-					echo "<td> I need a sub! </td>";
+				// if($active == 0)
+				// 	echo "<td> Subbed! </td>";
+				// if($active == 1)
+				// 	echo "<td> I need a sub! </td>";
 				//I changed it from binary to text for humans
 				//echo "<td>".$active."</td>";
 

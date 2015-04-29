@@ -98,8 +98,10 @@ catch(PDOException $e) {
 		<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 			<form id="data-input" action="/_submit-post.php" method="POST" role="form">
+			<legend>Add a new post:</legend>
+			<br>
 			<div class="form-group">
-				<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
+				<textarea class="form-control" name="content" placeholder="Post here" rows="3">
 			</div>
 			<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
 			<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">

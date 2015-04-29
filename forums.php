@@ -74,10 +74,10 @@ try {
 							<h4 class='text-left'> <?php echo $content ?> </h4>
 							<p class='text-right'>By <?php echo $user['name'] ?></p>
 							<p class='text-right'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>
+
 						</div>
 					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>	
 				</div>
-				
 				<?php
 			}
 		}

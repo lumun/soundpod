@@ -12,15 +12,26 @@
           border-radius: $radius;
 }
 
+@mixin calc($key, $value) {
+  #{$key}: -webkit-calc(#{$value});
+  #{$key}: -moz-calc(#{$value});
+  #{$key}: calc(#{$value});
+}
+
 body {
 	background: #ffffff $background-image;
-	padding-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 50px;
+	margin-bottom: 20px;
 }
 @media (max-width: 979px) {
 	body {
 		padding-top: 0px;
 	}
+}
+
+.container-fluid-index {
+	padding-right: 0px;
+	padding-left: 0px;
 }
 
 // Data insertion
@@ -29,7 +40,8 @@ body {
 }
 
 .carousel-inner > .item > .caro  {
-	height: 500px;	
+	// height: 500px;	
+	@include calc("max-height", "100vh - 70px");
 	margin-left: auto;
 	margin-right: auto;
 }

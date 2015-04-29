@@ -15,7 +15,6 @@
 </head>
 
 <body>
-<div class="container-fluid">
 	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
@@ -66,5 +65,8 @@
 	    </div>
 	  </div>
 	</nav>
+
+<div <?php if(htmlspecialchars($_SERVER['PHP_SELF']) != '/index.php') { echo "class='container-fluid'"; } else { echo "class='container-fluid container-fluid-index'"; } ?> >
+
 
 <!-- container div closed in footer -->

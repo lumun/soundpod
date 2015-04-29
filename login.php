@@ -65,21 +65,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 		else { ?>
 			<div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
-		    	<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
-		    		<legend>Log In</legend>
-		    	
-		    		<div class="form-group">
-		    			<label for="email">Email</label>
-		    			<input type="text" placeholder="you@pugetsound.edu" class="form-control" name="email" value=<?php echo "\"".$email."\"";?>>
-		    		</div>
-			    	<div class="form-group">
-			    		<label for="password">Password</label>
-			    		<input type="password" class="form-control" name="password">
-			    	</div>
-		    	
-		    		<button  type="submit" class="btn btn-primary" name="submit">Log In</button>
-		    	</form>
-	
+				<br />
+			    <div class="well">
+			    	<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
+			    		<legend>Log In</legend>
+			    	
+			    		<div class="form-group">
+			    			<label for="email">Email</label>
+			    			<input type="text" placeholder="Enter Email" class="form-control" name="email" value=<?php echo "\"".$email."\"";?>>
+			    		</div>
+				    	<div class="form-group">
+				    		<label for="password">Password</label>
+				    		<input type="password" class="form-control" name="password" placeholder="Enter Password">
+				    	</div>
+			    	
+			    		<button  type="submit" class="btn btn-primary" name="submit">Log In</button>
+			    	</form>
+				</div>
 			</div>
 		<?php
 		}

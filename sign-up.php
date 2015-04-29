@@ -64,23 +64,27 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 }
 
 ?>
-    	<!-- Header inserter here -->
-    	<?php include '_header.php'; ?>
+
+<!-- Header inserter here -->
+<?php include '_header.php'; ?>
+
 <div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	<br />
+	<div class="well">
     	<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
     		<legend>Sign Up</legend>
     	
     		<div class="form-group">
     			<label for="name">Name</label>
-    			<input type="text" placeholder="First Last" class="form-control" name="name" value=<?php echo "\"".$name."\"";?>><span class="input-error"> <?php echo $nameErr;?></span>
+    			<input type="text" placeholder="Enter Full Name" class="form-control" name="name" value=<?php echo "\"".$name."\"";?>><span class="input-error"> <?php echo $nameErr;?></span>
     		</div>
 	    	<div class="form-group">
 	    		<label for="email">Email</label>
-	    		<input type="text" class="form-control" name="email" placeholder="you@pugetsound.edu" <?php if (!empty($email)) { echo "value=\"".$email."\""; } ?> ><span class="input-error"> <?php echo $emailErr;?></span>
+	    		<input type="text" class="form-control" name="email" placeholder="Enter Email" <?php if (!empty($email)) { echo "value=\"".$email."\""; } ?> ><span class="input-error"> <?php echo $emailErr;?></span>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="password">Password</label>
-	    		<input type="password" class="form-control" name="password" value=<?php echo "\"".$password."\"";?>><span class="input-error" > <?php echo $passwordErr;?></span>
+	    		<input type="password" class="form-control" name="password" placeholder="Enter Password"><span class="input-error" > <?php echo $passwordErr;?></span>
 	    	</div>
 
 
@@ -89,7 +93,7 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
     	
     		<button  type="submit" class="btn btn-primary">Submit</button>
     	</form>
-	
+	</div>
 </div>
 
 <script type="text/javascript">

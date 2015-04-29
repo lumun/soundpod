@@ -27,7 +27,7 @@ echo "<div class='content left-float'>";
 			<?php
 		}
 		else{
-			echo '<table class="table table-bordered" border="1">';
+			echo '<table class="table table-striped" border="1">';
 			echo '<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th></th></tr>';
 			foreach ($shows as $show) {
 				$showid = $show['showid'];
@@ -65,7 +65,7 @@ echo "<div class='content left-float'>";
 		else {
 			?>
 			<h2>Sub Requests! Help someone out!</h2>
-			<table class="table table-bordered" border="1">
+			<table class="table table-striped" border="1">
 				<tbody align="center">
 			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><th>Subbing DJ</th><th>Active</th><th></th></tr>
 			<?php

@@ -13,18 +13,18 @@ echo "<div class='well'>";
 		if ($admin == 1) {
 			echo "<td>Yes</td><td>";
 			if (!$me) { 
-				echo "<form id='admin_form_$email' method='post' action='/_admin-user.php'><input type='hidden' name='email' value='$email' /><input type='submit' name='submit_$email' value='Unmake' /></form>"; 
+				echo "<form id='admin_form_$email' method='post' action='/_admin-user.php'><input type='hidden' name='email' value='$email' /><input type='submit' class='btn btn-md btn-primary' name='submit_$email' value='Revoke' /></form>"; 
 			} else { echo "That's you!"; }
 			echo "</td>";
 		}
 		else {
 			echo "<td>No</td><td>";
-			echo "<form id='admin_form_$email' method='post' action='/_admin-user.php'><input type='hidden' name='email' value='$email' /><input type='submit' name='submit_$email' value='Make Admin' /></form>";
+			echo "<form id='admin_form_$email' method='post' action='/_admin-user.php'><input type='hidden' name='email' value='$email' /><input type='submit' class='btn btn-md btn-primary' name='submit_$email' value='Make Admin' /></form>";
 			echo "</td>";		
 		}
 		echo "<td>";
 		if (!$me) { 
-			echo "<form id='delete_form_$email' method='post' action='/_delete-user.php'><input type='hidden' name='email' value='$email' /><input type='submit' name='submit_$email' value='Delete' /></form>"; 
+			echo "<form id='delete_form_$email' method='post' action='/_delete-user.php'><input type='hidden' name='email' value='$email' /><input type='submit' class='btn btn-md btn-primary' name='submit_$email' value='Delete' /></form>"; 
 		} else { echo "That's you!"; }
 		echo "</td></tr>";
 	}

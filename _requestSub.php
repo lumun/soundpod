@@ -27,6 +27,6 @@ if(isset($_POST["date"])) {
 }
 
 //redirect
-header("Location: /substitutions.php");
+header("Location: /substitutions.php?request=$showid");
 
 ?>

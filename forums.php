@@ -80,13 +80,13 @@ try {
 				$user = $users->fetch();
 				?>
 				<div class="row">
-					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
-						<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span>
+						<div class="well col-xs-8 col-sm-8 col-md-8 col-lg-8">
 							<h4 class='text-left'> <?php echo $content ?> </h4>
 							<p class='text-right'>By <?php echo $user['name'] ?></p>
 							<p class='text-right'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>
 						</div>
-					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>	
+					<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span>	
 				</div>
 				
 				<?php

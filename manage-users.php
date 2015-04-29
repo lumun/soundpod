@@ -3,6 +3,9 @@ include '_session.php';
 include '_header.php';
 include '_helpers.php';
 
+echo "<span class='col-xs-2 col-sm-2 col-md-2 col-lg-2'></span>";
+echo "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
+
 try {
 	//open the database
 	$db = new PDO("mysql:dbname=soundpod", 'root');
@@ -27,7 +30,7 @@ try {
 		$user = $result -> fetch();
 		$name = stripslashes($user['name']);
 		?>
-		<div class="alert alert-success fade in">
+		<div class="alert alert-success">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<p><strong>Success!</strong> <?php echo $name ?>'s admin role changed</p>
 		</div>
@@ -43,7 +46,7 @@ catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
 
-echo '<br />';
+echo '<br /></div>';
 
 include '_footer.php'
 ?>

@@ -32,9 +32,18 @@ echo "<div class='col-md-8 col-lg-8'>";
 		else if (isset($_GET["accept"])) {
 			$showid = $_GET["accept"];
 			?>
-			<div class="alert alert-success">
+			<div class="alert alert-success fade in">
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				<p><strong>Thank you for accepting a sub request!</strong> Please take note of its date and time so you're sure not to miss it</p>
+			</div>
+			<?php
+		}
+		else if (isset($_GET["revoke"])) {
+			$showid = $_GET["revoke"];
+			?>
+			<div class="alert alert-info fade in">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<p><strong>Okay.</strong> You've removed yourself from a subbing position</p>
 			</div>
 			<?php
 		}

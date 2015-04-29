@@ -9,7 +9,7 @@ else {
 	?>
 	<div class='well well-important'>
 	<legend>Your Scheduled Substitutions</legend>
-	<table class="table table-bordered table-hover" border="1">
+	<table class="table table-bordered table-striped" border="1">
 	<tbody align="center">
 	<tr><th>Show Title</th><th>Genre</th><th>Showtime(s)</th><th>Posting DJ</th><th></th></tr>
 	<?php

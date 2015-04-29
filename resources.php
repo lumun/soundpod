@@ -105,24 +105,9 @@ if($isAdmin)
 
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-</div>
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
 
-<img style="float:right" src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
-
-</div>
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-</div>
-	
-
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-</div>
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
-<h3>Contact us!</h3>
-<p class='text-left'>The Spot ~ <br><a href="https://www.google.com/maps/place/KUPS+90.1FM+Tacoma+%22The+Sound%22/@47.26322,-122.478836,17z/data=!3m1!4b1!4m2!3m1!1s0x549054e23edb113d:0x2295ea3f4cc7466a">1500 N Warner Street
-Tacoma, WA 98416</a></p>
-<p class='text-left'>The phone <br>253-879-2415</p>
-
+<img style="float:right" src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
 </div>
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>

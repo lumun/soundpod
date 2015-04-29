@@ -6,7 +6,7 @@ $dir = "uploads/";
 // Set this to true if upload is successful
 $successfulUpload = false;
 // Set a maximum filesize in bytes
-$maxFileSize = 10000000;
+$maxFileSize = 300000000;
 // Error message string
 $errorMessage = "";
 

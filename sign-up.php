@@ -72,15 +72,15 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
     	
     		<div class="form-group">
     			<label for="name">Name</label>
-    			<input type="text" placeholder="First Last" class="form-control" name="name" value=<?php echo "\"".$name."\"";?>><span class="input-error"> <?php echo $nameErr;?></span>
+    			<input type="text" class="form-control" name="name" placeholder="Enter Full Name" value=<?php echo "\"".$name."\"";?>><span class="input-error"> <?php echo $nameErr;?></span>
     		</div>
 	    	<div class="form-group">
 	    		<label for="email">Email</label>
-	    		<input type="text" class="form-control" name="email" placeholder="you@pugetsound.edu" <?php if (!empty($email)) { echo "value=\"".$email."\""; } ?> ><span class="input-error"> <?php echo $emailErr;?></span>
+	    		<input type="text" class="form-control" name="email" placeholder="Enter Email" <?php if (!empty($email)) { echo "value=\"".$email."\""; } ?> ><span class="input-error"> <?php echo $emailErr;?></span>
 	    	</div>
 	    	<div class="form-group">
 	    		<label for="password">Password</label>
-	    		<input type="password" class="form-control" name="password" value=<?php echo "\"".$password."\"";?>><span class="input-error" > <?php echo $passwordErr;?></span>
+	    		<input type="password" class="form-control" name="password" placeholder="Enter Password"><span class="input-error" > <?php echo $passwordErr;?></span>
 	    	</div>
 
 

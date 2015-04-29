@@ -1,7 +1,6 @@
 
-		<div class="navbar navbar-default navbar-fixed-bottom" id="footer">
-	<p class="text-center">KUPS</p>
-</div>
+	<!-- <div class="navbar navbar-default navbar-fixed-bottom" if="footer" /> -->
 
+</div>
 </body>
 </html>

@@ -69,8 +69,8 @@ try {
 				$user = $users->fetch();
 				?>
 				<div class="row">
-					<span class="well col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
+						<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6">
 							<h4 class='text-left'> <?php echo $content ?> </h4>
 							<p class='text-right'>By <?php echo $user['name'] ?></p>
 							<p class='text-right'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>

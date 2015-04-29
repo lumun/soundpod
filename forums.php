@@ -32,17 +32,17 @@ try {
 	if($result->rowCount() < 1)
 	{
 		//404 if that wasn't a real category
-		// header("Location: /404.php");
-		// die();
-		//print "Sory, there's nothing here";
-		echo "<p>Sorry, there's nothing here. Click <a href='/forumTopics.php'>here</a> to go to the forums</p>";
+		header("Location: /404.php");
+		die();
 	}
 	else{ ?>
 		<div class="container">
 			<div class="row">
 			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-					<h1><a class="text-center" href="/forumTopics.php"><?php echo $category; ?> Forums</a></h1>
+					<br />
+					<p class="text-center"><a href="/forumTopics.php">Back to Forums</a></p>
+					<h1 class="text-center" style="top-margin:10px"><?php echo $category; ?> Posts</h1>
 				</div>
 			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
 			</div>
@@ -62,7 +62,8 @@ try {
 			<div class="row">
 			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
 				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			<h2>There aren't any posts here yet. Add one!</h2>
+			<h2 class="text-center">There aren't any posts here yet. Add the first one!</h2>
+			<br />
 			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
 			</div>
 			
@@ -107,16 +108,17 @@ catch(PDOException $e) {
 	<div class="row">
 		<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<form id="data-input" action="/_submit-post.php" method="POST" role="form">
-			<legend>Add a new post:</legend>
-			<br>
-			<div class="form-group">
-				<textarea class="form-control" name="content" placeholder="Post here" rows="3"></textarea>
+			<div class="well well-add">
+				<form id="data-input" action="/_submit-post.php" method="POST" role="form">
+				<p>Add a new post:</p>
+				<div class="form-group">
+					<textarea class="form-control" name="content" placeholder="Post here" rows="3"></textarea>
+				</div>
+				<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
+				<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
+				<button  type="submit" class="text-center btn btn-primary">Submit</button>
+				</form>
 			</div>
-			<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
-			<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
-			<button  type="submit" class="text-center btn btn-primary">Submit</button>
-			</form>
 		</div>
 	</div>
 </div>

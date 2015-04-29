@@ -48,12 +48,16 @@ else {
 
 		// This is where you select
 		if ($active == 1) {
-			echo "<td><form id='sub_accept_$showid' method='post' action='/_acceptSub.php'>";
-			echo "<input type='hidden' name='showid' value='$showid'/>";
-			echo "<input type='hidden' name='month' value='$month'/>";
-			echo "<input type='hidden' name='day' value='$day'/>";
-			echo "<input class='btn btn-primary' type='submit' name='submit_$showid' value='Sub this Show' /></form></td>";
-		
+			if ($_SESSION['email'] == $origdj) {
+				echo "<td>/</td>";
+			}
+			else {
+				echo "<td><form id='sub_accept_$showid' method='post' action='/_acceptSub.php'>";
+				echo "<input type='hidden' name='showid' value='$showid'/>";
+				echo "<input type='hidden' name='month' value='$month'/>";
+				echo "<input type='hidden' name='day' value='$day'/>";
+				echo "<input class='btn btn-primary' type='submit' name='submit_$showid' value='Sub this Show' /></form></td>";
+			}
 		}
 
 		echo "</tr>";

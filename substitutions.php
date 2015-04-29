@@ -58,7 +58,7 @@ echo "<div class='content left-float'>";
 		echo "<br /><br /><br /><br />";
  
 		//$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active=1) AS rqs NATURAL JOIN radioShow");
-		$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest) AS rqs NATURAL JOIN radioShow");
+		$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active='1') AS rqs NATURAL JOIN radioShow");
 		if($subRequests->rowCount() < 1){
 			print "There are zero active subRequests...";
 		}

@@ -101,7 +101,7 @@ catch(PDOException $e) {
 			<legend>Add a new post:</legend>
 			<br>
 			<div class="form-group">
-				<textarea class="form-control" name="content" placeholder="Post here" rows="3">
+				<textarea class="form-control" name="content" placeholder="Post here" rows="3"></textarea>
 			</div>
 			<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
 			<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">

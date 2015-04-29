@@ -1,7 +1,7 @@
 <?php 
 include '_session.php';
 include '_header.php'; ?>
-
+<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 	<form action="/_add-show.php" method="POST" role="form">
 		<legend>Add Your Show</legend>
@@ -38,8 +38,6 @@ include '_header.php'; ?>
 	        <input type='text' name="show2" class="form-control" id="datetimepicker2"/>
 		</div>
 
-
-
 		<button type="submit" class="btn btn-primary">Add Show</button>
 	</form>
 </div>
@@ -68,3 +66,7 @@ include '_header.php'; ?>
 		$('#extraHour').show();
 	});
 </script>
+
+<?php
+	include '_header.php';
+?>

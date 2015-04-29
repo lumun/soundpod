@@ -37,11 +37,12 @@
 		echo "  </td>";
 
 		if ($isAdmin) {
-			// This is all the delete button
+			// This is all the delete button 
 			echo "<td><form id='delete_form_$showid' method='post' action='/_delete-show.php'>";
 			echo "<input type='hidden' name='showid' value='$showid' />";
-			echo "<input type='submit' class='btn btn-md btn-primary' name='submit_$showid' value='Delete' /></form></td>";
-		}
+			?>
+			<input type='submit' class='btn btn-md btn-primary' name='submit_<?php echo $showid ?>' value='Delete' onclick="return confirm('Are you sure you want to delete a radio show?')" /></form></td>
+		<?php }
 
 		echo "</tr>";
 	}

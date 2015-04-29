@@ -4,13 +4,10 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if ($_POST["email"]) {
 		$email = $_POST["email"];
+		$name = $_POST['name'];
 		try {
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-			$result = $db -> query ("SELECT * FROM user WHERE email='$email'");
-			$user = $result -> fetch();
-			$name = stripslashes($user['name']);
 
 			$sql = "DELETE FROM user WHERE email='$email'";
 			// delete

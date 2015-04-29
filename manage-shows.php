@@ -3,19 +3,21 @@ include '_session.php';
 include '_header.php'; 
 include '_helpers.php';
 
+echo "<span class='col-xs-2 col-sm-2 col-md-2 col-lg-2'></span>";
+echo "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
+echo "<br />";
+
 // If there was a successful deletion or update, let the user know
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	if (isset($_GET["delete"])) {
-		// echo "<h1 class='center small-caps'>User ".$_GET["delete"]." successfully deleted</h1>";
 		?>
-		<div class="alert alert-info fade in">
+		<div class="alert alert-error fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<p><strong>Success!</strong> Radio show <?php echo $_GET["delete"] ?> deleted</p>
+			<p><strong>Radio show deleted</strong></p>
 		</div>
 		<?php
 	}
 	else if (isset($_GET["update"])) {
-		// echo "<h1 class='center small-caps'>User ".$_GET["update"]." successfully made admin</h1>";
 		?>
 		<div class="alert alert-success fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -23,20 +25,24 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		</div>
 		<?php
 	}
+	else if (isset($_GET["add-show"])) {
+		$showName = $_GET['add-show'];
+		?>
+		<div class="alert alert-success fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<p><strong>Success!</strong> You've added your show <?php echo stripslashes($showName) ?> to the portal</p>
+		</div>
+		<?php
+	}
 }
 ?>
 
 <?php
-echo "<span class='col-xs-2 col-sm-2 col-md-2 col-lg-2'></span>";
-echo "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
-
 try {
 	//open the database
 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	// Set errormode to exceptions
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	echo "<br />";
 
 	include '_my-shows.php';
 

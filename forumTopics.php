@@ -59,7 +59,7 @@ try {
 	// Set errormode to exceptions
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$categories = $db -> query("SELECT DISTINCT name From category");
+	$categories = $db -> query("SELECT DISTINCT name From category ORDER BY name");
 	?>
 	
 	<div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">

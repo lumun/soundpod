@@ -77,17 +77,17 @@ CREATE TABLE IF NOT EXISTS post (
 INSERT INTO user(email,name,admin,password) VALUES ('admin','Bob Belcher',1,'password');
 INSERT INTO user(email,name,admin,password) VALUES ('dj','Megan Wensel',0,'password');
  
-INSERT INTO radioShow(showid,genre,title) VALUES (67584563,'alt','Bob lays it Down');
-INSERT INTO radioShow(showid,genre,title) VALUES (22349008,'loud','Megan and Bob Are Sharks');
+INSERT INTO radioShow(showid,genre,title) VALUES (67584563,'alt','Bob Plays All The Hits');
+INSERT INTO radioShow(showid,genre,title) VALUES (22349008,'loud','Megan And Bob Love Megadeth');
 
 INSERT INTO dj(email,showid) VALUES ('admin',67584563);
 INSERT INTO dj(email,showid) VALUES ('admin',22349008);
 INSERT INTO dj(email,showid) VALUES ('dj',22349008);
 
-INSERT INTO showInstance(showid,weekday,time) VALUES (67584563,'Tuesday','1500');
-INSERT INTO showInstance(showid,weekday,time) VALUES (22349008,'Monday','2200');
+INSERT INTO showInstance(showid,weekday,time) VALUES (67584563,'Tue','3PM');
+INSERT INTO showInstance(showid,weekday,time) VALUES (22349008,'Mon','10PM');
 
-INSERT INTO category(name) VALUES ('New DJ\'s!');
+INSERT INTO category(name) VALUES ('New DJ\'s Forum!');
 INSERT INTO category(name) VALUES ('KUPS');
 INSERT INTO category(name) VALUES ('Alternative');
 INSERT INTO category(name) VALUES ('Loud Rock');
@@ -95,9 +95,7 @@ INSERT INTO category(name) VALUES ('Hip-Hop');
 INSERT INTO category(name) VALUES ('Specialty');
 INSERT INTO category(name) VALUES ('Street Team');
 INSERT INTO category(name) VALUES ('Tabling');
-
-
-
+INSERT INTO category(name) VALUES ('DJ Tips');
 
 INSERT INTO post(postid,email,content,category) VALUES (1,'admin','Welcome to KUPS! Ask questions and get advice here. And don\'t forget to have fun!','New DJ\'s');
 INSERT INTO post(postid,email,content,category) VALUES (2,'dj','Im stoked to be here','New DJ\'s');

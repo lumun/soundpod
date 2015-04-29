@@ -9,7 +9,7 @@ if ($isAdmin) {
 			$email = $tuple['email'];
 			$name = $tuple['name'];
 			echo "<tr><td>".$name."</td>";
-			echo "<td>".$email."</td>";
+			echo "<td><a href='mailto:".$email."' target='_blank'>".$email."</a></td>";
 			$me = ($email == $_SESSION["email"]);
 			$admin = $tuple['admin'];
 			if ($admin == 1) {

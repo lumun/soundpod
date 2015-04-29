@@ -10,7 +10,7 @@ if (!$loggedin) {
 // $category = getCurrentUri();
 $category = '';
 if (isset($_GET['category'])) {
-	$category = $_GET['category'];
+	$category = htmlspecialchars_decode($_GET['category']);
 }
 
 if(trim($category) == '')//I might use this to make sure there is no

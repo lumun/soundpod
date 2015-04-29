@@ -39,7 +39,9 @@ echo "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
 			<?php
 		}
 
-		include '_my-shows.php';
+		// include '_my-shows.php';
+
+		include '_display-sub-accepts.php';
  
 		include '_display-sub-requests.php';
 

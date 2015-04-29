@@ -32,7 +32,7 @@ else {
 
 		$origdjs = $db -> query ("SELECT * FROM user WHERE email='$origdj'");
 		$theorigdj = $origdjs -> fetch();
-		echo "<td>".$theorigdj['name']."</td>";
+		echo "<td><a href='mailto:".$origdj."' target='_blank'>".$theorigdj['name']."</a></td>";
 
 		// $subdjs = $db -> query ("SELECT * FROM user WHERE email='$subdj'");
 		// $thesubdj = $subdjs -> fetch();
@@ -49,7 +49,7 @@ else {
 		// This is where you select
 		if ($active == 1) {
 			if ($_SESSION['email'] == $origdj) {
-				echo "<td>/</td>";
+				echo "<td>That's you!</td>";
 			}
 			else {
 				echo "<td><form id='sub_accept_$showid' method='post' action='/_acceptSub.php'>";

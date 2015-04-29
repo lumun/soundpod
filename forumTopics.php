@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<br />
 		<div class="alert alert-success fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<p><strong>Success!</strong> You added a new forum topic: <?php echo stripslashes($_POST["topic"]) ?>. <a href="/forums.php?category=<?php echo $rawtopic ?>">Click here</a> to add your first post.</p>
+			<p><strong>Success!</strong> You added a new forum topic: <?php echo htmlspecialchars_decode($_POST["topic"]) ?>. <a href="/forums.php?category=<?php echo $rawtopic ?>">Click here</a> to add your first post.</p>
 		</div>
 		<?php
 		}
@@ -71,7 +71,7 @@ try {
 				?>
 				<!-- <div class="container">
 				<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
-				<a class="text-center" href="/forums.php?category=<?php echo $cName ?>"><h2 ><?php echo stripslashes($cName) ?></h2 class="text-center"></a>
+				<a class="text-center" href="/forums.php?category=<?php echo htmlspecialchars($cName) ?>"><h2 ><?php echo stripslashes($cName) ?></h2 class="text-center"></a>
 				<?php 	
 				$cName = $db->quote($cName);
 				$posts = $db -> query("SELECT count(*) AS 'num' FROM post WHERE category=$cName");

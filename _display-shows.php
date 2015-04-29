@@ -21,7 +21,8 @@
 		echo "<td>  ";
 		foreach ($djs as $dj) {
 			$n = $dj['name'];
-			echo "$n<br />";
+			$e = $dj['email'];
+			echo "<a href='mailto:".$e."' target='_blank'>".$n."</a><br />";
 		}
 		echo "  </td>";
 

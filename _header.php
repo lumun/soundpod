@@ -39,7 +39,7 @@
 		        <?php if ($isAdmin) { ?>
 	            	<li><a href="/manage-shows.php">Manage Shows</a></li>
 	            <?php } else { ?>
-	            	<li><a href="/manage-shows.php">View Shows</a></li>
+	            	<li><a href="/manage-shows.php">Shows</a></li>
 	            <?php } ?>
 	        	<?php if ($isAdmin) { ?>
 	            	<li><a href="/manage-users.php">Manage Users</a></li>

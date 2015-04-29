@@ -84,12 +84,11 @@ try {
 					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 							<p class='text-left'> <?php echo $content ?> </p><br>
-							<p class='text-left'>By <?php echo $user['name'] ?></p>
-							<p class='text-left'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>
+							<p style='font-size:80%' class='text-left'>By <?php echo $user['name'] ?></p>
+							<p style='font-size:80%' class='text-left'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>
 						</div>
 					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>	
 				</div>
-				
 				<?php
 			}
 		}

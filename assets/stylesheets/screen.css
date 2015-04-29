@@ -30,23 +30,24 @@ div#header #logout, div#header #login, div#header #my-account, div#header #manag
 /* line 42, ../sass/screen.scss */
 body {
   background: #ffffff url("/assets/images/background/escheresque.png") repeat left top;
+  margin-bottom: 60px;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 h1 {
   margin: 30px;
 }
 
-/* line 49, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 a {
   text-decoration: none;
 }
-/* line 51, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 a:link, a:visited, a:hover, a:active {
   color: inherit;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 .content {
   border: 4px solid rgba(102, 0, 0, 0.4);
   -webkit-border-radius: 10px;
@@ -57,43 +58,43 @@ a:link, a:visited, a:hover, a:active {
   padding: 10px;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 .left-float {
   float: left;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .right-float {
   float: right;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 p.center, a.center, h1.center, h2.center, h3.center {
   text-align: center;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 img.center {
   display: block;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 .margined {
   margin: 20px;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 .small-caps {
   font-variant: small-caps;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .nav-button {
   font-variant: small-caps;
   font-weight: bold;
@@ -107,39 +108,44 @@ img.center {
   padding: 5px;
   margin: 10px 0;
 }
-/* line 98, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .nav-button:link, .nav-button:visited {
   color: black;
   border-color: black;
   background: transparent;
 }
-/* line 104, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 .nav-button:hover, .nav-button:active {
   color: black;
   border-color: black;
   background: rgba(102, 0, 0, 0.4);
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 div#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: rgba(102, 0, 0, 0.4);
   color: black;
   border-top: 4px solid #660000;
-  background: rgba(102, 0, 0, 0.4);
   padding: 5px;
 }
-/* line 118, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 div#footer p {
   font-variant: small-caps;
   padding: 5px;
   font-weight: bold;
 }
 
-/* line 126, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .input-error {
   color: red;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .carousel-inner > .item > .caro {
   height: 500px;
   margin-left: auto;

@@ -44,66 +44,84 @@ if(isset($_POST["submit"])) {
 }
 
 // This section deals with finding the files currently in the directory
-// helper method located in _helpers
 $filesOnServer = scandir($dir);
 
 
 include '_header.php'; 
+echo "<br />"; ?>
 
-if ($successfulUpload)
-	echo "<h1 class='center'>" . $filename . " uploaded successfully</h1>";
-if ($errorMessage !== "") 
-	echo "<h1 class='center' style='color:red'>" . $errorMessage . "</h1>";
-	
-
-if($isAdmin)
-{	
-?>
 <div class = "container">
 <div class="row">
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-<div class="content left-float">
-	<h2 style="text-decoration: underline">File Upload Form</h2>
-	<br/>
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-		<p>Upload a file</p>
-		<p>Max file size: <?php echo $maxFileSize ?> bytes</p>
-		<br/>
-		<!-- MAX_FILE_SIZE must precede the file input field -->
-   		<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize ?>" />
-		<input type="file" name="fileUpload" id="fileUpload">
-		<br/>
-		<br/>
-		<input type="submit" name="submit" value="Upload">
-	</form>
-</div></div>
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-</div>
-</div>
-<?php }//for admin only uploads ?>
+<div class="col-md-3 col-lg-3"></div>
+<div class="col-md-6 col-lg-6">
 
+	<?php
+	if ($successfulUpload) { 
+		?>
+		<div class="alert alert-success fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<p><strong>Success!</strong> You uploaded a new resource: <?php echo $filename ?></p>
+		</div>
+		<?php
+	}
+	else {
+		?>
+		<div class="alert alert-error fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<p><strong>Error!</strong> <?php echo $errorMessage ?></p>
+		</div>
+	<?php } ?>
+	
+	<div class="well well-add"> <?php
+		if($isAdmin)
+		{	
+		?>
+			<legend>Resource Upload Form</legend>
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+				<p>Upload a file</p>
+				<p>Max file size: <?php echo $maxFileSize ?> bytes</p>
+		   		<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize ?>" />
+				<input type="file" name="fileUpload" id="fileUpload">
+				<br/>
+				<input type="submit" name="submit" value="Upload">
+			</form>
+		<?php }//for admin only uploads ?>
+	</div>
+
+</div></div>
+<div class="col-md-3 col-lg-3"></div>
+</div>
+</div>
 
 <div class = "container">
 <div class = "row">
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+<div class="col-md-3 col-lg-3"></div>
 
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+<div class="col-md-6 col-lg-6">
 
-<div class="content left-float">
-	<h2 style="text-decoration: underline">Helpful KUPS resources!</h2>
-	<br/>
-	<table>
-		<tr><td><p style="text-decoration: underline">File (click to access)</p></td><td><p style="text-decoration: underline">Size</p></td></tr>
-		<?php 
-		foreach ($filesOnServer as $f => $s) {
-			if($s != "." && $s != "..")
-				echo "<tr><td><a href='uploads/" . $s . "'>" . $s . "</a></td></tr>"; 
+	<div class="well">
+		<legend>DJ Resources</legend>
+		<?php
+		if (count($filesOnServer) < 3) {
+			print "The admins haven't uploaded any resources to the server.";
+		}
+		else { ?>
+			<table class="table table-bordered table-striped" border="1">
+			<tbody align="center">
+			<tr><th>File (click to access)</th></tr>
+			
+			<?php	
+			foreach ($filesOnServer as $f => $s) {
+				if($s != "." && $s != "..")
+					echo "<tr><td><a href='uploads/" . $s . "'>" . $s . "</a></td></tr>"; 
+			}
 		}
 		?>
-	</table>
-</div></div>
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+	</tbody></table>
+	</div>
+
+</div>
+<div class="col-md-3 col-lg-3"></div>
 </div>
 </div>
 
@@ -111,14 +129,15 @@ if($isAdmin)
 
 <div class = "row">
 <div class = "container">
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+<div class="col-md-2 col-lg-2"></div>
 
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+<div class="col-md-8 col-lg-8">
 <img style="float:center" src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
 </div>
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+<div class="col-md-2 col-lg-2"></div>
 </div>
 </div>
 
+<br />
 
 <?php include '_footer.php'; ?>

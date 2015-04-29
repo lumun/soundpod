@@ -115,7 +115,7 @@ div#footer {
 	
 	/* Set the fixed height of the footer here */
 	height: 60px;
-	background-color: black;
+	background-color: $content-border-color;
 	color: $footer-text-color;
 	border-top: 4px solid $footer-border-color;
 	padding: 5px;

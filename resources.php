@@ -70,23 +70,21 @@ echo "<br />"; ?>
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<p><strong>Error!</strong> <?php echo $errorMessage ?></p>
 		</div>
-	<?php } ?>
-	
-	<div class="well well-add"> <?php
-		if($isAdmin)
-		{	
-		?>
-			<legend>Resource Upload Form</legend>
-			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-				<p>Upload a file</p>
-				<p>Max file size: <?php echo $maxFileSize ?> bytes</p>
-		   		<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize ?>" />
-				<input type="file" name="fileUpload" id="fileUpload">
-				<br/>
-				<input type="submit" name="submit" value="Upload">
-			</form>
-		<?php }//for admin only uploads ?>
-	</div>
+	<?php }
+
+	if($isAdmin) { ?>
+		<div class="well well-add">
+		<legend>Resource Upload Form</legend>
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+			<p>Upload a file</p>
+			<p>Max file size: <?php echo $maxFileSize ?> bytes</p>
+	   		<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $maxFileSize ?>" />
+			<input type="file" name="fileUpload" id="fileUpload">
+			<br/>
+			<input type="submit" name="submit" value="Upload">
+		</form>
+		</div>
+	<?php }//for admin only uploads ?>
 
 </div></div>
 <div class="col-md-3 col-lg-3"></div>

@@ -111,9 +111,14 @@ img.center {
 
 // Footer
 div#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: $footer-background-color;
 	color: $footer-text-color;
 	border-top: 4px solid $footer-border-color;
-	background: $footer-background-color;
 	padding: 5px;
 	p {
 		font-variant: small-caps;

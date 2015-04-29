@@ -43,7 +43,9 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 	try {
 	 	$db = new PDO("mysql:dbname=soundpod", 'root');
 	 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	 	$sql = "INSERT INTO user(name,email,password) VALUES ('$name', '$email', '$password')";
+	 	$name = $db -> quote($name);
+	 	$password = $db -> quote($password);
+	 	$sql = "INSERT INTO user(name,email,password) VALUES ($name, '$email', $password)";
 	 	// insert
 	 	$db -> exec($sql);
 	 	session_start();

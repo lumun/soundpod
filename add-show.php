@@ -50,6 +50,7 @@ include '_header.php'; ?>
 	</div>
 </div>
 
+<?php include '_footer.php'; ?>
 
 <script type="text/javascript">
 	$(document).ready(function(){

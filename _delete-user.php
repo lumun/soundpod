@@ -7,6 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 			$db = new PDO("mysql:dbname=soundpod", 'root');
 			$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+			$result = $db -> query ("SELECT * FROM user WHERE email='$email'");
+			$user = $result -> fetch();
+			$name = stripslashes($user['name']);
+
 			$sql = "DELETE FROM user WHERE email='$email'";
 			// delete
 			$db -> exec($sql);
@@ -14,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$db = NULL;
 
 			//redirect to success page
-			header("Location: /manage-users.php?delete='$email'");
+			header("Location: /manage-users.php?delete=$name");
 		}
 		catch(PDOException $e) {
 			print 'Exception : '.$e -> getMessage();

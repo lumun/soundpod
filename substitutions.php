@@ -16,47 +16,8 @@ echo "<div class='content left-float col-xs-6 col-sm-6 col-md-6 col-lg-6'>";
 		$db = new PDO("mysql:dbname=soundpod", 'root');
 		// Set errormode to exceptions
 		$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "<legend>Your Shows</legend>";
-		//now output the data to a simple html table...
-		if (isset($_SESSION['email'])) { $myemail = $_SESSION['email']; }
-		$shows = $db -> query ("SELECT * FROM radioShow NATURAL JOIN dj WHERE email='$myemail'");
 
-		if($shows->rowCount() < 1)
-		{
-			?>
-			<p>You don't have a show in the schedule :(  ...maybe you should make one? <a href="/add-show.php"> Click Here for show creation</a></p>
-			<?php
-		}
-		else{
-			echo '<table class="table table-striped" border="1">';
-			echo '<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th></th></tr>';
-			foreach ($shows as $show) {
-				$showid = $show['showid'];
-				$title = $show['title'];
-				// get_genre method found in helpers
-				$genre = get_genre($show['genre']);
-				echo "<td>".$title."</td>";
-				echo "<td>".$genre."</td>";
-				$showtimes = $db -> query ("SELECT * FROM showInstance WHERE showid=$showid");
-				echo "<td>";
-				foreach ($showtimes as $showtime) {
-					$day = $showtime['weekday'];
-					$time = $showtime['time'];
-					echo $day."s at ";
-					echo $time;
-					echo "<br />";
-				}
-				echo "</td>";
-
-				echo "<td><form id='sub_request_$showid' method='post' action='/requestSub.php'>";
-				echo "<input type='hidden' name='showid' value='$showid' />";
-				echo "<input type='submit' class='btn btn-primary' name='submit_$showid' value='Request Sub' /></form></td>";
-
-				echo "</tr>";
-			}
-			echo "</table>";
-		}
-		echo "<br /><br /><br /><br />";
+		include '_my-shows.php';
  
 		//$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active=1) AS rqs NATURAL JOIN radioShow");
 		$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active='1') AS rqs NATURAL JOIN radioShow");

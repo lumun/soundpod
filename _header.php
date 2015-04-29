@@ -36,17 +36,11 @@
 	      <ul class="nav navbar-nav">
 	      	<?php if ($loggedin) { ?>
 		        <li><a href="/forums.php">Forums</a></li>
-		        <li class="dropdown">
-		          <a class="dropdown-toggle" data-toggle="dropdown" href="/manage-shows.php">Shows<span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		          	<?php if ($isAdmin) { ?>
-		            	<li><a href="/manage-shows.php">Manage Shows</a></li>
-		            <?php } else { ?>
-		            	<li><a href="/manage-shows.php">View Shows</a></li>
-		            <?php } ?>
-		            <li><a href="/add-show.php">Add Show</a></li>
-		          </ul>
-		        </li>
+		        <?php if ($isAdmin) { ?>
+	            	<li><a href="/manage-shows.php">Manage Shows</a></li>
+	            <?php } else { ?>
+	            	<li><a href="/manage-shows.php">View Shows</a></li>
+	            <?php } ?>
 	        	<?php if ($isAdmin) { ?>
 	            	<li><a href="/manage-users.php">Manage Users</a></li>
 	            <?php } ?>

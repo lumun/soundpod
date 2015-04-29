@@ -66,9 +66,10 @@ try {
 		<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
 		<a href="/forums.php?category=<?php echo $category['name'] ?>"><h4><?php echo stripslashes($category['name']) ?></h4></a>	
 	<?php
+
+	}
 		echo "</div>";
 	echo "</div>";
-	}
 }
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();

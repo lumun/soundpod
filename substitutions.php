@@ -7,8 +7,9 @@ if (!$loggedin) {
 }
 
 include '_header.php';
+echo "<div class='container'>";
 
-echo "<div class='content left-float'>";
+echo "<div class='content left-float col-xs-6 col-sm-6 col-md-6 col-lg-6'>";
 	try 
 	{
 		//open the databas
@@ -125,4 +126,6 @@ echo "<div class='content left-float'>";
 		print 'Exception : '.$e -> getMessage();
 	}
 echo "</div>";
+echo "</div>";
+
 ?>

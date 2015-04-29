@@ -123,7 +123,6 @@ img.center {
 
 /* line 114, ../sass/screen.scss */
 div#footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -133,19 +132,19 @@ div#footer {
   border-top: 4px solid #660000;
   padding: 5px;
 }
-/* line 124, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 div#footer p {
   font-variant: small-caps;
   padding: 5px;
   font-weight: bold;
 }
 
-/* line 132, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 .input-error {
   color: red;
 }
 
-/* line 136, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .carousel-inner > .item > .caro {
   height: 500px;
   margin-left: auto;

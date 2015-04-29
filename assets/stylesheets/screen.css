@@ -11,18 +11,23 @@ body {
     padding-top: 0px;
   }
 }
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* line 37, ../sass/screen.scss */
 .container-fluid-index {
   padding-right: 0px;
   padding-left: 0px;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .input-error {
   color: red;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 .carousel-inner > .item > .caro {
   max-height: -webkit-calc(100vh - 70px);
   max-height: -moz-calc(100vh - 70px);
@@ -31,7 +36,7 @@ body {
   margin-right: auto;
 }
 
-/* line 49, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .alert {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -48,13 +53,16 @@ body {
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
-/* line 69, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .alert a {
-  font-weight: bold;
   color: black;
-  text-decoration: none;
+  text-decoration: underline;
 }
-/* line 75, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
+.alert a:hover {
+  font-weight: bold;
+}
+/* line 83, ../sass/screen.scss */
 .alert.alert-success {
   background-color: #57a957;
   background-repeat: repeat-x;
@@ -70,7 +78,7 @@ body {
   border-color: #57a957 #57a957 #3d773d;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
-/* line 93, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 .alert.alert-error {
   background-color: #c43c35;
   background-repeat: repeat-x;
@@ -86,7 +94,7 @@ body {
   border-color: #c43c35 #c43c35 #882a25;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
-/* line 111, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .alert.alert-info {
   background-color: #339bb9;
   background-repeat: repeat-x;
@@ -103,11 +111,11 @@ body {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
-/* line 131, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 .navbar-fixed-bottom {
   min-height: 20px;
 }
-/* line 133, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .navbar-fixed-bottom p {
   font-variant: small-caps;
   font-weight: bold;

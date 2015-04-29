@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 			//redirect to success page
-			header("Location: /manage-shows.php");
+			header("Location: /notification.php?add-show=$title");
 		}
 		catch(PDOException $e) {
 			print 'Exception : '.$e -> getMessage();

@@ -46,19 +46,7 @@ try {
 				</div>
 			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
 			</div>
-			<div class="row">
-				<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
-				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-					<form id="data-input" action="/_submit-post.php" method="POST" role="form">
-					<div class="form-group">
-						<input type="text" class="form-control" name="content" placeholder="Post here" width = "100px" height = "100px" >
-					</div>
-					<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
-					<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
-					<button  type="submit" class="text-center btn btn-primary">Submit</button>
-					</form>
-				</div>
-			</div>
+			
 		</div>
 
 		<div class="container">
@@ -69,7 +57,17 @@ try {
 		$cat = $db->quote($category);
 		$result = $db -> query("SELECT * from post where category = $cat ORDER BY time");
 		if($result->rowCount() < 1){
-			print "There aren't any posts here yet. Add one above!";
+			?>
+			<div class="container">
+			<div class="row">
+			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<h2>There aren't any posts here yet. Add one!</h2>
+			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
+			</div>
+			
+		</div>
+			<?php
 		}
 		else {
 			foreach ($result as $thisPost)
@@ -82,13 +80,14 @@ try {
 				?>
 				<div class="row">
 					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<p class='text-left'> <?php echo $content ?> </p><br>
-							<p style='font-size:80%' class='text-left'>By <?php echo $user['name'] ?></p>
-							<p style='font-size:80%' class='text-left'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>
+						<div class="well col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<h4 class='text-left'> <?php echo $content ?> </h4>
+							<p class='text-right'>By <?php echo $user['name'] ?></p>
+							<p class='text-right'>Posted <?php date_default_timezone_set('UTC'); echo date("F j, g:i:s A", strtotime($timestamp)); ?></p>
 						</div>
 					<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>	
 				</div>
+				
 				<?php
 			}
 		}
@@ -99,3 +98,27 @@ try {
 catch(PDOException $e) {
 	print 'Exception : '.$e -> getMessage();
 }
+
+?>
+<!-- end container -->
+</div>
+
+<div class="container">
+	<div class="row">
+		<span class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></span>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<form id="data-input" action="/_submit-post.php" method="POST" role="form">
+			<legend>Add a new post:</legend>
+			<br>
+			<div class="form-group">
+				<textarea class="form-control" name="content" placeholder="Post here" rows="3"></textarea>
+			</div>
+			<input type="hidden" name="categoryClean" value="<?php echo $cat; ?>" class="form-control">
+			<input type="hidden" name="category" value="<?php echo $category; ?>" class="form-control">
+			<button  type="submit" class="text-center btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<?php include '_footer.php'; ?>

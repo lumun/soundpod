@@ -57,7 +57,17 @@ try {
 		$cat = $db->quote($category);
 		$result = $db -> query("SELECT * from post where category = $cat ORDER BY time");
 		if($result->rowCount() < 1){
-			print "There aren't any posts here yet. Add one above!";
+			?>
+			<div class="container">
+			<div class="row">
+			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<h2>There aren't any posts here yet. Add one!</h2>
+			<span class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></span> 
+			</div>
+			
+		</div>
+			<?php
 		}
 		else {
 			foreach ($result as $thisPost)

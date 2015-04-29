@@ -59,6 +59,7 @@ if ($errorMessage !== "")
 if($isAdmin)
 {	
 ?>
+<div class = "container">
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -79,13 +80,15 @@ if($isAdmin)
 </div></div>
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
 </div>
+</div>
 <?php }//for admin only uploads ?>
 
 
+<div class = "container">
+<div class = "row">
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
 
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
-</div>
-<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
 <div class="content left-float">
 	<h2 style="text-decoration: underline">Helpful KUPS resources!</h2>
@@ -102,12 +105,15 @@ if($isAdmin)
 </div></div>
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
 </div>
+</div>
 
-
+<div class = "row">
+<div class = "container">
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
 
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
 <img style="float:right" src="/assets/images/kids.jpg" class="center-block img-responsive" alt="Image">
 </div>
 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+</div>
+</div>

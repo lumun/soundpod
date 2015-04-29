@@ -60,12 +60,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<?php 
 		include '_header.php';
 
+		echo "<br />";
+		echo "<div class='col-md-offset-3 col-lg-offset-3 col-md-6 col-lg-6'>";
+
+		if (isset($error)) { ?>
+			<div class="alert alert-error fade in">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<p><strong>Error!</strong> <?php echo $error ?></p>
+			</div>
+		<?php 
+		}
+
     	if ($loggedin) {
     		echo "<h2 class='center small-caps'>YOU ARE ALREADY LOGGED IN</h2>";
 		}
 		else { ?>
-			<div class="col-md-offset-3 col-lg-offset-3 col-md-6 col-lg-6">
-				<br />
 			    <div class="well">
 			    	<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
 			    		<legend>Log In</legend>
@@ -82,12 +91,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			    		<button  type="submit" class="btn btn-primary" name="submit">Log In</button>
 			    	</form>
 				</div>
-			</div>
 		<?php
 		}
-		if (isset($error)) {
-			echo "<p>$error</p>";
-		}
 		?>
+		</div>
 </body>
 </html>

@@ -1,5 +1,4 @@
 <?php
-echo "<div class='well well-important'>";
 $email = $_SESSION['email'];
 //$subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active=1) AS rqs NATURAL JOIN radioShow");
 $subRequests = $db -> query ("SELECT * FROM (SELECT * FROM subRequest WHERE active='0' AND subdj='$email') AS rqs NATURAL JOIN radioShow");
@@ -8,6 +7,7 @@ if($subRequests->rowCount() < 1){
 }
 else {
 	?>
+	<div class='well well-important'>
 	<legend>Your Scheduled Substitutions</legend>
 	<table class="table table-bordered table-hover" border="1">
 	<tbody align="center">
@@ -44,6 +44,6 @@ else {
 	}
 	echo "</table>";
 	echo "</tbody>";
+	echo "</div>";
 }
-echo "</div>";
 ?>

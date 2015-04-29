@@ -64,7 +64,7 @@ echo "<br />"; ?>
 		</div>
 		<?php
 	}
-	else {
+	else if ($errorMessage != "") {
 		?>
 		<div class="alert alert-error fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

@@ -49,7 +49,7 @@ echo "<div class='content left-float'>";
 
 				echo "<td><form id='sub_request_$showid' method='post' action='/requestSub.php'>";
 				echo "<input type='hidden' name='showid' value='$showid' />";
-				echo "<input type='submit' name='submit_$showid' value='Request Sub' /></form></td>";
+				echo "<input type='submit' class='btn btn-primary' name='submit_$showid' value='Request Sub' /></form></td>";
 
 				echo "</tr>";
 			}
@@ -109,7 +109,8 @@ echo "<div class='content left-float'>";
 					echo "<input type='hidden' name='showid' value='$showid'/>";
 					echo "<input type='hidden' name='month' value='$month'/>";
 					echo "<input type='hidden' name='day' value='$day'/>";
-					echo "<input type='submit' name='submit_$showid' value='Sub this Show' /></form></td>";
+					echo "<input class='btn btn-primary' type='submit' name='submit_$showid' value='Sub this Show' /></form></td>";
+				
 				}
 
 				echo "</tr>";

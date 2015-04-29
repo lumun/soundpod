@@ -38,12 +38,16 @@ include '_header.php'; ?>
 		        <input type='text' name="show1" class="form-control" id="datetimepicker1"/>
 			</div>
 
-			<div id="extraHour" class='input-group date' >
+			<div id="extraHour" class='text-center input-group date' >
 				<label for="password">Show Time</label>
 		        <input type='text' name="show2" class="form-control" id="datetimepicker2"/>
 			</div>
 
-			<button type="submit" class="btn btn-primary">Add Show</button>
+			<br>
+			<br>
+			<br>
+
+			<button type="submit" class="text-center btn btn-primary">Add Show</button>
 		</form>
 	</div>
 </div>

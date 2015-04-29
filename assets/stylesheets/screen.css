@@ -123,28 +123,26 @@ img.center {
 
 /* line 114, ../sass/screen.scss */
 div#footer {
-  bottom: 0;
-  width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: rgba(102, 0, 0, 0.4);
+  background-color: black;
   color: black;
   border-top: 4px solid #660000;
   padding: 5px;
 }
-/* line 123, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 div#footer p {
   font-variant: small-caps;
   padding: 5px;
   font-weight: bold;
 }
 
-/* line 131, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 .input-error {
   color: red;
 }
 
-/* line 135, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 .carousel-inner > .item > .caro {
   height: 500px;
   margin-left: auto;

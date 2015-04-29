@@ -68,7 +68,7 @@ echo "<div class='content left-float col-xs-6 col-sm-6 col-md-6 col-lg-6'>";
 			<h2>Sub Requests! Help someone out!</h2>
 			<table class="table table-striped" border="1">
 				<tbody align="center">
-			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><!-- <th>Subbing DJ</th> --><th>Active</th></tr>
+			<tr><th>Show Title</th><th>Genre</th><th>Show Time(s)</th><th>Posting DJ</th><!-- <th>Subbing DJ</th> --><th></th></tr>
 			<?php
 			foreach ($subRequests as $sub) {
 				$showid = $sub['showid'];

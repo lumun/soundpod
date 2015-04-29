@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	date_default_timezone_set('America/Los_Angeles');
 	$date = new DateTime();
 
-	$sql = "INSERT INTO post(email,content,category,time) values('$email',$content,$cat,'$date')";
+	$sql = "INSERT INTO post(email,content,category,time) values('$email',$content,$cat,$date)";
 	// Set errormode to exceptionsgi
 	$db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$db->exec($sql);

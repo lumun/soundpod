@@ -25,7 +25,7 @@ include '_header.php';
 		<p>thanks so much for subbing the show! Here's the details of the show you agreed to sub, ROCKSTAR</p>
 		<p>It is on <?php echo "$month $day";?></p>
 		<p>To go back to the subrequests page,
-			<a href="/substitutions.php" class="btn btn-primary btn-lg">Here</a>
+			<a href="/substitutions.php" class="btn btn-primary">Here</a>
 		</p>
 	</div>
 </div>

@@ -7,7 +7,7 @@ if($subRequests->rowCount() < 1){
 }
 else {
 	?>
-	<div class='well well-important'>
+	<div class='well'>
 	<legend>Your Scheduled Substitutions</legend>
 	<table class="table table-bordered table-striped" border="1">
 	<tbody align="center">

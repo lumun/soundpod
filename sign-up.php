@@ -70,7 +70,7 @@ if (!empty($name) AND !empty($email) AND !empty($password) AND empty($nameErr) A
 <!-- Header inserter here -->
 <?php include '_header.php'; ?>
 
-<div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<div class="col-md-offset-3 col-lg-offset-3 col-md-6 col-lg-6">
 	<br />
 	<div class="well">
     	<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">

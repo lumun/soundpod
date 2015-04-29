@@ -39,7 +39,7 @@ if($isAdmin)
 {
 	?>
 	<br />
-	<div class='col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+	<div class='col-md-offset-3 col-lg-offset-3 col-md-6 col-lg-6'>
 		<div class='well well-add'>
 			<form id="data-input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" role="form">
 				<p>Admins, please only add a new topic if you're sure it's needed</p>
@@ -62,7 +62,7 @@ try {
 	$categories = $db -> query("SELECT DISTINCT name From category ORDER BY name");
 	?>
 	
-	<div class="col-md-offset-3 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	<div class="col-md-offset-3 col-lg-offset-3 col-md-6 col-lg-6">
 		<h1 class='text-center' style='margin-top:10px'>DJ Forum</h1>
 		<div class='well'>
 			<?php

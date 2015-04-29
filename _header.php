@@ -15,10 +15,11 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-id">
+		        <span class="sr-only">Toggle navigation</span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>                        
@@ -28,11 +29,9 @@
 			</a>
 		    <a class="navbar-brand" href="<?php if ($loggedin) { echo '/index.php'; } else { echo '/index.php'; } ?>">
 		      	<p> KUPS DJ Portal</p>
-				<!-- <img src="/assets/images/kups.png" alt="DJ Portal" style="height:30px;float:left"> -->
-				<!-- <img src="/assets/images/kups.png" alt="DJ Portal" class="left-float" style="height:52px"> -->
 			</a>
 	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
+	    <div class="collapse navbar-collapse" id="navbar-collapse-id">
 	      <ul class="nav navbar-nav">
 	      	<?php if ($loggedin) { ?>
 		        <li><a href="/forums.php">Forums</a></li>
@@ -60,6 +59,7 @@
 	  </div>
 	</nav>
 
+<!-- because of the carousel on the index page, we want slighly different css on the container -->
 <div <?php if(htmlspecialchars($_SERVER['PHP_SELF']) != '/index.php') { echo "class='container-fluid'"; } else { echo "class='container-fluid container-fluid-index'"; } ?> >
 
 

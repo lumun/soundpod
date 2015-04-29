@@ -3,8 +3,8 @@ include '_session.php';
 include '_header.php'; 
 include '_helpers.php';
 
-echo "<span class='col-xs-2 col-sm-2 col-md-2 col-lg-2'></span>";
-echo "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
+echo "<span class='col-md-2 col-lg-2'></span>";
+echo "<div class='col-md-8 col-lg-8'>";
 echo "<br />";
 
 // If there was a successful deletion or update, let the user know

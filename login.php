@@ -70,11 +70,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		    	
 		    		<div class="form-group">
 		    			<label for="email">Email</label>
-		    			<input type="text" placeholder="Enter Email" class="form-control" name="email" value=<?php echo "\"".$email."\"";?>>
+		    			<input type="text" placeholder="you@pugetsound.edu" class="form-control" name="email" value=<?php echo "\"".$email."\"";?>>
 		    		</div>
 			    	<div class="form-group">
 			    		<label for="password">Password</label>
-			    		<input type="password" placeholder="Enter Password" class="form-control" name="password">
+			    		<input type="password" class="form-control" name="password">
 			    	</div>
 		    	
 		    		<button  type="submit" class="btn btn-primary" name="submit">Log In</button>

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	} else {				
 		$email = clean_input($_POST["email"]);
 
-  		if (!preg_match("/^[A-Za-z0-9._%+-]+@(pugetsound\.edu|ups\.edu)$/",$email)) {
+  		if (!preg_match("/^[A-Za-z0-9._-]+@(pugetsound\.edu|ups\.edu)$/",$email)) {
 				$emailErr = "Required format: username@pugetsound.edu";
 		}
 	}
@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   	} 
   	else {
   		$password = clean_input($_POST["password"]);
-  		if (!preg_match("/^[\w]+$/",$password)) {
-				$passwordErr = "Only valid symbols allowed";
-		}
+  // 		if (!preg_match("/^[A-Za-z0-9._]+$/",$password)) {
+		// 		$passwordErr = "Only valid symbols allowed";
+		// }
 	}
 }
 

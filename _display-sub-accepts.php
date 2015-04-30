@@ -40,7 +40,7 @@ else {
 		echo "<input type='hidden' name='showid' value='$showid'/>";
 		echo "<input type='hidden' name='month' value='$month'/>";
 		echo "<input type='hidden' name='day' value='$day'/>"; ?>
-		<input class='btn btn-primary' type='submit' name='submit_$showid' value='Revoke' onclick="return confirm('Are you sure you want to delete a radio show?')" /></form></td></tr>
+		<input class='btn btn-primary' type='submit' name='submit_$showid' value='Revoke' onclick="return confirm('Are you sure you cannot make this show?')" /></form></td></tr>
 	<?php
 	}
 	echo "</table>";

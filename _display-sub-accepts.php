@@ -7,7 +7,7 @@ if($subRequests->rowCount() < 1){
 }
 else {
 	?>
-	<div class='well well-important'>
+	<div class='well'>
 	<legend>Your Scheduled Substitutions</legend>
 	<table class="table table-bordered table-striped" border="1">
 	<tbody align="center">
@@ -39,8 +39,9 @@ else {
 		echo "<td><form id='sub_reject_$showid' method='post' action='/_rejectSub.php'>";
 		echo "<input type='hidden' name='showid' value='$showid'/>";
 		echo "<input type='hidden' name='month' value='$month'/>";
-		echo "<input type='hidden' name='day' value='$day'/>";
-		echo "<input class='btn btn-primary' type='submit' name='submit_$showid' value='Revoke' /></form></td></tr>";
+		echo "<input type='hidden' name='day' value='$day'/>"; ?>
+		<input class='btn btn-primary' type='submit' name='submit_$showid' value='Revoke' onclick="return confirm('Are you sure you cannot make this show?')" /></form></td></tr>
+	<?php
 	}
 	echo "</table>";
 	echo "</tbody>";

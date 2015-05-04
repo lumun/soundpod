@@ -1,6 +1,7 @@
 <?php 
 include '_session.php';
 include '_header.php';
+include '_helpers.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['showid'])) {
 	$showid = $_POST['showid'];
@@ -30,9 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['showid'])) {
 	
 
 </div>
+
+<?php
+// $getShowDayAndHours = get_show_day_and_hours($showid);
+// $disabledDaysOfWeek = $getShowDayAndHours[0];
+// $disabledHours = $getShowDayAndHours[1];
+// $enabledHours = $getShowDayAndHours[2];
+?>
+
 <script type="text/javascript">
     $(function () {
+
         $('#dtp').datetimepicker({format: "ddd, MMMM Do, hA" });
+
+
     });
 
 </script>

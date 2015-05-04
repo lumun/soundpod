@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['showid'])) {
 
 	    	<div class='input-group date' >
 	    		<label for="password">Show Time</label>
-                <input type='text' name="date" class="form-control" id="datetimepicker1"/>
+                <input type='text' name="date" class="form-control" id="dtp"/>
 	    	</div>
 	    	<br>
 	    	<br>
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['showid'])) {
 </div>
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker1').datetimepicker({format: "ddd, MMMM Do, hA" });
+        $('#dtp').datetimepicker({format: "ddd, MMMM Do, hA" });
     });
 
 </script>
